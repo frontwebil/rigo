@@ -41,11 +41,19 @@
 }
 
 .link-current-page{
-  color: #000;
+  color: rgb(0, 157, 255)!important;
   transition: 0.5s ease all;
   padding: 3px;
+  font-weight: bold;
 }
-.link-current-page:hover{
+
+.linkToAll{
+  transition: 0.5s ease all;
+  padding: 3px;
+  color: #000;
+}
+
+.linkToAll:hover{
   opacity: 0.8;
   background-color: #C0C0C0;
 }

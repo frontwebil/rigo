@@ -29,13 +29,23 @@ export function Search({ searchTerm, setSearchTerm, currentPage }) {
       </div>
       <div className="current-page" style={{ textTransform: "capitalize" }}>
         {names[0]} -{" "}
-        <Link to={linkTo} className="link-current-page" style={{color:"#009DFF" , fontWeight:'bold'}}>
+        <Link
+          to={linkTo}
+          className={`linkToAll ${names.length == 2 ? "link-current-page" : ""}`}
+        >
           {currentPage.names[1]}
         </Link>{" "}
-        <span style={{color:"#009DFF" , fontWeight:'bold'}}>{names[2] && `- ${names[2]}`}</span>
-        <span style={{ textTransform: "capitalize" , color:"#009DFF", fontWeight:'bold'}}>
-          {names[3] && ` - ${names[3]}`}
+        <span className={`${names.length == 3 ? "link-current-page" : ""}`}>
+          {names[2] && `- ${names[2]}`}
         </span>
+        {names[3] && (
+          <>
+            {" - "} 
+            <span className={names.length == 4 ? "link-current-page" : ""}>
+            {names[3]}
+          </span>
+          </>
+        )}
       </div>
     </section>
   );
