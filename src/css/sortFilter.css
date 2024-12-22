@@ -1,0 +1,125 @@
+.sortFiltrButtons {
+  background-color: #fff;
+}
+.sortFiltrButtons-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative; /* Додаємо, щоб меню позиціонувалося відносно цього блоку */
+}
+.sortFiltrButtons-flexButtons {
+  display: flex;
+  gap: 10px;
+}
+
+.openMoreButtonsMenu{
+  position: absolute;
+  top: 100%; /* Розміщуємо меню одразу під кнопкою */
+  right: 10px; /* Вирівнюємо по лівому краю кнопки */
+  z-index: 3;
+  background-color: #f9f9f9;
+  border: 1px solid black;
+  padding: 10px 15px 0px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: max-content; /* Автоматична ширина, щоб меню відповідало вмісту */
+}
+
+.sortFiltrButtonsMenu {
+  position: absolute;
+  top: 100%; /* Розміщуємо меню одразу під кнопкою */
+  left: 10px; /* Вирівнюємо по лівому краю кнопки */
+  z-index: 3;
+  background-color: #f9f9f9;
+  border: 1px solid black;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: max-content; /* Автоматична ширина, щоб меню відповідало вмісту */
+}
+
+.sortFiltrButtonsMenu-container {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.sortFiltrButtons-button {
+  font-size: 14px;
+  border: 1px solid #9F9F9F;
+  padding: 8px 30px;
+  border-radius: 10px;
+}
+
+.sortFiltrButtons-button.active {
+  color: #fff;
+  background-color: #00C617;
+  border: 1px solid #9F9F9F;
+}
+
+.select-group {
+  display: flex;
+  flex-direction: column; /* Размещаем label и select вертикально */
+  gap: 8px; /* Расстояние между label и select */
+}
+
+label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+select {
+  padding: 8px 22px 8px 10px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+  text-transform: capitalize;
+
+  /* Для стрелки select */
+  appearance: none;
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns%3D%22http%3A//www.w3.org/2000/svg%22 viewBox%3D%220 0 4 5%22%3E%3Cpath fill%3D%22%23333%22 d%3D%22M2 0L0 2h4z%22/%3E%3C/svg%3E');
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 8px 10px;
+}
+
+select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+
+.Sort-button {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #00C617;
+  color: white;
+  margin-right: 5px;
+  border-radius: 5px;
+}
+.Close-button {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #ef4e09;
+  color: white;
+  border-radius: 5px;
+}
+
+.openMoreButtonsMenu-button {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;  
+  cursor: pointer;
+  padding-bottom: 10px;
+}
+.openMoreButtonsMenu-button:hover {
+  text-decoration: underline;
+}

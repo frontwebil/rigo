@@ -1,0 +1,50 @@
+.id-block-site {
+  padding-top: 20px;
+}
+.name-block-site {
+  padding-top: 20px;
+  /* background-color: #F0F4FC; */
+}
+.workers-block-site {
+  padding-top: 20px;
+  text-align: center;
+  background-color: #F0F4FC;
+  text-decoration: underline;
+}
+.absent-block-site {
+  padding-top: 20px;
+  text-align: center;
+  background-color: #F0F4FC;
+  text-decoration: underline;
+}
+.present-block-site {
+  padding-top: 20px;
+  text-align: center;
+  background-color: #F0F4FC;
+  text-decoration: underline;
+}
+.manager-block-site {
+  padding-top: 20px;
+}
+.location-block-site {
+  /* padding-top: 20px; */
+  text-align: center;
+}
+.location-button {
+  width: 30px;
+  cursor: pointer;
+}
+.radius-block-site {
+  padding-top: 20px;
+  text-align: center;
+  background-color: #F0F4FC;
+}
+.alerts-block-site {
+  padding-top: 20px;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.info-block-site{
+  text-align: center;
+}

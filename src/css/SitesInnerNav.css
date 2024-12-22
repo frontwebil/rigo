@@ -1,0 +1,27 @@
+.SitesInnerNav {
+  max-width: 1400px;
+  padding: 10px;
+  margin: 10px auto;
+  /* border: 1px solid black; */
+}
+.SitesInnerNav-buttons {
+  display: flex;
+  gap: 5px;
+  justify-content: space-between;
+}
+.SitesInnerNav-button {
+  background-color: #434343;
+  max-width: 185px;
+  width: 100%;
+  text-align: center;
+  padding: 10px;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.SitesInnerNav-button.active {
+  background-color: #EF4255;
+}

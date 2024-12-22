@@ -1,0 +1,24 @@
+@import url(/src/css/Header.css);
+@import url(/src/css/Search.css);
+@import url(/src/css/Reset.css);
+@import url(/src/css/sortFilter.css);
+@import url(/src/css/EventsLog.css);
+@import url(/src/css/Table.css);
+@import url(/src/css/AlertsTable.css);
+@import url(/src/css/WorkedTable.css);
+@import url(/src/css/media.css);
+@import url(/src/css/SiteTable.css);
+@import url(/src/css/SitesInnerNav.css);
+@import url(/src/css/SitesInnerNavButtons.css);
+@import url(/src/css/SitesInnerBasic.css);
+
+*{
+  font-family: "Montserrat", serif;
+}
+
+body{
+  overflow-x: hidden;
+  position: relative;
+}
+
+

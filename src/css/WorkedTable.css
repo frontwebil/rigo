@@ -1,0 +1,35 @@
+.site-block-workedTime {
+  text-align: center;
+  padding-top: 25px;
+}
+.customer-block-workedTime {
+  text-align: center;
+  padding-top: 25px;
+  text-decoration: underline;
+}
+.workedTime-block-WorkedTime {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* padding-top: 25px; */
+}
+.manager-block-workedTime {
+  text-align: center;
+  padding-top: 25px;
+}
+.days-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.info-button{
+  width: 40px;
+  cursor: pointer;
+}
+
+.flex-bruttoNetto{
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+}

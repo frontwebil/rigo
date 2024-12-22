@@ -1,0 +1,69 @@
+.SitesInnerBasic {
+  max-width: 1380px;
+  margin: 0 auto;
+}
+.SitesInnerBasic-topInfo {
+  background-color: #484444;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+.SitesInnerBasic-topInfo-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  max-width: 450px;
+  width: 100%;
+}
+.SitesInnerBasic-topInfo-block-text {
+  font-size: 16px;
+  color: #FFFFFF;
+  font-weight: bold;
+}
+.SitesInnerBasic-topInfo-block-img {
+  border-radius: 20px;
+  padding: 5px;
+  width: 40px;
+  height: 35px;
+  color: #fff;
+}
+
+.SitesInnerBasic-content {
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.SitesInnerBasic-content-block {
+  display: flex;
+  flex-direction: column;
+  max-width: 450px;
+  width: 100%;
+  border-right: 1px solid #000000;
+  border-left: 1px solid #000000;
+  padding: 5px 20px;
+}
+
+.SitesInnerBasic-content-block:last-child {
+  border-right: 2px solid #000000;
+}
+.SitesInnerBasic-content-block:first-child {
+  border-left: 2px solid #000000;
+}
+
+.SitesInnerBasic-content-block-title {
+  font-size: 28px;
+  font-weight: bold;
+  padding-bottom: 15px;
+}
+.SitesInnerBasic-content-row {
+  display: flex;
+  padding-bottom: 5px;
+  justify-content: space-between;
+}
+.SitesInnerBasic-content-row-text {
+  font-size: 13px;
+
+}

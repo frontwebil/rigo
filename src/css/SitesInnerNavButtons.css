@@ -1,0 +1,38 @@
+.SitesInnerNavButtons {
+  max-width: 1420px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+.SitesInnerNavButtons-buttons {
+  display: flex;
+  gap: 10px;
+}
+.SitesInnerNavButton {
+  font-size: 14px;
+  padding: 8px 30px;
+  border-radius: 10px;
+}
+.Sort {
+  background-color: #00C617;
+  color: #fff;
+}
+.Tag {
+  background-color: #983CDC;
+  color: #fff;
+}
+.show-hide{
+  border: 1px solid #9F9F9F;
+}
+.SitesInnerNavButtons-more {
+  background-color: #00CE26;
+  border: 2px solid #BEBEBE;
+  width: 35px;
+  height: 35px;
+  color: #fff;
+  border-radius: 30px;
+  cursor: pointer;
+}

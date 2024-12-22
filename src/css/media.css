@@ -1,0 +1,15 @@
+@media (max-width: 1365px) {
+  .header-flex{
+    display: none;
+  }
+
+.header-flex-mobile-button {
+  display: block;
+}
+.header-flex-mobile {
+  display: block;
+}
+.flex-mobile{
+  display: block;
+}
+}

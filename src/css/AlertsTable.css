@@ -1,0 +1,112 @@
+.table-block-info{
+  padding:10px;
+  text-align: left;
+  border: 1px solid #F0F4FC;
+  word-wrap: break-word; 
+  overflow-wrap: break-word;
+  white-space: normal;
+  height: auto; 
+  /* min-height: 50px; */
+  box-sizing: border-box;
+}
+
+
+
+.photo-block {
+  margin: auto;
+}
+.photo-block img {
+  width: 100%;
+}
+.name-block {
+  padding-top: 25px;
+  background-color: #F8F4FC;
+}
+.phone-block {
+  padding-top: 25px;
+  text-align: center;
+}
+.site-block {
+  /* padding-top: 25px; */
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  background-color: #F8F4FC;
+}
+
+.house-info{
+  width: 40px;
+  padding: 6px;
+  background-color: #d9d9d9;
+  color: rgb(82, 77, 77);
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.manager-block {
+  padding-top: 25px;
+  text-align: center;
+}
+.date-block {
+  /* padding-top: 25px; */
+  background-color: #F8F4FC;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.table-block-flex{
+  display: flex;
+  gap: 5px;
+}
+
+.edit-block {
+  width: 40px;
+  padding: 6px;
+  background-color: #b0e0ec;
+  color: rgb(82, 77, 77);
+  cursor: pointer;
+  border-radius: 20px;
+}
+.recent-block {
+  width: 40px;
+  padding: 6px;
+  background-color: #b6dcc2;
+  color: rgb(82, 77, 77);
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.site-location{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.location { 
+  text-align: center;
+  width: 125px;
+  padding: 8px;
+  border-radius: 10px;
+}
+
+.location.enter{
+  background-color: #E8F4E4;
+}
+.location.exit{
+  background-color: #F7EFDC;
+}
+.location.colleague{
+  background-color: #EFEFEF;
+}
+
+.distance {
+  background-color: #FFD4D4;
+  text-align: center;
+  width: 75px;
+  padding: 8px;
+  border-radius: 10px;
+}
