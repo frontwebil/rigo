@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import { CiSettings } from "react-icons/ci";
 import { useLocation } from "react-router-dom"; // Імпорт useLocation
 import NavButtons from "../NavButtons/NavButtons";
-import { BurgerMenu } from "../burgerMenu/burgerMenu";
+import { BurgerMenu } from "../BurgerMenu/BurgerMenu";
+
 
 export function Header() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
