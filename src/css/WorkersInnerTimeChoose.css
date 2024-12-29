@@ -1,0 +1,19 @@
+.WorkersInnerTimeChoose {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  align-items: center;
+}
+.button-WorkersInnerTimeChoose {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  border-radius: 10px;
+  border: 1px solid black;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.WorkersInnerTimeChoose-text{
+  cursor:auto;
+}

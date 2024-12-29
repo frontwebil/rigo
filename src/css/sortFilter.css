@@ -123,3 +123,16 @@ select:focus {
 .openMoreButtonsMenu-button:hover {
   text-decoration: underline;
 }
+
+.SitesInnerNavButton.date{
+  background-color: #F8F4F4; 
+  border: 1px solid transparent;
+}
+.SitesInnerNavButton.date.active{
+  border: 1px solid #00A6FF;
+}
+
+.ToggleMonthWeek{
+  display: flex;
+  gap: 10px;
+}

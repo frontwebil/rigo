@@ -4,6 +4,7 @@ import { useState } from "react";
 import {WorkersInnerAlerts} from "../WorkersInnerAlerts/WorkersInnerAlerts";
 import { PageNotFound } from "../InDeveloping/InDeveloping";
 import { WorkersInnerTrack } from "../WorkersInnerTrack/WorkersInnerTrack";
+import { WorkersInnerTime } from "../WorkersInnerTime/WorkersInnerTime";
 
 export function WorkersInner({ currentPage }) {
   const { id } = useParams(); 
@@ -13,11 +14,7 @@ export function WorkersInner({ currentPage }) {
   );
   const currentEmployee = currentData?.sitesEmployees.find((employee) => employee.id === id);
   
-  console.log(currentEmployee)
-  
-  // const currentDataBasic = currentData?.sitesBasic;
-
-  const [activeTab, setActiveTab] = useState("Track");
+  const [activeTab, setActiveTab] = useState("Time");
 
   const tabs = [
     "Basic",
@@ -67,7 +64,13 @@ export function WorkersInner({ currentPage }) {
         return <PageNotFound/>;
       case "Time":
         return (
-          <PageNotFound/>
+          <WorkersInnerTime 
+          currentPage={currentPage}
+          handleTabClick={handleTabClick}
+          tabs={tabs}
+          activeTab={activeTab}
+          updatedCurrentPage={updatedCurrentPage}
+          />
         );
       case "Insures":
         return <p>Insurance details are displayed here.</p>;

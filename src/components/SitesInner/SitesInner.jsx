@@ -1,19 +1,20 @@
 import { useParams } from "react-router-dom";
 import { UsersData } from "../../consts/UsersData";
+import { sitesData } from "../../consts/sitesData";
 import { useState } from "react";
 import SitesInnerBasic from "../SitesInnerBasic/SitesInnerBasic";
-// import { SitesInnerSortButtons } from "../SitesInnerSortButtons/SitesInnerSortButtons";
 import SitesInnerTime from "../SitesInnerTime/SitesInnerTime";
 import { SitesInnerActions } from "../SitesInnerActions/SitesInnerActions";
 import { SitesInnerEmployees } from "../SitesInnerEmployees/SitesInnerEmployees";
 
 export function SitesInner({ currentPage }) {
   const { id } = useParams();
-  const currentData = UsersData.find((item) => item.id === id);
+  const currentData = sitesData.find((item) => item.id === id);
+  const currentEmployees = UsersData.find((item) => item.id === id)
   const currentDataBasic = currentData?.sitesBasic;
   const currentDataTime = currentData?.sitesWorkedTime;
   const currentActionsData = currentData?.sitesActions;
-  const currentEmployeesData = currentData?.sitesEmployees;
+  const currentEmployeesData = currentEmployees?.sitesEmployees;
 
   const [activeTab, setActiveTab] = useState("Basic");
 

@@ -124,3 +124,18 @@
 .onConfirm{
   background-color: #F7EFDC;
 }
+.shabat{
+  background-color: #C0C0C0;
+}
+.holiday{
+  background-color: #006EB8!important;
+  color: #fff!important;
+}
+
+.alert{
+  background-color: #DCE097;
+}
+
+.persents{
+  text-align: center;
+}

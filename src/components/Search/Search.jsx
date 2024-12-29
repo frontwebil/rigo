@@ -1,5 +1,3 @@
-// import { FaArrowRight } from "react-icons/fa";
-// import { FaArrowLeft } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 export function Search({ searchTerm, setSearchTerm, currentPage }) {
@@ -8,10 +6,6 @@ export function Search({ searchTerm, setSearchTerm, currentPage }) {
   return (
     <section className="Search">
       <div className="search-container" style={{ justifyContent: "center" }}>
-        {/* <div className="button">
-          <FaArrowLeft className="arrows"/>
-          Back
-        </div> */}
         <div className="search-input-container">
           <input
             value={searchTerm}
@@ -22,10 +16,7 @@ export function Search({ searchTerm, setSearchTerm, currentPage }) {
             onChange={(e) => setSearchTerm(e.target.value)}
           />
         </div>
-        {/* <div className="button">
-          Next
-          <FaArrowRight className="arrows"/>
-        </div> */}
+
       </div>
       <div className="current-page" style={{ textTransform: "capitalize" }}>
         {names[0]} -{" "}

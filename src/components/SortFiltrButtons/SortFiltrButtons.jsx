@@ -76,7 +76,9 @@ export function SortFiltrButtons({ sortByButtons, data, setData }) {
           <button className="sortFiltrButtons-button active">Filter</button>
         </div>
         <div className="sortFiltrButtons-flexButtons">
-          <button className="sortFiltrButtons-button">Date</button>
+          {sortByButtons.includes("date") && (
+            <button className="sortFiltrButtons-button">Date</button>
+          )}
           <button className="sortFiltrButtons-button">Show/Hide Column</button>
         </div>
         {isOpenSort && (

@@ -2,11 +2,24 @@ import { useState } from "react";
 import { MdOutlineMoreVert } from "react-icons/md";
 import { CiShare2 } from "react-icons/ci";
 import { LuPrinter } from "react-icons/lu";
+import { TogleMonthWeek } from "../TogleMonthWeek/TogleMonthWeek";
 
-export function SitesInnerSortButtons({ data, setData, sortByButtons }) {
+export function SitesInnerSortButtons({
+  data,
+  setData,
+  sortByButtons,
+  timeToggle,
+  isWeekCurrent,
+  setIsWeekCurrent
+}) {
   const [isOpenMore, setIsOpenMore] = useState(false);
   const [isOpenSort, setIsOpenSort] = useState(false);
   const [sortBy, setSortBy] = useState({ sort: "name", asc: true });
+
+
+
+
+  
 
   const handleSortChange = (e) => {
     setSortBy((prev) => ({ ...prev, sort: e.target.value }));
@@ -19,18 +32,17 @@ export function SitesInnerSortButtons({ data, setData, sortByButtons }) {
   const compareDates = (dateA, dateB) => {
     const getDateString = (date) => {
       const year = date.year;
-      const month = date.month.padStart(2, '0');
-      const day = date.day.padStart(2, '0');
+      const month = date.month.padStart(2, "0");
+      const day = date.day.padStart(2, "0");
       const time = date.time || "00:00"; // Якщо часу немає, використовуємо "00:00"
       return `${year}-${month}-${day} ${time}`;
     };
-  
+
     const dateStrA = getDateString(dateA);
     const dateStrB = getDateString(dateB);
-  
+
     return new Date(dateStrA) - new Date(dateStrB);
   };
-  
 
   const handleSortAction = () => {
     const newData = [...data].sort((a, b) => {
@@ -38,9 +50,9 @@ export function SitesInnerSortButtons({ data, setData, sortByButtons }) {
       const isAscending = sortBy.asc;
       let result;
 
-      if (field === 'date') {
+      if (field === "date") {
         result = compareDates(a.date, b.date);
-      } else if (field === 'netto' || field === 'brutto') {
+      } else if (field === "netto" || field === "brutto") {
         const valueA = parseInt(a.workedTime[field].split(":")[0], 10);
         const valueB = parseInt(b.workedTime[field].split(":")[0], 10);
         result = valueA - valueB;
@@ -53,7 +65,7 @@ export function SitesInnerSortButtons({ data, setData, sortByButtons }) {
           valueB = +valueB;
         }
 
-        if (typeof valueA === 'string' && typeof valueB === 'string') {
+        if (typeof valueA === "string" && typeof valueB === "string") {
           result = valueA.localeCompare(valueB);
         } else {
           result = (valueA || 0) - (valueB || 0);
@@ -67,7 +79,6 @@ export function SitesInnerSortButtons({ data, setData, sortByButtons }) {
     setData(newData);
   };
 
-
   return (
     <div className="SitesInnerNavButtons">
       <div className="SitesInnerNavButtons-buttons">
@@ -78,6 +89,7 @@ export function SitesInnerSortButtons({ data, setData, sortByButtons }) {
           Sort
         </button>
         <button className="SitesInnerNavButton Tag">Tag</button>
+        {timeToggle && <TogleMonthWeek isWeekCurrent={isWeekCurrent} setIsWeekCurrent={setIsWeekCurrent}/>}
       </div>
       <div className="SitesInnerNavButtons-buttons">
         <button className="SitesInnerNavButton show-hide">

@@ -11,6 +11,7 @@
 @import url(/src/css/SitesInnerNav.css);
 @import url(/src/css/SitesInnerNavButtons.css);
 @import url(/src/css/SitesInnerBasic.css);
+@import url(/src/css/WorkersInnerTimeChoose.css);
 
 *{
   font-family: "Montserrat", serif;
