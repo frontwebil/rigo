@@ -6,19 +6,19 @@ import { Link } from "react-router-dom";
 export function SitesInnerEmployeesTableRow({el}) {
   return (
     <div className="table-row ">
+      <div className="table-block block-site-inner" style={{ width: "5%" }}>
+        {el.tax}
+      </div>
       <div className="table-block " style={{ width: "5%" }}>
         <img src={el.photo} alt="" />
       </div>
       <div className="table-block name-site-inner" style={{ width: "15%" }}>
         {el.name}
       </div>
-      <div className="table-block block-site-inner" style={{ width: "6%" }}>
-        {el.tax}
-      </div>
       <div className="table-block block-site-inner" style={{ width: "8%" }}>
       {el.passport}
       </div>
-      <div className="table-block block-site-inner" style={{ width: "8%" }}>
+      <div className="table-block block-site-inner" style={{ width: "9%" }}>
       {el.phone}
       </div>
       <div className="table-block block-site-inner" style={{ width: "8%" }}>

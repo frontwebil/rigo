@@ -5,16 +5,19 @@ import { MdOutlineWrapText } from "react-icons/md";
 export function AlertsTableRow({el}) {
   return (
         <div className="table-row">
+          <div className="table-block-info tax-block" style={{ width: '5%' }}>
+            {el.tax}
+          </div>
           <div className="table-block-info photo-block" style={{ width: '5%' }}>
             <img src={el.photo || 'placeholder.jpg'}/>
           </div>
           <div className="table-block-info name-block" style={{ width: '15%' }}>
             {el.name || 'N/A'}
           </div>
-          <div className="table-block-info phone-block" style={{ width: '13%' }}>
+          <div className="table-block-info phone-block" style={{ width: '11%' }}>
             {el.phone || 'N/A'}
           </div>
-          <div className="table-block-info site-block" style={{ width: '17%' }}>
+          <div className="table-block-info site-block" style={{ width: '15%' }}>
             {el.site || 'N/A'}
             <HiOutlineHome className="house-info"/>
           </div>
@@ -22,7 +25,7 @@ export function AlertsTableRow({el}) {
             <div className={`location ${el.location.type == 'Enter' ? 'enter' : ''} ${el.location.type == 'Exit' ? 'exit' : ''} ${el.location.type == 'Colleague' ? 'colleague' : ''}`}>{el.location.type}</div>
             <div className="distance">{el.location.distance}</div>
           </div>
-          <div className="table-block-info manager-block" style={{ width: '11%' }}>
+          <div className="table-block-info manager-block" style={{ width: '10%' }}>
             {el.manager || 'N/A'}
           </div>
           <div className="table-block-info date-block" style={{ width: '21%' }}>

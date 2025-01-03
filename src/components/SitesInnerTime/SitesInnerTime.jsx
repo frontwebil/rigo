@@ -59,6 +59,9 @@ export default function SitesInnerTime({
         <div className="table">
           <div className="table-row nav">
             <div className="table-block nav" style={{ width: "5%" }}>
+              TaxID
+            </div>
+            <div className="table-block nav" style={{ width: "5%" }}>
               Photo
             </div>
             <div className="table-block nav" style={{ width: "22%" }}>
@@ -67,7 +70,7 @@ export default function SitesInnerTime({
             {/* <div className="table-block nav" style={{ width: "15%" }}>
               Site
             </div> */}
-            <div className="table-block nav" style={{ width: "20%" }}>
+            <div className="table-block nav" style={{ width: "15%" }}>
               Customer
             </div>
             <div className="table-block nav" style={{ width: "22%" }}>
@@ -85,8 +88,9 @@ export default function SitesInnerTime({
           })}
           <div className="table-row nav">
             <div className="table-block nav" style={{ width: "5%" }}></div>
+            <div className="table-block nav" style={{ width: "5%" }}></div>
             <div className="table-block nav" style={{ width: "22%" }}></div>
-            <div className="table-block nav" style={{ width: "20%" }}></div>
+            <div className="table-block nav" style={{ width: "15%" }}></div>
             <div
               className="table-block nav flex-bruttoNetto"
               style={{ width: "22%" }}

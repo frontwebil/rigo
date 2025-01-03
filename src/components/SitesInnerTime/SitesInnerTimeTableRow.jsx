@@ -2,6 +2,9 @@ import { IoIosInformationCircle } from "react-icons/io";
 export function SitesInnerTimeRow({el}) {
   return (
     <div className="table-row">
+    <div className="table-block tax-block" style={{ width: "5%" }}>
+      {el.tax}
+    </div>
     <div className="table-block photo-block" style={{ width: "5%" }}>
       <img src={el.photo} alt="" />
     </div>
@@ -9,7 +12,7 @@ export function SitesInnerTimeRow({el}) {
       {el.name || 'N/A'}
     </div>
 
-    <div className="table-block customer-block-workedTime" style={{ width: "20%"}}>
+    <div className="table-block customer-block-workedTime" style={{ width: "15%"}}>
       {el.customer || 'N/A'}
     </div>
     <div className="table-block workedTime-block-WorkedTime" style={{ width: "22%" }}>

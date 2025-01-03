@@ -74,21 +74,24 @@ export function AlertsPage({currentPage}) {
         <div className="table">
           <div className="table-row nav">
             <div className="table-block nav" style={{ width: "5%" }}>
+              TaxID
+            </div>
+            <div className="table-block nav" style={{ width: "5%" }}>
               Photo
             </div>
             <div className="table-block nav" style={{ width: "15%" }}>
               Name
             </div>
-            <div className="table-block nav" style={{ width: "13%" }}>
+            <div className="table-block nav" style={{ width: "11%" }}>
               Phone
             </div>
-            <div className="table-block nav" style={{ width: "17%" }}>
+            <div className="table-block nav" style={{ width: "15%" }}>
               Site
             </div>
             <div className="table-block nav" style={{ width: "18%" }}>
               Location
             </div>
-            <div className="table-block nav" style={{ width: "11%" }}>
+            <div className="table-block nav" style={{ width: "10%" }}>
               Manager
             </div>
             <div className="table-block nav" style={{ width: "21%" }}>

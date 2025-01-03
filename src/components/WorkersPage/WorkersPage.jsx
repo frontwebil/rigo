@@ -79,18 +79,18 @@ export function WorkersPage({
         <div className="table">
           <div className="table-row nav">
             <div className="table-block nav" style={{ width: "5%" }}>
+            TaxID
+            </div>
+            <div className="table-block nav" style={{ width: "5%" }}>
               Photo
             </div>
             <div className="table-block nav" style={{ width: "15%" }}>
               Name
             </div>
-            <div className="table-block nav" style={{ width: "6%" }}>
-            Tax
-            </div>
             <div className="table-block nav" style={{ width: "8%" }}>
             Passport
             </div>
-            <div className="table-block nav" style={{ width: "8%" }}>
+            <div className="table-block nav" style={{ width: "9%" }}>
             Phone
             </div>
             <div className="table-block nav" style={{ width: "8%" }}>

@@ -15,7 +15,7 @@ export function SitesInnerActions({
 
     const [actionsData, setActionsData] = useState(data);
     const [searchTerm, setSearchTerm] = useState("");
-    const sortByButtons = ['site' , 'name' ,'brutto','netto' , 'manager' , 'date'];
+    const sortByButtons = ['site' , 'name' ,'brutto','netto' , 'manager' , 'date' ,'tax'];
   
     const SearchInData = (searchText, list) => {
       if (!searchText) return list;
@@ -84,6 +84,9 @@ export function SitesInnerActions({
         <div className="table">
           <div className="table-row nav">
             <div className="table-block nav" style={{ width: "5%" }}>
+              TaxID
+            </div>
+            <div className="table-block nav" style={{ width: "5%" }}>
               Photo
             </div>
             <div className="table-block nav" style={{ width: "15%" }}>
@@ -92,13 +95,13 @@ export function SitesInnerActions({
             <div className="table-block nav" style={{ width: "15%" }}>
               Site
             </div>
-            <div className="table-block nav" style={{ width: "14%" }}>
+            <div className="table-block nav" style={{ width: "15%" }}>
             Action \ Location
             </div>
-            <div className="table-block nav" style={{ width: "20%" }}>
+            <div className="table-block nav" style={{ width: "15%" }}>
               Worked Time
             </div>
-            <div className="table-block nav" style={{ width: "11%" }}>
+            <div className="table-block nav" style={{ width: "10%" }}>
               Manager
             </div>
             <div className="table-block nav" style={{ width: "20%" }}>
@@ -111,17 +114,19 @@ export function SitesInnerActions({
           <div className="table-row nav">
             <div className="table-block nav" style={{ width: "5%" }}>
             </div>
+            <div className="table-block nav" style={{ width: "5%" }}>
+            </div>
+            <div className="table-block nav" style={{ width: "15%" }}>
+            </div>
             <div className="table-block nav" style={{ width: "15%" }}>
             </div>
             <div className="table-block nav" style={{ width: "15%" }}>
             </div>
-            <div className="table-block nav" style={{ width: "14%" }}>
-            </div>
-            <div className="table-block nav flex-bruttoNetto" style={{ width: "20%" }}>
+            <div className="table-block nav flex-bruttoNetto" style={{ width: "15%" }}>
               <p>{sumTimeBrutto(data)}</p>
               <p>{sumTimeNetto(data)}</p>
             </div>
-            <div className="table-block nav" style={{ width: "11%" }}>
+            <div className="table-block nav" style={{ width: "10%" }}>
             </div>
             <div className="table-block nav" style={{ width: "20%" }}>
             </div>

@@ -10,16 +10,12 @@ export function SitesInnerSortButtons({
   sortByButtons,
   timeToggle,
   isWeekCurrent,
-  setIsWeekCurrent
+  setIsWeekCurrent,
 }) {
   const [isOpenMore, setIsOpenMore] = useState(false);
   const [isOpenSort, setIsOpenSort] = useState(false);
   const [sortBy, setSortBy] = useState({ sort: "name", asc: true });
 
-
-
-
-  
 
   const handleSortChange = (e) => {
     setSortBy((prev) => ({ ...prev, sort: e.target.value }));
@@ -45,6 +41,7 @@ export function SitesInnerSortButtons({
   };
 
   const handleSortAction = () => {
+    console.log(data)
     const newData = [...data].sort((a, b) => {
       const field = sortBy.sort;
       const isAscending = sortBy.asc;
@@ -75,6 +72,7 @@ export function SitesInnerSortButtons({
       return isAscending ? result : -result;
     });
 
+    console.log(newData)
     setIsOpenSort(false);
     setData(newData);
   };
@@ -89,7 +87,12 @@ export function SitesInnerSortButtons({
           Sort
         </button>
         <button className="SitesInnerNavButton Tag">Tag</button>
-        {timeToggle && <TogleMonthWeek isWeekCurrent={isWeekCurrent} setIsWeekCurrent={setIsWeekCurrent}/>}
+        {timeToggle && (
+          <TogleMonthWeek
+            isWeekCurrent={isWeekCurrent}
+            setIsWeekCurrent={setIsWeekCurrent}
+          />
+        )}
       </div>
       <div className="SitesInnerNavButtons-buttons">
         <button className="SitesInnerNavButton show-hide">

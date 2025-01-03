@@ -21,26 +21,20 @@ export function WorkersInnerTime({
   const [currentWeekIndex, setCurrentWeekIndex] = useState(0);
   const [currentMonthIndex, setCurrentMonthIndex] = useState(0);
 
-  // Спочатку групуємо по місяцях (для місячного виду)
   const monthsData = groupDataByMonths(data);
-  // Отримуємо всі повні тижні
   const allFullWeeks = getFullWorkWeeks(data);
 
-  // Функція для визначення місяця тижня
   const getWeekMonth = (weekData) => {
     if (!weekData || weekData.length === 0) return 1;
-    // Беремо середину тижня для визначення місяця
     const middleDay = weekData[Math.floor(weekData.length / 2)];
     return middleDay.date.month;
   };
 
   useEffect(() => {
     if (isWeekCurrent) {
-      // При переключенні на тижні
       if (TimeData.length === monthsData[currentMonthIndex]?.length) {
         const firstDayOfMonth = monthsData[currentMonthIndex]?.[0];
         if (firstDayOfMonth) {
-          // Знаходимо тиждень, який містить перший день місяця
           const weekIndex = allFullWeeks.findIndex((week) =>
             week.some(
               (day) =>
@@ -75,7 +69,6 @@ export function WorkersInnerTime({
   }
 
   function getFullWorkWeeks(data) {
-    // Сортуємо всі дані за датою
     const sortedData = [...data].sort((a, b) => {
       const dateA = new Date(a.date.year, a.date.month - 1, a.date.day);
       const dateB = new Date(b.date.year, b.date.month - 1, b.date.day);
@@ -87,14 +80,12 @@ export function WorkersInnerTime({
     let lastSunday = null;
 
     sortedData.forEach((entry) => {
-      // Створюємо дату для поточного запису
       const currentDate = new Date(
         entry.date.year,
         entry.date.month - 1,
         entry.date.day
       );
 
-      // Якщо це неділя і у нас вже є тиждень, починаємо новий
       if (entry.day === "Sunday") {
         if (currentWeek.length > 0) {
           weeks.push(currentWeek);
@@ -103,7 +94,6 @@ export function WorkersInnerTime({
         lastSunday = currentDate;
       }
 
-      // Якщо це перший запис або він належить до поточного тижня
       if (
         !lastSunday ||
         (currentDate >= lastSunday &&
@@ -114,7 +104,6 @@ export function WorkersInnerTime({
       }
     });
 
-    // Додаємо останній тиждень, якщо він є
     if (currentWeek.length > 0) {
       weeks.push(currentWeek);
     }

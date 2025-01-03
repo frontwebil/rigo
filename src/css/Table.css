@@ -63,7 +63,7 @@
   justify-content: left;
 }
 
-.total{
+.total {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -72,7 +72,7 @@
   margin: 5px auto;
   border-radius: 5px;
   padding: 5px;
-  border:1px solid #008000;
+  border: 1px solid #008000;
 }
 
 .name-site-inner {
@@ -81,17 +81,17 @@
   background-color: #f8f4fc;
   text-decoration: underline;
 }
-.canceled{
-  background-color: #FFD4D4;
+.canceled {
+  background-color: #ffd4d4;
 }
-.pending{
-  background-color: #F5EAB2;
+.pending {
+  background-color: #f5eab2;
 }
-.empty{
-  background-color: #EFEFEF;
+.empty {
+  background-color: #efefef;
 }
 
-.alertsButton-wrap{
+.alertsButton-wrap {
   display: flex;
   justify-content: center;
 }
@@ -103,39 +103,85 @@
   cursor: pointer;
 }
 
-.tableFlex-block{
+.tableFlex-block {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 10px;
 }
 
-.insurance{
+.insurance {
   width: 100%;
   text-align: center;
   padding: 10px;
   border-radius: 10px;
 }
 
-.confirmed{
-  background-color: #D8ECBC;
+.confirmed {
+  background-color: #d8ecbc;
 }
 
-.onConfirm{
-  background-color: #F7EFDC;
+.onConfirm {
+  background-color: #f7efdc;
 }
-.shabat{
-  background-color: #C0C0C0;
+.shabat {
+  background-color: #c0c0c0;
 }
-.holiday{
-  background-color: #006EB8!important;
-  color: #fff!important;
-}
-
-.alert{
-  background-color: #DCE097;
+.holiday {
+  background-color: #006eb8 !important;
+  color: #fff !important;
 }
 
-.persents{
+.alert {
+  background-color: #dce097;
+}
+
+.persents {
   text-align: center;
+}
+
+.tax-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.name-inner {
+  display: flex;
+  align-items: center;
+  background-color: #f0f4fc;
+  text-decoration: underline;
+}
+
+.confirmTimeGreen {
+  padding: 8px 20px;
+  border-radius: 10px;
+  border: 1px solid #008000;
+  max-width: 80px;
+}
+
+.confirmTimeRed {
+  padding: 8px 20px;
+  border-radius: 10px;
+  border: 1px solid #FF0000;
+  max-width: 80px;
+}
+
+.confirmTime{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.alerts-block-notification{
+  background-color: #F5B184;
+  border-radius: 10px;
+  padding: 8px 15px;
+}
+.alertNotification-flex{
+  display: flex;
+  align-items: center;  
+  flex-wrap: wrap;
+  gap: 10px;
 }
