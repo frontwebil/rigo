@@ -42,28 +42,28 @@ export function SitesPage({ currentPage }) {
       <div className="table-container">
         <div className="table">
           <div className="table-row nav">
-            <div className="table-block nav" style={{ width: "12%" }}>
+            <div className="table-block nav" style={{ width: "10%" }}>
               ID
             </div>
-            <div className="table-block nav" style={{ width: "18%" }}>
+            <div className="table-block nav" style={{ width: "19%" }}>
               Name
             </div>
-            <div className="table-block nav" style={{ width: "7%" }}>
+            <div className="table-block nav" style={{ width: "9%" }}>
               Workers
             </div>
-            <div className="table-block nav" style={{ width: "7%" }}>
+            <div className="table-block nav" style={{ width: "8%" }}>
               Absent
             </div>
-            <div className="table-block nav" style={{ width: "7%" }}>
+            <div className="table-block nav" style={{ width: "8%" }}>
               Present
             </div>
-            <div className="table-block nav" style={{ width: "20%" }}>
+            <div className="table-block nav" style={{ width: "15%" }}>
               Manager
             </div>
-            <div className="table-block nav" style={{ width: "8%" }}>
+            <div className="table-block nav" style={{ width: "9%" }}>
               Location
             </div>
-            <div className="table-block nav" style={{ width: "7%" }}>
+            <div className="table-block nav" style={{ width: "8%" }}>
               Radius
             </div>
             <div className="table-block nav" style={{ width: "7%" }}>
@@ -78,9 +78,9 @@ export function SitesPage({ currentPage }) {
           return <SitePageTableRow el={el} key={index} id={index} />;
         })}
         <div className="table-row nav">
-          <div className="table-block nav" style={{ width: "12%" }}></div>
-          <div className="table-block nav" style={{ width: "18%" }}></div>
-          <div className="table-block nav" style={{ width: "7%" }}>
+          <div className="table-block nav" style={{ width: "10%" }}></div>
+          <div className="table-block nav" style={{ width: "19%" }}></div>
+          <div className="table-block nav" style={{ width: "9%" }}>
             {(() => {
               let workers = siteData.reduce(
                 (acc, el) => acc + (+el.workers || 0),
@@ -89,7 +89,7 @@ export function SitesPage({ currentPage }) {
               return workers;
             })()}
           </div>
-          <div className="table-block nav" style={{ width: "7%" }}>
+          <div className="table-block nav" style={{ width: "8%" }}>
             {(() => {
               let absent = siteData.reduce(
                 (acc, el) => acc + (+el.absent || 0),
@@ -98,7 +98,7 @@ export function SitesPage({ currentPage }) {
               return absent;
             })()}
           </div>
-          <div className="table-block nav" style={{ width: "7%" }}>
+          <div className="table-block nav" style={{ width: "8%" }}>
           {(() => {
               let present = siteData.reduce(
                 (acc, el) => acc + (+el.present || 0),
@@ -107,9 +107,9 @@ export function SitesPage({ currentPage }) {
               return present;
             })()}
           </div>
-          <div className="table-block nav" style={{ width: "20%" }}></div>
+          <div className="table-block nav" style={{ width: "15%" }}></div>
+          <div className="table-block nav" style={{ width: "9%" }}></div>
           <div className="table-block nav" style={{ width: "8%" }}></div>
-          <div className="table-block nav" style={{ width: "7%" }}></div>
           <div className="table-block nav" style={{ width: "7%" }}></div>
           <div className="table-block nav" style={{ width: "7%" }}></div>
         </div>

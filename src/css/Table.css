@@ -3,11 +3,11 @@
   margin: 15px auto 40px;
   overflow-x: auto;
   width: max-content;
-  scrollbar-width: none;
+  scrollbar-width: thin;
   width: 100%;
 }
 .table {
-  width: 1400px;
+  /* width: 1400px; */
   border: 1px solid #f0f4fc;
   border-collapse: separate; /* Роз'єднує комірки */
   border-spacing: 0;

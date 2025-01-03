@@ -1,52 +1,62 @@
 .id-block-site {
-  padding-top: 20px;
+  display: flex;
+  align-items: center;
 }
 .name-block-site {
-  padding-top: 20px;
-  /* background-color: #F0F4FC; */
+  display: flex;
+  align-items: center;
 }
 .workers-block-site {
-  padding-top: 20px;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #F0F4FC;
   text-decoration: underline;
 }
 .absent-block-site {
-  padding-top: 20px;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #F0F4FC;
   text-decoration: underline;
 }
 .present-block-site {
-  padding-top: 20px;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #F0F4FC;
   text-decoration: underline;
 }
 .manager-block-site {
-  padding-top: 20px;
+  display: flex;
+  align-items: center;
 }
 .location-block-site {
-  /* padding-top: 20px; */
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .location-button {
   width: 30px;
   cursor: pointer;
 }
 .radius-block-site {
-  padding-top: 20px;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #F0F4FC;
 }
 .alerts-block-site {
-  padding-top: 20px;
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-decoration: underline;
 }
 
 .info-block-site{
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 
