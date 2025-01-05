@@ -243,6 +243,22 @@
 }
 
 @media (max-width: 450px) {
+
+  .house-info {
+    width: 20px;
+    height: 20px;
+  }
+
+  .edit-block {
+    width: 20px;
+    height: 20px;
+  }
+
+  .recent-block {
+    width: 20px;
+    height: 20px;
+  }
+
   .EventsLog-buttons {
     gap: 4px;
   }
