@@ -1,7 +1,38 @@
 @media (max-width: 1365px) {
+
+  .confirmTimeGreen , .confirmTimeRed{
+    font-size: 12px;
+  }
+  .location {
+    text-align: center;
+    max-width: 105px;
+    padding: 8px 4px;
+    border-radius: 10px;
+    font-size: 12px;
+  }
+
+  .distance {
+    font-size: 12px;
+  }
+
   .info-button {
     width: 33px;
     cursor: pointer;
+  }
+
+  .house-info {
+    width: 30px;
+    height: 30px;
+  }
+
+  .edit-block {
+    width: 30px;
+    height: 30px;
+  }
+
+  .recent-block {
+    width: 30px;
+    height: 30px;
   }
 
   .location-button {
@@ -36,21 +67,140 @@
   }
 }
 @media (max-width: 1100px) {
+  .search-input-container input {
+    width: 100%;
+    padding: 7px 10px;
+    font-size: 12px;
+  }
+
+  .current-page {
+    font-size: 12px;
+  }
+
+  .sortFiltrButtons-button {
+    font-size: 12px;
+    padding: 8px 20px;
+  }
+
+  .EventsLog-button {
+    padding: 8px 20px;
+    font-size: 12px;
+  }
+
+  .EventsLog-container {
+    margin: 20px auto 0;
+  }
+
+  .EventsLog-button-all.active {
+    padding: 8px 15px;
+    font-size: 11px;
+  }
+
+  .search-container {
+    padding: 12px 10px;
+  }
+  .header {
+    padding: 12px 10px;
+  }
+
+  .logo {
+    font-size: 24px;
+    font-weight: 700;
+    color: #ff8000;
+  }
+
+  .sortFiltrButtons-container {
+    padding: 20px 10px 0;
+  }
+
+  .table-block {
+    padding: 4px;
+  }
+
   .table-container {
-    max-width: 900px;
+    max-width: 1100px;
   }
   .table-row {
-    width: 900px;
+    width: 1080px;
     margin: 0 auto;
   }
   .table-block.nav {
-    font-size: 12px;
+    font-size: 11px;
   }
   .table-block {
-    font-size: 12px;
+    font-size: 11px;
+  }
+}
+@media (max-width: 900px) {
+
+  .SitesInnerNav-button{
+    font-size: 10px;
+  }
+
+  .table-container {
+    max-width: 1100px;
+  }
+  .table-row {
+    width: 850px;
+    margin: 0 auto;
   }
 }
 @media (max-width: 640px) {
+  .site-location {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+  }
+
+  .house-info {
+    width: 25px;
+    height: 25px;
+  }
+
+  .edit-block {
+    width: 25px;
+    height: 25px;
+  }
+
+  .recent-block {
+    width: 25px;
+    height: 25px;
+  }
+
+  .location {
+    font-size: 10px;
+  }
+
+  .distance {
+    font-size: 10px;
+  }
+
+  .Sort-button {
+    font-size: 12px;
+  }
+
+  .Close-button {
+    font-size: 12px;
+  }
+
+  label {
+    font-size: 12px;
+    font-weight: 500;
+    color: #333;
+  }
+
+  .sortFiltrButtonsMenu-container {
+    display: flex;
+    gap: 10px;
+  }
+
+  select {
+    padding: 5px 15px 5px 10px;
+    font-size: 10px;
+    background-position: right 5px center;
+    background-size: 5px 6px;
+  }
 
   .info-button {
     width: 25px;
@@ -58,7 +208,7 @@
   }
 
   .location-button {
-    width: 20px!important;
+    width: 20px !important;
     cursor: pointer;
   }
 
@@ -69,28 +219,46 @@
     width: 700px;
     margin: 0 auto;
   }
-  .table-block.nav{
+  .table-block.nav {
     font-size: 9px;
   }
-  .table-block{
+  .table-block {
     font-size: 9px;
   }
 }
 @media (max-width: 505px) {
-  .sortFiltrButtons-button {
-    font-size: 12px;
-    padding: 8px 20px;
+
+  .location {
+    font-size: 9px;
   }
-  .sortFiltrButtons-container {
-    padding: 20px 10px 0;
+
+  .distance {
+    font-size: 9px;
+  }
+
+  .table-row {
+    width: 600px;
+    margin: 0 auto;
   }
 }
 
-@media (max-width: 375px) {
+@media (max-width: 450px) {
+  .EventsLog-buttons {
+    gap: 4px;
+  }
+  .EventsLog-button {
+    padding: 8px 10px;
+    font-size: 10px;
+  }
   .sortFiltrButtons-button {
-    font-size: 12px;
+    font-size: 10px;
     padding: 8px 10px;
   }
+  .EventsLog-container {
+    padding: 15px 5px;
+  }
+}
+@media (max-width: 375px) {
   .sortFiltrButtons-container {
     padding: 20px 10px 0;
   }

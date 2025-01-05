@@ -48,15 +48,15 @@ export function WorkedTimePage({ currentPage }) {
         <div className="table">
           <div className="table-row nav">
             <div className="table-block nav" style={{ width: "5%" }}>
-              TaxID
+              Tax
             </div>
             <div className="table-block nav" style={{ width: "5%" }}>
               Photo
             </div>
-            <div className="table-block nav" style={{ width: "15%" }}>
+            <div className="table-block nav" style={{ width: "16%" }}>
               Name
             </div>
-            <div className="table-block nav" style={{ width: "15%" }}>
+            <div className="table-block nav" style={{ width: "14%" }}>
               Site
             </div>
             <div className="table-block nav" style={{ width: "10%" }}>
@@ -77,9 +77,9 @@ export function WorkedTimePage({ currentPage }) {
           })}
           <div className="table-row nav">
             <div className="table-block nav" style={{ width: "5%" }}></div>
-            <div className="table-block nav" style={{ width: "5%" }}></div>
+            <div className="table-block nav" style={{ width: "6%" }}></div>
             <div className="table-block nav" style={{ width: "15%" }}></div>
-            <div className="table-block nav" style={{ width: "15%" }}></div>
+            <div className="table-block nav" style={{ width: "14%" }}></div>
             <div className="table-block nav" style={{ width: "10%" }}></div>
             <div className="table-block nav flex-bruttoNetto" style={{ width: "20%" }}>
               <p>Brutto</p>

@@ -31,7 +31,7 @@ export function SitesInnerAlertsRow({ el }) {
           {el.location.distance}
         </div>
       </div>
-      <div className="table-block " style={{ width: "15%" }}>
+      <div className="table-block center" style={{ width: "15%" }}>
         {el.confirmTime.green && el.confirmTime.red ? (
           <div className="confirmTime">
             <p className="confirmTimeGreen">{el.confirmTime.green}</p>

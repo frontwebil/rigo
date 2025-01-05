@@ -7,12 +7,11 @@
   width: 100%;
 }
 .table {
-  /* width: 1400px; */
-  border: 1px solid #f0f4fc;
-  border-collapse: separate; /* Роз'єднує комірки */
+  border-collapse: separate;
   border-spacing: 0;
 }
 .table-block.nav {
+  justify-content: center;
   text-align: center;
 }
 .table-row {
@@ -28,7 +27,6 @@
   font-weight: 700;
 }
 .table-block {
-  flex-shrink: 0;
   padding: 8px;
   text-align: left;
   border: 1px solid #f0f4fc;
@@ -36,12 +34,17 @@
   overflow-wrap: break-word;
   white-space: normal;
   height: auto;
-  overflow: hidden; /* Приховує вміст, що виходить за межі */
-  text-overflow: ellipsis; /* Додає трикрапку для довгого тексту */
-  white-space: nowrap;
-  /* min-height: 50px; */
+  overflow: visible;
+  white-space: normal;
   box-sizing: border-box;
+  display: flex;
+  align-items: center;
 }
+
+.table-block.center {
+  justify-content: center;
+}
+
 
 .brake {
   background-color: #f1ad80;
@@ -154,14 +157,14 @@
 }
 
 .confirmTimeGreen {
-  padding: 8px 20px;
+  padding: 8px 18px;
   border-radius: 10px;
   border: 1px solid #008000;
   max-width: 80px;
 }
 
 .confirmTimeRed {
-  padding: 8px 20px;
+  padding: 8px 18px;
   border-radius: 10px;
   border: 1px solid #FF0000;
   max-width: 80px;
@@ -171,7 +174,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 8px;
 }
 
 .alerts-block-notification{

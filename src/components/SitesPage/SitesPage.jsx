@@ -7,14 +7,14 @@ import { SitePageTableRow } from "./SitePageTableRow";
 export function SitesPage({ currentPage }) {
   const [siteData, setSiteData] = useState(UsersData);
   const [searchTerm, setSearchTerm] = useState("");
-  const sortByButtons = ['name','workers','absent','present','radius','alerts','id'];
+  const sortByButtons = ['nameObject','workers','absent','present','radius','alerts','id'];
 
   const SearchInData = (searchText, list) => {
     if (!searchText) return list;
     const cleanSearchText = searchText.replace(/-/g, "").toLowerCase();
-    return list.filter(({ name, customer, site, manager, days }) => {
+    return list.filter(({ nameObject, customer, site, manager, days }) => {
       return (
-        name.toLowerCase().includes(cleanSearchText) ||
+        nameObject.toLowerCase().includes(cleanSearchText) ||
         customer.toLowerCase().includes(cleanSearchText) ||
         site.toLowerCase().includes(cleanSearchText) ||
         days.toLowerCase().includes(cleanSearchText) ||

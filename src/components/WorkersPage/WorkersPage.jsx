@@ -79,7 +79,7 @@ export function WorkersPage({
         <div className="table">
           <div className="table-row nav">
             <div className="table-block nav" style={{ width: "5%" }}>
-            TaxID
+            Tax Id
             </div>
             <div className="table-block nav" style={{ width: "5%" }}>
               Photo
@@ -112,7 +112,9 @@ export function WorkersPage({
             Alerts
             </div>
             <div className="table-block nav" style={{ width: "8%" }}>
+              <p>
             Real Estate
+              </p>
             </div>
             <div className="table-block nav" style={{ width: "6%" }}>
             Info

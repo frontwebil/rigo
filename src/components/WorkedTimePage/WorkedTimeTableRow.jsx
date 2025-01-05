@@ -9,10 +9,10 @@ export function WorkedTimeTableRow({el}) {
     <div className="table-block photo-block" style={{ width: "5%" }}>
       <img src={el.photo} alt="" />
     </div>
-    <div className="table-block name-block" style={{ width: "15%" }}>
+    <div className="table-block name-inner" style={{ width: "16%" }}>
       {el.name || 'N/A'}
     </div>
-    <div className="table-block site-block-workedTime" style={{ width: "15%" }}>
+    <div className="table-block site-block-workedTime" style={{ width: "14%" }}>
       {el.site || 'N/A'}
     </div>
     <div className="table-block customer-block-workedTime" style={{ width: "10%" }}>

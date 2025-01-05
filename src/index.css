@@ -6,12 +6,12 @@
 @import url(/src/css/Table.css);
 @import url(/src/css/AlertsTable.css);
 @import url(/src/css/WorkedTable.css);
-@import url(/src/css/media.css);
 @import url(/src/css/SiteTable.css);
 @import url(/src/css/SitesInnerNav.css);
 @import url(/src/css/SitesInnerNavButtons.css);
 @import url(/src/css/SitesInnerBasic.css);
 @import url(/src/css/WorkersInnerTimeChoose.css);
+@import url(/src/css/media.css);
 
 *{
   font-family: "Montserrat", serif;

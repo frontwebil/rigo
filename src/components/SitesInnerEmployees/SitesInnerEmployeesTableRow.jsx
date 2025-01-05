@@ -33,7 +33,7 @@ export function SitesInnerEmployeesTableRow({el}) {
       <div className="table-block block-site-inner" style={{ width: "5%" }}>
         {el.app}
       </div>
-      <div className="table-block" style={{ width: "10%" , display:'flex' , alignItems:'center' }}>
+      <div className="table-block" style={{ width: "10%" , display:'flex' , alignItems:'center' , justifyContent:'center' }}>
         <div className={`location ${el.insurance == 'Enter' ? 'enter' : ''} ${el.insurance == 'Canceled' ? 'canceled' : ''} ${el.insurance == 'Pending' ? 'pending' : ''} ${el.insurance == 'Empty' ? 'empty' : ''}`}>{el.insurance}</div>
       </div>
       <div className="table-block alertsButton-wrap" style={{ width: "5%" }}>
