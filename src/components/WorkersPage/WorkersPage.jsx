@@ -1,26 +1,99 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { SitesInnerEmployeesTableRow } from "../SitesInnerEmployees/SitesInnerEmployeesTableRow";
 import { UsersData } from "../../consts/UsersData";
 import { Search } from "../Search/Search";
 import { SortFiltrButtons } from "../SortFiltrButtons/SortFiltrButtons";
 import { WorkerEventLog } from "../WorkerEventLog/WorkerEventLog";
+import html2canvas from "html2canvas";
+import jsPDF from "jspdf";
 
-export function WorkersPage({
-  currentPage
-}) {
+export function WorkersPage({ currentPage }) {
+  const [data] = useState(() => {
+    return UsersData.map((el) => el.sitesEmployees).flat();
+  });
+  const [allWorkersData, setAllWorkersData] = useState(data);
+  const [eventLog, setEventLog] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+  const sortByButtons = [
+    "realEstate",
+    "insurance",
+    "country",
+    "customer",
+    "manager",
+    "tax",
+  ];
 
-    const [data] = useState(() => {
-      return UsersData.map((el) => el.sitesEmployees).flat();
-    });
-    const [allWorkersData, setAllWorkersData] = useState(data);
-    const [eventLog , setEventLog] = useState([])
-    const [searchTerm, setSearchTerm] = useState("");
-    const sortByButtons = ['name' , 'realEstate' , 'insurance' , 'country' , 'customer' ,'manager' , 'passport' , 'tax' , 'phone'];
-  
-    const SearchInData = (searchText, list) => {
-      if (!searchText) return list;
-      const cleanSearchText = searchText.replace(/-/g, "").toLowerCase();
-      return list.filter(({ name, customer , manager , realEstate , country , passport , tax , phone}) => {
+  const printRef = useRef(null);
+
+  const handleDownloadPdf = async () => {
+    const element = printRef.current;
+    if (!element) return;
+
+    try {
+      const canvas = await html2canvas(element, {
+        scale: 1,
+        useCORS: true,
+        logging: false,
+        scrollX: 0,
+        scrollY: -window.scrollY,
+      });
+      const data = canvas.toDataURL("image/png");
+
+      const pdf = new jsPDF({
+        orientation: "portrait",
+        unit: "px",
+        format: "a4",
+      });
+
+      const imgProperties = pdf.getImageProperties(data);
+      const pdfWidth = pdf.internal.pageSize.getWidth();
+      const pdfHeight = pdf.internal.pageSize.getHeight();
+      const ratio = pdfWidth / imgProperties.width;
+      const imgHeight = imgProperties.height * ratio;
+
+      const totalPages = Math.ceil(imgHeight / pdfHeight);
+
+      for (let i = 0; i < totalPages; i++) {
+        if (i > 0) {
+          pdf.addPage();
+        }
+
+        pdf.addImage(data, "PNG", 0, -(pdfHeight * i), pdfWidth, imgHeight);
+      }
+
+      // Mobile-friendly download
+      if (
+        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+          navigator.userAgent
+        )
+      ) {
+        const blob = pdf.output("blob");
+        const link = document.createElement("a");
+        link.href = URL.createObjectURL(blob);
+        link.download = "document.pdf";
+        link.click();
+      } else {
+        pdf.save("document.pdf");
+      }
+    } catch (error) {
+      console.error("PDF generation error:", error);
+    }
+  };
+
+  const SearchInData = (searchText, list) => {
+    if (!searchText) return list;
+    const cleanSearchText = searchText.replace(/-/g, "").toLowerCase();
+    return list.filter(
+      ({
+        name,
+        customer,
+        manager,
+        realEstate,
+        country,
+        passport,
+        tax,
+        phone,
+      }) => {
         return (
           name.toLowerCase().includes(cleanSearchText) ||
           customer.toLowerCase().includes(cleanSearchText) ||
@@ -31,40 +104,41 @@ export function WorkersPage({
           phone.toLowerCase().includes(cleanSearchText) ||
           manager.toLowerCase().includes(cleanSearchText)
         );
-      });
-    };
-
-    const eventHandleClick = (event) => {
-      if(event === 'All'){
-        setEventLog([])
       }
-      setEventLog((prevLog) => {
-        if (prevLog.includes(event)) {
-          return prevLog.filter((item) => item !== event);
-        } else {
-          return [...prevLog, event];
-        }
-      });
-    };
-  
-    useEffect(() => {
-      const debounce = setTimeout(() => {
-        let filteredData = data;
-        if (searchTerm) {
-          filteredData = SearchInData(searchTerm, filteredData);
-        }
+    );
+  };
 
-        if (eventLog.length > 0) {
-          filteredData = filteredData.filter(alert =>
-            eventLog.includes(alert.insurance)
-          );
-        }
+  const eventHandleClick = (event) => {
+    if (event === "All") {
+      setEventLog([]);
+    }
+    setEventLog((prevLog) => {
+      if (prevLog.includes(event)) {
+        return prevLog.filter((item) => item !== event);
+      } else {
+        return [...prevLog, event];
+      }
+    });
+  };
 
-        setAllWorkersData(filteredData);
-      }, 100);
-  
-      return () => clearTimeout(debounce);
-    }, [searchTerm , data , eventLog]);
+  useEffect(() => {
+    const debounce = setTimeout(() => {
+      let filteredData = data;
+      if (searchTerm) {
+        filteredData = SearchInData(searchTerm, filteredData);
+      }
+
+      if (eventLog.length > 0) {
+        filteredData = filteredData.filter((alert) =>
+          eventLog.includes(alert.insurance)
+        );
+      }
+
+      setAllWorkersData(filteredData);
+    }, 100);
+
+    return () => clearTimeout(debounce);
+  }, [searchTerm, data, eventLog]);
   return (
     <div>
       <Search
@@ -72,14 +146,24 @@ export function WorkersPage({
         setSearchTerm={setSearchTerm}
         searchTerm={searchTerm}
       />
-      <SortFiltrButtons sortByButtons={sortByButtons} data={allWorkersData} setData={setAllWorkersData}/>
-      <WorkerEventLog eventLog={eventLog} setEventLog={setEventLog} eventHandleClick={eventHandleClick}/>
-    
-      <div className="table-container">
+      <SortFiltrButtons
+        sortByButtons={sortByButtons}
+        data={allWorkersData}
+        setData={setAllWorkersData}
+        defaultData={UsersData.map((el) => el.sitesEmployees).flat()}
+        handleDownloadPdf={handleDownloadPdf}
+      />
+      <WorkerEventLog
+        eventLog={eventLog}
+        setEventLog={setEventLog}
+        eventHandleClick={eventHandleClick}
+      />
+
+      <div ref={printRef} className="table-container">
         <div className="table">
           <div className="table-row nav">
             <div className="table-block nav" style={{ width: "5%" }}>
-            Tax Id
+              Tax Id
             </div>
             <div className="table-block nav" style={{ width: "5%" }}>
               Photo
@@ -88,44 +172,43 @@ export function WorkersPage({
               Name
             </div>
             <div className="table-block nav" style={{ width: "8%" }}>
-            Passport
+              Passport
             </div>
             <div className="table-block nav" style={{ width: "9%" }}>
-            Phone
+              Phone
             </div>
             <div className="table-block nav" style={{ width: "8%" }}>
-            Manager
+              Manager
             </div>
             <div className="table-block nav" style={{ width: "8%" }}>
-            Customer
+              Customer
             </div>
             <div className="table-block nav" style={{ width: "8%" }}>
-            Country
+              Country
             </div>
             <div className="table-block nav" style={{ width: "5%" }}>
-            APP
+              APP
             </div>
             <div className="table-block nav" style={{ width: "10%" }}>
-            Insurance
+              Insurance
             </div>
             <div className="table-block nav" style={{ width: "5%" }}>
-            Alerts
+              Alerts
             </div>
             <div className="table-block nav" style={{ width: "8%" }}>
-              <p>
-            Real Estate
-              </p>
+              <p>Real Estate</p>
             </div>
             <div className="table-block nav" style={{ width: "6%" }}>
-            Info
+              Info
             </div>
           </div>
           {allWorkersData.map((el, index) => {
-            return <SitesInnerEmployeesTableRow key={index} el={el} i={index} />;
+            return (
+              <SitesInnerEmployeesTableRow key={index} el={el} i={index} />
+            );
           })}
         </div>
       </div>
     </div>
   );
 }
-

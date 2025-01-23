@@ -4308,6 +4308,1434 @@ export const UsersData = [
           },
         ],
       },
+      {
+        id:'29',
+        name: "Anatoli Vechurko",
+        photo: "https://frontwebil.github.io/RIGO-photos/img/woman.svg",
+        tax: "2066",
+        passport: "FJ417699",
+        phone: "502985544",
+        manager: "Kobi Kats",
+        customer: "FICO TAO",
+        country: "Ukraine",
+        app: "4.2.6",
+        insurance: "Enter",
+        alerts: true,
+        realEstate: "2",
+        employeeAlert: [
+          {
+            photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+            site: "Adassa",
+            schedule:'06:00-18:30',
+            action:{
+              type:'Enter',
+              distance:'1,3km'
+            },
+            manager:'Kobi Kats',
+            insurance:"On Confirmation",
+            chat:false,
+            date:{
+              day:'12',
+              month:'08',
+              year:'2024'
+            }
+          },
+          {
+            photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+            site: "Adassa",
+            schedule:'06:00-18:00',
+            action:{
+              type:'Enter',
+              distance:'900m'
+            },
+            manager:'Ofra Shapiro',
+            insurance:"On Confirmation",
+            chat:false,
+            date:{
+              day:'08',
+              month:'08',
+              year:'2024'
+            },
+          },
+          {
+            photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+            site: "Ramat Gan 16",
+            schedule:'06:00-18:30',
+            action:{
+              type:'Enter',
+              distance:'1,7km'
+            },
+            manager:'Moti Rush',
+            insurance:"On Confirmation",
+            chat:false,
+            date:{
+              day:'08',
+              month:'08',
+              year:'2024'
+            },
+          },
+          {
+            photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+            site: "Adassa",
+            schedule:'06:00-18:30',
+            action:{
+              type:'Enter',
+              distance:'350m'
+            },
+            manager:'Moti Rush',
+            insurance:"Confirmed",
+            chat:true,
+            date:{
+              day:'25',
+              month:'07',
+              year:'2024'
+            },
+          },
+          {
+            photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+            site: "Ramat Gan 16",
+            schedule:'06:00-18:30',
+            action:{
+              type:'Enter',
+              distance:'1,7km'
+            },
+            manager:'Moti Rush',
+            insurance:"Confirmed",
+            chat:true,
+            date:{
+              day:'02',
+              month:'08',
+              year:'2024'
+            },
+          },
+        ],
+      },
+      {
+        id:'30',
+        photo: "https://frontwebil.github.io/RIGO-photos/img/man-yellow.svg",
+        name: "Ion Sinu",
+        tax: "2063",
+        passport: "FJ417699",
+        phone: "502985544",
+        manager: "Kobi Kats",
+        customer: "FICO TAO",
+        country: "Moldova",
+        app: "4.2.6",
+        insurance: "Canceled",
+        alerts: false,
+        realEstate: "6",
+        employeeAlert: [
+          {
+            photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+            site: "Adassa",
+            schedule:'06:00-18:30',
+            action:{
+              type:'Enter',
+              distance:'1,3km'
+            },
+            manager:'Kobi Kats',
+            insurance:"On Confirmation",
+            chat:false,
+            date:{
+              day:'12',
+              month:'08',
+              year:'2024'
+            }
+          },
+          {
+            photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+            site: "Adassa",
+            schedule:'06:00-18:00',
+            action:{
+              type:'Enter',
+              distance:'900m'
+            },
+            manager:'Ofra Shapiro',
+            insurance:"On Confirmation",
+            chat:false,
+            date:{
+              day:'08',
+              month:'08',
+              year:'2024'
+            },
+          },
+          {
+            photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+            site: "Ramat Gan 16",
+            schedule:'06:00-18:30',
+            action:{
+              type:'Enter',
+              distance:'1,7km'
+            },
+            manager:'Moti Rush',
+            insurance:"On Confirmation",
+            chat:false,
+            date:{
+              day:'08',
+              month:'08',
+              year:'2024'
+            },
+          },
+          {
+            photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+            site: "Adassa",
+            schedule:'06:00-18:30',
+            action:{
+              type:'Enter',
+              distance:'350m'
+            },
+            manager:'Moti Rush',
+            insurance:"Confirmed",
+            chat:true,
+            date:{
+              day:'25',
+              month:'07',
+              year:'2024'
+            },
+          },
+          {
+            photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+            site: "Ramat Gan 16",
+            schedule:'06:00-18:30',
+            action:{
+              type:'Enter',
+              distance:'1,7km'
+            },
+            manager:'Moti Rush',
+            insurance:"Confirmed",
+            chat:true,
+            date:{
+              day:'02',
+              month:'08',
+              year:'2024'
+            },
+          },
+        ],
+      },
+      {
+        id:'31',
+        photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+        name: "Victor Jacota",
+        tax: "2062",
+        passport: "FJ417699",
+        phone: "502985544",
+        manager: "Moti Rush",
+        customer: "MALGAM",
+        country: "India",
+        app: "",
+        insurance: "Pending",
+        alerts: false,
+        realEstate: "6",
+        employeeAlert: [
+          {
+            photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+            site: "Adassa",
+            schedule:'06:00-18:30',
+            action:{
+              type:'Enter',
+              distance:'1,3km'
+            },
+            manager:'Kobi Kats',
+            insurance:"On Confirmation",
+            chat:false,
+            date:{
+              day:'12',
+              month:'08',
+              year:'2024'
+            }
+          },
+          {
+            photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+            site: "Adassa",
+            schedule:'06:00-18:00',
+            action:{
+              type:'Enter',
+              distance:'900m'
+            },
+            manager:'Ofra Shapiro',
+            insurance:"On Confirmation",
+            chat:false,
+            date:{
+              day:'08',
+              month:'08',
+              year:'2024'
+            },
+          },
+          {
+            photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+            site: "Ramat Gan 16",
+            schedule:'06:00-18:30',
+            action:{
+              type:'Enter',
+              distance:'1,7km'
+            },
+            manager:'Moti Rush',
+            insurance:"On Confirmation",
+            chat:false,
+            date:{
+              day:'08',
+              month:'08',
+              year:'2024'
+            },
+          },
+          {
+            photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+            site: "Adassa",
+            schedule:'06:00-18:30',
+            action:{
+              type:'Enter',
+              distance:'350m'
+            },
+            manager:'Moti Rush',
+            insurance:"Confirmed",
+            chat:true,
+            date:{
+              day:'25',
+              month:'07',
+              year:'2024'
+            },
+          },
+          {
+            photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+            site: "Ramat Gan 16",
+            schedule:'06:00-18:30',
+            action:{
+              type:'Enter',
+              distance:'1,7km'
+            },
+            manager:'Moti Rush',
+            insurance:"Confirmed",
+            chat:true,
+            date:{
+              day:'02',
+              month:'08',
+              year:'2024'
+            },
+          },
+        ],
+      },
+      {
+        id:'32',
+        photo: "https://frontwebil.github.io/RIGO-photos/img/woman.svg",
+        name: "Victor Jacota",
+        tax: "2062",
+        passport: "FJ417699",
+        phone: "502985544",
+        manager: "Moti Rush",
+        customer: "MALGAM",
+        country: "India",
+        app: "",
+        insurance: "Pending",
+        alerts: false,
+        realEstate: "6",
+        employeeAlert: [
+          {
+            photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+            site: "Adassa",
+            schedule:'06:00-18:30',
+            action:{
+              type:'Enter',
+              distance:'1,3km'
+            },
+            manager:'Kobi Kats',
+            insurance:"On Confirmation",
+            chat:false,
+            date:{
+              day:'12',
+              month:'08',
+              year:'2024'
+            }
+          },
+          {
+            photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+            site: "Adassa",
+            schedule:'06:00-18:00',
+            action:{
+              type:'Enter',
+              distance:'900m'
+            },
+            manager:'Ofra Shapiro',
+            insurance:"On Confirmation",
+            chat:false,
+            date:{
+              day:'08',
+              month:'08',
+              year:'2024'
+            },
+          },
+          {
+            photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+            site: "Ramat Gan 16",
+            schedule:'06:00-18:30',
+            action:{
+              type:'Enter',
+              distance:'1,7km'
+            },
+            manager:'Moti Rush',
+            insurance:"On Confirmation",
+            chat:false,
+            date:{
+              day:'08',
+              month:'08',
+              year:'2024'
+            },
+          },
+          {
+            photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+            site: "Adassa",
+            schedule:'06:00-18:30',
+            action:{
+              type:'Enter',
+              distance:'350m'
+            },
+            manager:'Moti Rush',
+            insurance:"Confirmed",
+            chat:true,
+            date:{
+              day:'25',
+              month:'07',
+              year:'2024'
+            },
+          },
+          {
+            photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+            site: "Ramat Gan 16",
+            schedule:'06:00-18:30',
+            action:{
+              type:'Enter',
+              distance:'1,7km'
+            },
+            manager:'Moti Rush',
+            insurance:"Confirmed",
+            chat:true,
+            date:{
+              day:'02',
+              month:'08',
+              year:'2024'
+            },
+          },
+        ],
+      },
+      {
+        id:'33',
+        photo: "https://frontwebil.github.io/RIGO-photos/img/angry-man.svg",
+        name: "Mihal Clmentov",
+        tax: "2061",
+        passport: "FJ417699",
+        phone: "502985544",
+        manager: "Moti Rush",
+        customer: "MALGAM",
+        country: "China",
+        app: "4.2.5",
+        insurance: "Empty",
+        alerts: true,
+        realEstate: "7",
+        employeeAlert: [
+          {
+            photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+            site: "Adassa",
+            schedule:'06:00-18:30',
+            action:{
+              type:'Enter',
+              distance:'1,3km'
+            },
+            manager:'Kobi Kats',
+            insurance:"On Confirmation",
+            chat:false,
+            date:{
+              day:'12',
+              month:'08',
+              year:'2024'
+            }
+          },
+          {
+            photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+            site: "Adassa",
+            schedule:'06:00-18:00',
+            action:{
+              type:'Enter',
+              distance:'900m'
+            },
+            manager:'Ofra Shapiro',
+            insurance:"On Confirmation",
+            chat:false,
+            date:{
+              day:'08',
+              month:'08',
+              year:'2024'
+            },
+          },
+          {
+            photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+            site: "Ramat Gan 16",
+            schedule:'06:00-18:30',
+            action:{
+              type:'Enter',
+              distance:'1,7km'
+            },
+            manager:'Moti Rush',
+            insurance:"On Confirmation",
+            chat:false,
+            date:{
+              day:'08',
+              month:'08',
+              year:'2024'
+            },
+          },
+          {
+            photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+            site: "Adassa",
+            schedule:'06:00-18:30',
+            action:{
+              type:'Enter',
+              distance:'350m'
+            },
+            manager:'Moti Rush',
+            insurance:"Confirmed",
+            chat:true,
+            date:{
+              day:'25',
+              month:'07',
+              year:'2024'
+            },
+          },
+          {
+            photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+            site: "Ramat Gan 16",
+            schedule:'06:00-18:30',
+            action:{
+              type:'Enter',
+              distance:'1,7km'
+            },
+            manager:'Moti Rush',
+            insurance:"Confirmed",
+            chat:true,
+            date:{
+              day:'02',
+              month:'08',
+              year:'2024'
+            },
+          },
+        ],
+      },
+      {
+        id:'34',
+        photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+        name: "Ion Sinu",
+        tax: "2061",
+        passport: "FJ417699",
+        phone: "502985544",
+        manager: "Moti Rush",
+        customer: "MALGAM",
+        country: "Moldova",
+        app: "4.2.5",
+        insurance: "Enter",
+        alerts: true,
+        realEstate: "7",
+        employeeAlert: [
+          {
+            photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+            site: "Adassa",
+            schedule:'06:00-18:30',
+            action:{
+              type:'Enter',
+              distance:'1,3km'
+            },
+            manager:'Kobi Kats',
+            insurance:"On Confirmation",
+            chat:false,
+            date:{
+              day:'12',
+              month:'08',
+              year:'2024'
+            }
+          },
+          {
+            photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+            site: "Adassa",
+            schedule:'06:00-18:00',
+            action:{
+              type:'Enter',
+              distance:'900m'
+            },
+            manager:'Ofra Shapiro',
+            insurance:"On Confirmation",
+            chat:false,
+            date:{
+              day:'08',
+              month:'08',
+              year:'2024'
+            },
+          },
+          {
+            photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+            site: "Ramat Gan 16",
+            schedule:'06:00-18:30',
+            action:{
+              type:'Enter',
+              distance:'1,7km'
+            },
+            manager:'Moti Rush',
+            insurance:"On Confirmation",
+            chat:false,
+            date:{
+              day:'08',
+              month:'08',
+              year:'2024'
+            },
+          },
+          {
+            photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+            site: "Adassa",
+            schedule:'06:00-18:30',
+            action:{
+              type:'Enter',
+              distance:'350m'
+            },
+            manager:'Moti Rush',
+            insurance:"Confirmed",
+            chat:true,
+            date:{
+              day:'25',
+              month:'07',
+              year:'2024'
+            },
+          },
+          {
+            photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+            site: "Ramat Gan 16",
+            schedule:'06:00-18:30',
+            action:{
+              type:'Enter',
+              distance:'1,7km'
+            },
+            manager:'Moti Rush',
+            insurance:"Confirmed",
+            chat:true,
+            date:{
+              day:'02',
+              month:'08',
+              year:'2024'
+            },
+          },
+        ],
+      },
+      {
+        id:'35',
+        photo: "https://frontwebil.github.io/RIGO-photos/img/angry-man.svg",
+        name: "Victor Jacota",
+        tax: "2061",
+        passport: "FJ417699",
+        phone: "502985544",
+        manager: "Moti Rush",
+        customer: "MALGAM",
+        country: "India",
+        app: "",
+        insurance: "Canceled",
+        alerts: false,
+        realEstate: "6",
+        employeeAlert: [
+          {
+            photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+            site: "Adassa",
+            schedule:'06:00-18:30',
+            action:{
+              type:'Enter',
+              distance:'1,3km'
+            },
+            manager:'Kobi Kats',
+            insurance:"On Confirmation",
+            chat:false,
+            date:{
+              day:'12',
+              month:'08',
+              year:'2024'
+            }
+          },
+          {
+            photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+            site: "Adassa",
+            schedule:'06:00-18:00',
+            action:{
+              type:'Enter',
+              distance:'900m'
+            },
+            manager:'Ofra Shapiro',
+            insurance:"On Confirmation",
+            chat:false,
+            date:{
+              day:'08',
+              month:'08',
+              year:'2024'
+            },
+          },
+          {
+            photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+            site: "Ramat Gan 16",
+            schedule:'06:00-18:30',
+            action:{
+              type:'Enter',
+              distance:'1,7km'
+            },
+            manager:'Moti Rush',
+            insurance:"On Confirmation",
+            chat:false,
+            date:{
+              day:'08',
+              month:'08',
+              year:'2024'
+            },
+          },
+          {
+            photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+            site: "Adassa",
+            schedule:'06:00-18:30',
+            action:{
+              type:'Enter',
+              distance:'350m'
+            },
+            manager:'Moti Rush',
+            insurance:"Confirmed",
+            chat:true,
+            date:{
+              day:'25',
+              month:'07',
+              year:'2024'
+            },
+          },
+          {
+            photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+            site: "Ramat Gan 16",
+            schedule:'06:00-18:30',
+            action:{
+              type:'Enter',
+              distance:'1,7km'
+            },
+            manager:'Moti Rush',
+            insurance:"Confirmed",
+            chat:true,
+            date:{
+              day:'02',
+              month:'08',
+              year:'2024'
+            },
+          },
+        ],
+      },
+      {
+        id:'29',
+        name: "Anatoli Vechurko",
+        photo: "https://frontwebil.github.io/RIGO-photos/img/woman.svg",
+        tax: "2066",
+        passport: "FJ417699",
+        phone: "502985544",
+        manager: "Kobi Kats",
+        customer: "FICO TAO",
+        country: "Ukraine",
+        app: "4.2.6",
+        insurance: "Enter",
+        alerts: true,
+        realEstate: "2",
+        employeeAlert: [
+          {
+            photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+            site: "Adassa",
+            schedule:'06:00-18:30',
+            action:{
+              type:'Enter',
+              distance:'1,3km'
+            },
+            manager:'Kobi Kats',
+            insurance:"On Confirmation",
+            chat:false,
+            date:{
+              day:'12',
+              month:'08',
+              year:'2024'
+            }
+          },
+          {
+            photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+            site: "Adassa",
+            schedule:'06:00-18:00',
+            action:{
+              type:'Enter',
+              distance:'900m'
+            },
+            manager:'Ofra Shapiro',
+            insurance:"On Confirmation",
+            chat:false,
+            date:{
+              day:'08',
+              month:'08',
+              year:'2024'
+            },
+          },
+          {
+            photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+            site: "Ramat Gan 16",
+            schedule:'06:00-18:30',
+            action:{
+              type:'Enter',
+              distance:'1,7km'
+            },
+            manager:'Moti Rush',
+            insurance:"On Confirmation",
+            chat:false,
+            date:{
+              day:'08',
+              month:'08',
+              year:'2024'
+            },
+          },
+          {
+            photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+            site: "Adassa",
+            schedule:'06:00-18:30',
+            action:{
+              type:'Enter',
+              distance:'350m'
+            },
+            manager:'Moti Rush',
+            insurance:"Confirmed",
+            chat:true,
+            date:{
+              day:'25',
+              month:'07',
+              year:'2024'
+            },
+          },
+          {
+            photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+            site: "Ramat Gan 16",
+            schedule:'06:00-18:30',
+            action:{
+              type:'Enter',
+              distance:'1,7km'
+            },
+            manager:'Moti Rush',
+            insurance:"Confirmed",
+            chat:true,
+            date:{
+              day:'02',
+              month:'08',
+              year:'2024'
+            },
+          },
+        ],
+      },
+      {
+        id:'30',
+        photo: "https://frontwebil.github.io/RIGO-photos/img/man-yellow.svg",
+        name: "Ion Sinu",
+        tax: "2063",
+        passport: "FJ417699",
+        phone: "502985544",
+        manager: "Kobi Kats",
+        customer: "FICO TAO",
+        country: "Moldova",
+        app: "4.2.6",
+        insurance: "Canceled",
+        alerts: false,
+        realEstate: "6",
+        employeeAlert: [
+          {
+            photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+            site: "Adassa",
+            schedule:'06:00-18:30',
+            action:{
+              type:'Enter',
+              distance:'1,3km'
+            },
+            manager:'Kobi Kats',
+            insurance:"On Confirmation",
+            chat:false,
+            date:{
+              day:'12',
+              month:'08',
+              year:'2024'
+            }
+          },
+          {
+            photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+            site: "Adassa",
+            schedule:'06:00-18:00',
+            action:{
+              type:'Enter',
+              distance:'900m'
+            },
+            manager:'Ofra Shapiro',
+            insurance:"On Confirmation",
+            chat:false,
+            date:{
+              day:'08',
+              month:'08',
+              year:'2024'
+            },
+          },
+          {
+            photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+            site: "Ramat Gan 16",
+            schedule:'06:00-18:30',
+            action:{
+              type:'Enter',
+              distance:'1,7km'
+            },
+            manager:'Moti Rush',
+            insurance:"On Confirmation",
+            chat:false,
+            date:{
+              day:'08',
+              month:'08',
+              year:'2024'
+            },
+          },
+          {
+            photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+            site: "Adassa",
+            schedule:'06:00-18:30',
+            action:{
+              type:'Enter',
+              distance:'350m'
+            },
+            manager:'Moti Rush',
+            insurance:"Confirmed",
+            chat:true,
+            date:{
+              day:'25',
+              month:'07',
+              year:'2024'
+            },
+          },
+          {
+            photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+            site: "Ramat Gan 16",
+            schedule:'06:00-18:30',
+            action:{
+              type:'Enter',
+              distance:'1,7km'
+            },
+            manager:'Moti Rush',
+            insurance:"Confirmed",
+            chat:true,
+            date:{
+              day:'02',
+              month:'08',
+              year:'2024'
+            },
+          },
+        ],
+      },
+      {
+        id:'31',
+        photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+        name: "Victor Jacota",
+        tax: "2062",
+        passport: "FJ417699",
+        phone: "502985544",
+        manager: "Moti Rush",
+        customer: "MALGAM",
+        country: "India",
+        app: "",
+        insurance: "Pending",
+        alerts: false,
+        realEstate: "6",
+        employeeAlert: [
+          {
+            photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+            site: "Adassa",
+            schedule:'06:00-18:30',
+            action:{
+              type:'Enter',
+              distance:'1,3km'
+            },
+            manager:'Kobi Kats',
+            insurance:"On Confirmation",
+            chat:false,
+            date:{
+              day:'12',
+              month:'08',
+              year:'2024'
+            }
+          },
+          {
+            photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+            site: "Adassa",
+            schedule:'06:00-18:00',
+            action:{
+              type:'Enter',
+              distance:'900m'
+            },
+            manager:'Ofra Shapiro',
+            insurance:"On Confirmation",
+            chat:false,
+            date:{
+              day:'08',
+              month:'08',
+              year:'2024'
+            },
+          },
+          {
+            photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+            site: "Ramat Gan 16",
+            schedule:'06:00-18:30',
+            action:{
+              type:'Enter',
+              distance:'1,7km'
+            },
+            manager:'Moti Rush',
+            insurance:"On Confirmation",
+            chat:false,
+            date:{
+              day:'08',
+              month:'08',
+              year:'2024'
+            },
+          },
+          {
+            photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+            site: "Adassa",
+            schedule:'06:00-18:30',
+            action:{
+              type:'Enter',
+              distance:'350m'
+            },
+            manager:'Moti Rush',
+            insurance:"Confirmed",
+            chat:true,
+            date:{
+              day:'25',
+              month:'07',
+              year:'2024'
+            },
+          },
+          {
+            photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+            site: "Ramat Gan 16",
+            schedule:'06:00-18:30',
+            action:{
+              type:'Enter',
+              distance:'1,7km'
+            },
+            manager:'Moti Rush',
+            insurance:"Confirmed",
+            chat:true,
+            date:{
+              day:'02',
+              month:'08',
+              year:'2024'
+            },
+          },
+        ],
+      },
+      {
+        id:'32',
+        photo: "https://frontwebil.github.io/RIGO-photos/img/woman.svg",
+        name: "Victor Jacota",
+        tax: "2062",
+        passport: "FJ417699",
+        phone: "502985544",
+        manager: "Moti Rush",
+        customer: "MALGAM",
+        country: "India",
+        app: "",
+        insurance: "Pending",
+        alerts: false,
+        realEstate: "6",
+        employeeAlert: [
+          {
+            photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+            site: "Adassa",
+            schedule:'06:00-18:30',
+            action:{
+              type:'Enter',
+              distance:'1,3km'
+            },
+            manager:'Kobi Kats',
+            insurance:"On Confirmation",
+            chat:false,
+            date:{
+              day:'12',
+              month:'08',
+              year:'2024'
+            }
+          },
+          {
+            photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+            site: "Adassa",
+            schedule:'06:00-18:00',
+            action:{
+              type:'Enter',
+              distance:'900m'
+            },
+            manager:'Ofra Shapiro',
+            insurance:"On Confirmation",
+            chat:false,
+            date:{
+              day:'08',
+              month:'08',
+              year:'2024'
+            },
+          },
+          {
+            photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+            site: "Ramat Gan 16",
+            schedule:'06:00-18:30',
+            action:{
+              type:'Enter',
+              distance:'1,7km'
+            },
+            manager:'Moti Rush',
+            insurance:"On Confirmation",
+            chat:false,
+            date:{
+              day:'08',
+              month:'08',
+              year:'2024'
+            },
+          },
+          {
+            photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+            site: "Adassa",
+            schedule:'06:00-18:30',
+            action:{
+              type:'Enter',
+              distance:'350m'
+            },
+            manager:'Moti Rush',
+            insurance:"Confirmed",
+            chat:true,
+            date:{
+              day:'25',
+              month:'07',
+              year:'2024'
+            },
+          },
+          {
+            photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+            site: "Ramat Gan 16",
+            schedule:'06:00-18:30',
+            action:{
+              type:'Enter',
+              distance:'1,7km'
+            },
+            manager:'Moti Rush',
+            insurance:"Confirmed",
+            chat:true,
+            date:{
+              day:'02',
+              month:'08',
+              year:'2024'
+            },
+          },
+        ],
+      },
+      {
+        id:'33',
+        photo: "https://frontwebil.github.io/RIGO-photos/img/angry-man.svg",
+        name: "Mihal Clmentov",
+        tax: "2061",
+        passport: "FJ417699",
+        phone: "502985544",
+        manager: "Moti Rush",
+        customer: "MALGAM",
+        country: "China",
+        app: "4.2.5",
+        insurance: "Empty",
+        alerts: true,
+        realEstate: "7",
+        employeeAlert: [
+          {
+            photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+            site: "Adassa",
+            schedule:'06:00-18:30',
+            action:{
+              type:'Enter',
+              distance:'1,3km'
+            },
+            manager:'Kobi Kats',
+            insurance:"On Confirmation",
+            chat:false,
+            date:{
+              day:'12',
+              month:'08',
+              year:'2024'
+            }
+          },
+          {
+            photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+            site: "Adassa",
+            schedule:'06:00-18:00',
+            action:{
+              type:'Enter',
+              distance:'900m'
+            },
+            manager:'Ofra Shapiro',
+            insurance:"On Confirmation",
+            chat:false,
+            date:{
+              day:'08',
+              month:'08',
+              year:'2024'
+            },
+          },
+          {
+            photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+            site: "Ramat Gan 16",
+            schedule:'06:00-18:30',
+            action:{
+              type:'Enter',
+              distance:'1,7km'
+            },
+            manager:'Moti Rush',
+            insurance:"On Confirmation",
+            chat:false,
+            date:{
+              day:'08',
+              month:'08',
+              year:'2024'
+            },
+          },
+          {
+            photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+            site: "Adassa",
+            schedule:'06:00-18:30',
+            action:{
+              type:'Enter',
+              distance:'350m'
+            },
+            manager:'Moti Rush',
+            insurance:"Confirmed",
+            chat:true,
+            date:{
+              day:'25',
+              month:'07',
+              year:'2024'
+            },
+          },
+          {
+            photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+            site: "Ramat Gan 16",
+            schedule:'06:00-18:30',
+            action:{
+              type:'Enter',
+              distance:'1,7km'
+            },
+            manager:'Moti Rush',
+            insurance:"Confirmed",
+            chat:true,
+            date:{
+              day:'02',
+              month:'08',
+              year:'2024'
+            },
+          },
+        ],
+      },
+      {
+        id:'34',
+        photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+        name: "Ion Sinu",
+        tax: "2061",
+        passport: "FJ417699",
+        phone: "502985544",
+        manager: "Moti Rush",
+        customer: "MALGAM",
+        country: "Moldova",
+        app: "4.2.5",
+        insurance: "Enter",
+        alerts: true,
+        realEstate: "7",
+        employeeAlert: [
+          {
+            photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+            site: "Adassa",
+            schedule:'06:00-18:30',
+            action:{
+              type:'Enter',
+              distance:'1,3km'
+            },
+            manager:'Kobi Kats',
+            insurance:"On Confirmation",
+            chat:false,
+            date:{
+              day:'12',
+              month:'08',
+              year:'2024'
+            }
+          },
+          {
+            photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+            site: "Adassa",
+            schedule:'06:00-18:00',
+            action:{
+              type:'Enter',
+              distance:'900m'
+            },
+            manager:'Ofra Shapiro',
+            insurance:"On Confirmation",
+            chat:false,
+            date:{
+              day:'08',
+              month:'08',
+              year:'2024'
+            },
+          },
+          {
+            photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+            site: "Ramat Gan 16",
+            schedule:'06:00-18:30',
+            action:{
+              type:'Enter',
+              distance:'1,7km'
+            },
+            manager:'Moti Rush',
+            insurance:"On Confirmation",
+            chat:false,
+            date:{
+              day:'08',
+              month:'08',
+              year:'2024'
+            },
+          },
+          {
+            photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+            site: "Adassa",
+            schedule:'06:00-18:30',
+            action:{
+              type:'Enter',
+              distance:'350m'
+            },
+            manager:'Moti Rush',
+            insurance:"Confirmed",
+            chat:true,
+            date:{
+              day:'25',
+              month:'07',
+              year:'2024'
+            },
+          },
+          {
+            photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+            site: "Ramat Gan 16",
+            schedule:'06:00-18:30',
+            action:{
+              type:'Enter',
+              distance:'1,7km'
+            },
+            manager:'Moti Rush',
+            insurance:"Confirmed",
+            chat:true,
+            date:{
+              day:'02',
+              month:'08',
+              year:'2024'
+            },
+          },
+        ],
+      },
+      {
+        id:'35',
+        photo: "https://frontwebil.github.io/RIGO-photos/img/angry-man.svg",
+        name: "Victor Jacota121",
+        tax: "2061",
+        passport: "FJ417699",
+        phone: "502985544",
+        manager: "Moti Rush",
+        customer: "MALGAM",
+        country: "India",
+        app: "",
+        insurance: "Canceled",
+        alerts: false,
+        realEstate: "6",
+        employeeAlert: [
+          {
+            photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+            site: "Adassa",
+            schedule:'06:00-18:30',
+            action:{
+              type:'Enter',
+              distance:'1,3km'
+            },
+            manager:'Kobi Kats',
+            insurance:"On Confirmation",
+            chat:false,
+            date:{
+              day:'12',
+              month:'08',
+              year:'2024'
+            }
+          },
+          {
+            photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+            site: "Adassa",
+            schedule:'06:00-18:00',
+            action:{
+              type:'Enter',
+              distance:'900m'
+            },
+            manager:'Ofra Shapiro',
+            insurance:"On Confirmation",
+            chat:false,
+            date:{
+              day:'08',
+              month:'08',
+              year:'2024'
+            },
+          },
+          {
+            photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+            site: "Ramat Gan 16",
+            schedule:'06:00-18:30',
+            action:{
+              type:'Enter',
+              distance:'1,7km'
+            },
+            manager:'Moti Rush',
+            insurance:"On Confirmation",
+            chat:false,
+            date:{
+              day:'08',
+              month:'08',
+              year:'2024'
+            },
+          },
+          {
+            photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+            site: "Adassa",
+            schedule:'06:00-18:30',
+            action:{
+              type:'Enter',
+              distance:'350m'
+            },
+            manager:'Moti Rush',
+            insurance:"Confirmed",
+            chat:true,
+            date:{
+              day:'25',
+              month:'07',
+              year:'2024'
+            },
+          },
+          {
+            photo: "https://frontwebil.github.io/RIGO-photos/img/black-man.svg",
+            site: "Ramat Gan 16",
+            schedule:'06:00-18:30',
+            action:{
+              type:'Enter',
+              distance:'1,7km'
+            },
+            manager:'Moti Rush',
+            insurance:"Confirmed",
+            chat:true,
+            date:{
+              day:'02',
+              month:'08',
+              year:'2024'
+            },
+          },
+        ],
+      },
     ],
   },
 ];

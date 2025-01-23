@@ -1,8 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Search } from "../Search/Search";
 import { SitesInnerNav } from "../SitesInnerNav/SitesInnerNav";
 import { SitesInnerSortButtons } from "../SitesInnerSortButtons/SitesInnerSortButtons";
 import { SitesInnerEmployeesTableRow } from "./SitesInnerEmployeesTableRow";
+import html2canvas from "html2canvas";
+import jsPDF from "jspdf";
 // import { SitesInnerActionsRow } from "./SitesInnerActionsRow";
 
 export function SitesInnerEmployees({
@@ -13,15 +15,57 @@ export function SitesInnerEmployees({
   tabs,
   activeTab,
 }) {
+  const [employeeData, setEmployeeData] = useState(data);
+  const [searchTerm, setSearchTerm] = useState("");
+  const sortByButtons = [
+    "name",
+    "realEstate",
+    "insurance",
+    "country",
+    "customer",
+    "manager",
+    "passport",
+    "tax",
+    "phone",
+  ];
+  const printRef = useRef(null);
 
-    const [employeeData, setEmployeeData] = useState(data);
-    const [searchTerm, setSearchTerm] = useState("");
-    const sortByButtons = ['name' , 'realEstate' , 'insurance' , 'country' , 'customer' ,'manager' , 'passport' , 'tax' , 'phone'];
-  
-    const SearchInData = (searchText, list) => {
-      if (!searchText) return list;
-      const cleanSearchText = searchText.replace(/-/g, "").toLowerCase();
-      return list.filter(({ name, customer , manager , realEstate , country , passport , tax , phone}) => {
+  const handleDownloadPdf = async () => {
+    const element = await printRef.current;
+    if (!element) {
+      return;
+    }
+
+    const canvas = await html2canvas(element);
+    const data = canvas.toDataURL("image/png");
+
+    const pdf = new jsPDF({
+      orientation: "portrait",
+      unit: "px",
+      format: "a4",
+    });
+
+    const imgProperties = pdf.getImageProperties(data);
+    const pdfWidth = pdf.internal.pageSize.getWidth();
+    const pdfHeight = (imgProperties.height * pdfWidth / imgProperties.width)
+
+    pdf.addImage(data, "PNG", 0, 0, pdfWidth, pdfHeight);
+    pdf.save("examplepdf.pdf");
+  };
+  const SearchInData = (searchText, list) => {
+    if (!searchText) return list;
+    const cleanSearchText = searchText.replace(/-/g, "").toLowerCase();
+    return list.filter(
+      ({
+        name,
+        customer,
+        manager,
+        realEstate,
+        country,
+        passport,
+        tax,
+        phone,
+      }) => {
         return (
           name.toLowerCase().includes(cleanSearchText) ||
           customer.toLowerCase().includes(cleanSearchText) ||
@@ -32,20 +76,22 @@ export function SitesInnerEmployees({
           phone.toLowerCase().includes(cleanSearchText) ||
           manager.toLowerCase().includes(cleanSearchText)
         );
-      });
-    };
-  
-    useEffect(() => {
-      const debounce = setTimeout(() => {
-        let filteredData = data;
-        if (searchTerm) {
-          filteredData = SearchInData(searchTerm, filteredData);
-        }
-        setEmployeeData(filteredData);
-      }, 100);
-  
-      return () => clearTimeout(debounce);
-    }, [searchTerm , data]);
+      }
+    );
+  };
+
+  useEffect(() => {
+    const debounce = setTimeout(() => {
+      let filteredData = data;
+      if (searchTerm) {
+        filteredData = SearchInData(searchTerm, filteredData);
+      }
+      setEmployeeData(filteredData);
+    }, 100);
+
+    return () => clearTimeout(debounce);
+  }, [searchTerm, data]);
+
   return (
     <div>
       <Search
@@ -58,12 +104,17 @@ export function SitesInnerEmployees({
         tabs={tabs}
         activeTab={activeTab}
       />
-      <SitesInnerSortButtons sortByButtons={sortByButtons} data={employeeData} setData={setEmployeeData}/>
-      <div className="table-container">
+      <SitesInnerSortButtons
+        sortByButtons={sortByButtons}
+        data={employeeData}
+        setData={setEmployeeData}
+        handleDownloadPdf={handleDownloadPdf}
+      />
+      <div ref={printRef} className="table-container">
         <div className="table">
           <div className="table-row nav">
             <div className="table-block nav" style={{ width: "5%" }}>
-            TaxID
+              TaxID
             </div>
             <div className="table-block nav" style={{ width: "5%" }}>
               Photo
@@ -72,42 +123,43 @@ export function SitesInnerEmployees({
               Name
             </div>
             <div className="table-block nav" style={{ width: "8%" }}>
-            Passport
+              Passport
             </div>
             <div className="table-block nav" style={{ width: "9%" }}>
-            Phone
+              Phone
             </div>
             <div className="table-block nav" style={{ width: "8%" }}>
-            Manager
+              Manager
             </div>
             <div className="table-block nav" style={{ width: "8%" }}>
-            Customer
+              Customer
             </div>
             <div className="table-block nav" style={{ width: "8%" }}>
-            Country
+              Country
             </div>
             <div className="table-block nav" style={{ width: "5%" }}>
-            APP
+              APP
             </div>
             <div className="table-block nav" style={{ width: "10%" }}>
-            Insurance
+              Insurance
             </div>
             <div className="table-block nav" style={{ width: "5%" }}>
-            Alerts
+              Alerts
             </div>
             <div className="table-block nav" style={{ width: "8%" }}>
-            Real Estate
+              Real Estate
             </div>
             <div className="table-block nav" style={{ width: "6%" }}>
-            Info
+              Info
             </div>
           </div>
           {employeeData.map((el, index) => {
-            return <SitesInnerEmployeesTableRow key={index} el={el} i={index}/>;
+            return (
+              <SitesInnerEmployeesTableRow key={index} el={el} i={index} />
+            );
           })}
         </div>
       </div>
     </div>
   );
 }
-

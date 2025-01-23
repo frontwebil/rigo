@@ -7,7 +7,7 @@ import { SitePageTableRow } from "./SitePageTableRow";
 export function SitesPage({ currentPage }) {
   const [siteData, setSiteData] = useState(UsersData);
   const [searchTerm, setSearchTerm] = useState("");
-  const sortByButtons = ['nameObject','workers','absent','present','radius','alerts','id'];
+  const sortByButtons = ['workers','absent','present','radius','alerts'];
 
   const SearchInData = (searchText, list) => {
     if (!searchText) return list;
@@ -38,7 +38,7 @@ export function SitesPage({ currentPage }) {
   return (
     <>
       <Search currentPage={currentPage} searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
-      <SortFiltrButtons sortByButtons={sortByButtons} data={siteData} setData={setSiteData}/>
+      <SortFiltrButtons sortByButtons={sortByButtons} data={siteData} setData={setSiteData} defaultData={UsersData}/>
       <div className="table-container">
         <div className="table">
           <div className="table-row nav">

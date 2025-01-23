@@ -67,7 +67,7 @@ export function AlertsPage({currentPage}) {
     <>
       <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} currentPage={currentPage}/>
       
-      <SortFiltrButtons sortByButtons={sortByButtons} data={AlertsData} setData={setAlertsData}/>
+      <SortFiltrButtons sortByButtons={sortByButtons} data={AlertsData} setData={setAlertsData} defaultData={UsersData}/>
 
       <EventsLog eventLog={eventLog} setEventLog={setEventLog} eventHandleClick={eventHandleClick}/>
       <div className="table-container">

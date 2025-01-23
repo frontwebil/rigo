@@ -11,6 +11,7 @@ export function SitesInnerSortButtons({
   timeToggle,
   isWeekCurrent,
   setIsWeekCurrent,
+  handleDownloadPdf
 }) {
   const [isOpenMore, setIsOpenMore] = useState(false);
   const [isOpenSort, setIsOpenSort] = useState(false);
@@ -150,7 +151,7 @@ export function SitesInnerSortButtons({
             Share
             <CiShare2 />
           </div>
-          <div className="openMoreButtonsMenu-button">
+          <div className="openMoreButtonsMenu-button" onClick={handleDownloadPdf}>
             Print
             <LuPrinter />
           </div>
