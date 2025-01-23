@@ -43,7 +43,7 @@ export function WorkedTimePage({ currentPage }) {
         searchTerm={searchTerm}
         setSearchTerm={setSearchTerm}
       />
-      <SortFiltrButtons sortByButtons={sortByButtons} data={workedTimeData} setData={setWorkedData}/>
+      <SortFiltrButtons sortByButtons={sortByButtons} data={workedTimeData} setData={setWorkedData} defaultData={UsersData}/>
       <div className="table-container">
         <div className="table">
           <div className="table-row nav">

@@ -25,60 +25,49 @@ export function WorkersPage({ currentPage }) {
 
   const printRef = useRef(null);
 
-  const handleDownloadPdf = async () => {
-    const element = printRef.current;
-    if (!element) return;
+const handleDownloadPdf = async () => {
+  const element = printRef.current;
+  if (!element) return;
 
-    try {
-      const canvas = await html2canvas(element, {
-        scale: 1,
-        useCORS: true,
-        logging: false,
-        scrollX: 0,
-        scrollY: -window.scrollY,
-      });
-      const data = canvas.toDataURL("image/png");
+  const canvas = await html2canvas(element, { 
+    scale: 1, // Adjust scale if needed
+    useCORS: true,
+    logging: false
+  });
+  const data = canvas.toDataURL("image/png");
 
-      const pdf = new jsPDF({
-        orientation: "portrait",
-        unit: "px",
-        format: "a4",
-      });
+  const pdf = new jsPDF({
+    orientation: "portrait",
+    unit: "px",
+    format: "a4",
+  });
 
-      const imgProperties = pdf.getImageProperties(data);
-      const pdfWidth = pdf.internal.pageSize.getWidth();
-      const pdfHeight = pdf.internal.pageSize.getHeight();
-      const ratio = pdfWidth / imgProperties.width;
-      const imgHeight = imgProperties.height * ratio;
+  const imgProperties = pdf.getImageProperties(data);
+  const pdfWidth = pdf.internal.pageSize.getWidth();
+  const pdfHeight = pdf.internal.pageSize.getHeight();
+  const ratio = pdfWidth / imgProperties.width;
+  const imgHeight = imgProperties.height * ratio;
 
-      const totalPages = Math.ceil(imgHeight / pdfHeight);
+  // More precise page calculation
+  const totalPages = Math.ceil(imgHeight / pdfHeight);
 
-      for (let i = 0; i < totalPages; i++) {
-        if (i > 0) {
-          pdf.addPage();
-        }
-
-        pdf.addImage(data, "PNG", 0, -(pdfHeight * i), pdfWidth, imgHeight);
-      }
-
-      // Mobile-friendly download
-      if (
-        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-          navigator.userAgent
-        )
-      ) {
-        const blob = pdf.output("blob");
-        const link = document.createElement("a");
-        link.href = URL.createObjectURL(blob);
-        link.download = "document.pdf";
-        link.click();
-      } else {
-        pdf.save("document.pdf");
-      }
-    } catch (error) {
-      console.error("PDF generation error:", error);
+  for (let i = 0; i < totalPages; i++) {
+    if (i > 0) {
+      pdf.addPage();
     }
-  };
+
+    pdf.addImage(
+      data, 
+      "PNG", 
+      0, 
+      -(pdfHeight * i), 
+      pdfWidth, 
+      imgHeight
+    );
+  }
+
+  pdf.save("document.pdf");
+};
 
   const SearchInData = (searchText, list) => {
     if (!searchText) return list;
