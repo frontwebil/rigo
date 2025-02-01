@@ -10,7 +10,7 @@ export function BankingPageRow({ el }) {
         <img src={el.photo} alt="" />
       </div>
       <div className="table-block name-inner" style={{ width: "15%" }}>
-        <Link to={`/workers/${el.tax}`}>{el.name}</Link>
+        {el.name}
       </div>
       <div className="table-block block-site-inner" style={{ width: "8%" }}>
         {el.passport}

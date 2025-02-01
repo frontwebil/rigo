@@ -187,3 +187,7 @@ select:focus {
   border-radius: 5px;
   padding: 3px 4px;
 }
+
+.openMoreIcon{
+  width: 20px;
+}

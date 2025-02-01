@@ -1,6 +1,4 @@
 import { useState } from "react";
-import { CiShare2 } from "react-icons/ci";
-import { LuPrinter } from "react-icons/lu";
 
 export function InnerTagEditButtons() {
   const [isOpenMore, setIsOpenMore] = useState(false);
@@ -31,17 +29,15 @@ export function InnerTagEditButtons() {
           />
       </div>
       {isOpenMore && (
-        <div className="openMoreButtonsMenu">
-          <div className="openMoreButtonsMenu-button">
-            Share
-            <CiShare2 />
+          <div className="openMoreButtonsMenu">
+            <div
+              className="openMoreButtonsMenu-button"
+            >
+              Download PDF
+              <img src="/icons/download.png" alt="" className="openMoreIcon"/>
+            </div>
           </div>
-          <div className="openMoreButtonsMenu-button">
-            Print
-            <LuPrinter />
-          </div>
-        </div>
-      )}
+        )}
     </div>
   );
 }

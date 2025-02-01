@@ -1,6 +1,4 @@
 import { useState, useEffect } from "react";
-import { CiShare2 } from "react-icons/ci";
-import { LuPrinter } from "react-icons/lu";
 import { Link } from "react-router-dom";
 
 export function SortFiltrButtons({
@@ -404,16 +402,12 @@ export function SortFiltrButtons({
         )}
         {isOpenMore && (
           <div className="openMoreButtonsMenu">
-            <div className="openMoreButtonsMenu-button">
-              Share
-              <CiShare2 />
-            </div>
             <div
               className="openMoreButtonsMenu-button"
               onClick={handleDownloadPdf}
             >
-              Print
-              <LuPrinter />
+              Download PDF
+              <img src="/icons/download.png" alt="" className="openMoreIcon"/>
             </div>
           </div>
         )}

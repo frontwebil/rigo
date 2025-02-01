@@ -1,6 +1,4 @@
 import { useState } from "react";
-import { CiShare2 } from "react-icons/ci";
-import { LuPrinter } from "react-icons/lu";
 import { TogleMonthWeek } from "../TogleMonthWeek/TogleMonthWeek";
 
 export function SitesInnerSortButtons({
@@ -10,14 +8,13 @@ export function SitesInnerSortButtons({
   timeToggle,
   isWeekCurrent,
   setIsWeekCurrent,
-  handleDownloadPdf
+  handleDownloadPdf,
 }) {
-  const [currentAction ,setCurrentAction] = useState('All')
+  const [currentAction, setCurrentAction] = useState("All");
   const [isSorted, setIsSorted] = useState(false);
   const [isOpenMore, setIsOpenMore] = useState(false);
   const [isOpenSort, setIsOpenSort] = useState(false);
   const [sortBy, setSortBy] = useState({ sort: "name", asc: true });
-
 
   const handleSortChange = (e) => {
     setSortBy((prev) => ({ ...prev, sort: e.target.value }));
@@ -43,7 +40,7 @@ export function SitesInnerSortButtons({
   };
 
   const handleSortAction = () => {
-    console.log(data)
+    console.log(data);
     const newData = [...data].sort((a, b) => {
       const field = sortBy.sort;
       const isAscending = sortBy.asc;
@@ -74,7 +71,7 @@ export function SitesInnerSortButtons({
       return isAscending ? result : -result;
     });
 
-    setIsSorted(true)
+    setIsSorted(true);
     setIsOpenSort(false);
     setData(newData);
   };
@@ -83,32 +80,32 @@ export function SitesInnerSortButtons({
     <div className="SitesInnerNavButtons">
       <div className="SitesInnerNavButtons-buttons">
         <button
-            className={`sortFiltrButtons-button ${isSorted && "active"}`}
-            onClick={() => setIsOpenSort(!isOpenSort)}
+          className={`sortFiltrButtons-button ${isSorted && "active"}`}
+          onClick={() => setIsOpenSort(!isOpenSort)}
         >
           Sort
         </button>
         <button className="SitesInnerNavButton Tag">Tag</button>
         <div className="flex-actions">
-            <button
-              onClick={() => setCurrentAction("All")}
-              className={`${currentAction === "All" && "activeAction"}`}
-            >
-              All
-            </button>
-            <button
-              onClick={() => setCurrentAction("At Site")}
-              className={`${currentAction === "At Site" && "activeAction"}`}
-            >
-              At Site
-            </button>
-            <button
-              onClick={() => setCurrentAction("Absent")}
-              className={`${currentAction === "Absent" && "activeAction"}`}
-            >
-              Absent
-            </button>
-          </div>
+          <button
+            onClick={() => setCurrentAction("All")}
+            className={`${currentAction === "All" && "activeAction"}`}
+          >
+            All
+          </button>
+          <button
+            onClick={() => setCurrentAction("At Site")}
+            className={`${currentAction === "At Site" && "activeAction"}`}
+          >
+            At Site
+          </button>
+          <button
+            onClick={() => setCurrentAction("Absent")}
+            className={`${currentAction === "Absent" && "activeAction"}`}
+          >
+            Absent
+          </button>
+        </div>
         {timeToggle && (
           <TogleMonthWeek
             isWeekCurrent={isWeekCurrent}
@@ -117,20 +114,18 @@ export function SitesInnerSortButtons({
         )}
       </div>
       <div className="SitesInnerNavButtons-buttons">
-        <button className="SitesInnerNavButton show-hide">
-          Date
-        </button>
+        <button className="SitesInnerNavButton show-hide">Date</button>
         <button className="SitesInnerNavButton show-hide">
           Show\Hide Column
         </button>
         <img
-            src="/icons/more.png"
-            alt=""
-            className="SitesInnerNavButtons-more"
-            onClick={() => {
-              setIsOpenMore(!isOpenMore);
-            }}
-          />
+          src="/icons/more.png"
+          alt=""
+          className="SitesInnerNavButtons-more"
+          onClick={() => {
+            setIsOpenMore(!isOpenMore);
+          }}
+        />
       </div>
       {isOpenSort && (
         <div className="sortFiltrButtonsMenu">
@@ -173,13 +168,12 @@ export function SitesInnerSortButtons({
       )}
       {isOpenMore && (
         <div className="openMoreButtonsMenu">
-          <div className="openMoreButtonsMenu-button">
-            Share
-            <CiShare2 />
-          </div>
-          <div className="openMoreButtonsMenu-button" onClick={handleDownloadPdf}>
-            Print
-            <LuPrinter />
+          <div
+            className="openMoreButtonsMenu-button"
+            onClick={handleDownloadPdf}
+          >
+            Download PDF
+            <img src="/icons/download.png" alt="" className="openMoreIcon" />
           </div>
         </div>
       )}
