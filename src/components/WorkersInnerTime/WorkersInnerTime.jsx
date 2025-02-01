@@ -20,6 +20,8 @@ export function WorkersInnerTime({
   const [isWeekCurrent, setIsWeekCurrent] = useState(false);
   const [currentWeekIndex, setCurrentWeekIndex] = useState(0);
   const [currentMonthIndex, setCurrentMonthIndex] = useState(0);
+  const [perHour , setPerHour] = useState(0)
+  const [salary , setSalary] = useState()
 
   const monthsData = groupDataByMonths(data);
   const allFullWeeks = getFullWorkWeeks(data);
@@ -123,6 +125,7 @@ export function WorkersInnerTime({
         setCurrentMonthIndex(monthIndex);
       }
     }
+    setSalary(0)
   }
 
   function handlePrevWeek() {
@@ -137,18 +140,53 @@ export function WorkersInnerTime({
         setCurrentMonthIndex(monthIndex);
       }
     }
+    setSalary(0)
   }
 
   function handleNextMonth() {
     if (currentMonthIndex < monthsData.length - 1) {
       setCurrentMonthIndex(currentMonthIndex + 1);
     }
+    setSalary(0)
   }
 
   function handlePrevMonth() {
     if (currentMonthIndex > 0) {
       setCurrentMonthIndex(currentMonthIndex - 1);
     }
+    setSalary(0)
+  }
+  function handleChangePerHour(e) {
+    const value = e.target.value;
+    if (value === "" || /^\d*\.?\d*$/.test(value)) {
+      setPerHour(value);
+    }
+  }
+
+  function countSalary() {
+    const p100 = TimeData.reduce(
+      (acc, el) => acc + (Number(el["100"]) || 0),
+      0
+    ) * 1 * perHour;
+    const p125 = TimeData.reduce(
+      (acc, el) => acc + (Number(el["125"]) || 0),
+      0
+    ) * 1.25 * perHour;
+    const p150 = TimeData.reduce(
+      (acc, el) => acc + (Number(el["150"]) || 0),
+      0
+    ) * 1.5 * perHour;
+    const p175 = TimeData.reduce(
+      (acc, el) => acc + (Number(el["175"]) || 0),
+      0
+    ) * 1.75 * perHour;
+    const p200 = TimeData.reduce(
+      (acc, el) => acc + (Number(el["200"]) || 0),
+      0
+    ) * 2 * perHour;
+    
+    const allSalary = p100 + p125 + p150 + p175 + p200;
+    setSalary(allSalary)
   }
 
   const sortByButtons = [
@@ -196,6 +234,12 @@ export function WorkersInnerTime({
       )}
       <div>
         <div className="table-container">
+        <div className="inputSallary">
+            <h2>Enter the salary rate</h2>
+            <input type="text" name="" id="" placeholder="Pay per hour" value={perHour} onChange={handleChangePerHour}/>
+            <button onClick={countSalary}>Count</button>
+            <h2>Salary:{salary}</h2>
+          </div>
           <div className="table">
             <div className="table-row nav">
               <div className="table-block nav" style={{ width: "10%" }}>
