@@ -235,7 +235,7 @@ export function WorkersInnerTime({
       <div>
         <div className="table-container">
         <div className="inputSallary">
-            <h2>Enter the salary rate</h2>
+            <h2>Pay per hour</h2>
             <input type="text" name="" id="" placeholder="Pay per hour" value={perHour} onChange={handleChangePerHour}/>
             <button onClick={countSalary}>Count</button>
             <h2>Salary:{salary}</h2>
