@@ -123,7 +123,9 @@ export function SitesInnerSortButtons({
         )}
       </div>
       <div className="SitesInnerNavButtons-buttons">
-        <button className="SitesInnerNavButton show-hide">Date</button>
+        {!timeToggle && (
+          <button className="SitesInnerNavButton show-hide">Date</button>
+        )}
         <button className="SitesInnerNavButton show-hide">
           Show\Hide Column
         </button>

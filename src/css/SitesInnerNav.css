@@ -25,3 +25,47 @@
 .SitesInnerNav-button.active {
   background-color: #ef4255ff;
 }
+
+.inputSallary {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.inputSallary h2 {
+  font-size: 16px;
+  color: #333;
+}
+
+.inputSallary input {
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: 0.3s;
+  max-width: 150px;
+}
+
+.inputSallary input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.inputSallary button {
+  padding: 10px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.inputSallary button:hover {
+  background: #0056b3;
+}
