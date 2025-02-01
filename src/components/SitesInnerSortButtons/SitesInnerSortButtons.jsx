@@ -86,31 +86,40 @@ export function SitesInnerSortButtons({
           Sort
         </button>
         <button className="SitesInnerNavButton Tag">Tag</button>
-        <div className="flex-actions">
-          <button
-            onClick={() => setCurrentAction("All")}
-            className={`${currentAction === "All" && "activeAction"}`}
-          >
-            All
-          </button>
-          <button
-            onClick={() => setCurrentAction("At Site")}
-            className={`${currentAction === "At Site" && "activeAction"}`}
-          >
-            At Site
-          </button>
-          <button
-            onClick={() => setCurrentAction("Absent")}
-            className={`${currentAction === "Absent" && "activeAction"}`}
-          >
-            Absent
-          </button>
-        </div>
+        {!timeToggle && (
+          <div className="flex-actions">
+            <button
+              onClick={() => setCurrentAction("All")}
+              className={`${currentAction === "All" && "activeAction"}`}
+            >
+              All
+            </button>
+            <button
+              onClick={() => setCurrentAction("At Site")}
+              className={`${currentAction === "At Site" && "activeAction"}`}
+            >
+              At Site
+            </button>
+            <button
+              onClick={() => setCurrentAction("Absent")}
+              className={`${currentAction === "Absent" && "activeAction"}`}
+            >
+              Absent
+            </button>
+          </div>
+        )}
+
         {timeToggle && (
           <TogleMonthWeek
             isWeekCurrent={isWeekCurrent}
             setIsWeekCurrent={setIsWeekCurrent}
           />
+        )}
+        {timeToggle && (
+          <>
+          <button className={`sortFiltrButtons-button`}>Check Problems</button>
+          <button className={`sortFiltrButtons-button`}>Add Road Time</button>
+          </>
         )}
       </div>
       <div className="SitesInnerNavButtons-buttons">

@@ -9,7 +9,7 @@ export function Header() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   const buttons = [
     { name: "Workers", linkTo: "/workers" },
-    { name: "Actions", linkTo: "/notFound" },
+    { name: "Actions", linkTo: "/actions" },
     { name: "Alerts", linkTo: "/alerts" },
     { name: "Sites", linkTo: "/sites" },
     { name: "Customers", linkTo: "/notFound" },

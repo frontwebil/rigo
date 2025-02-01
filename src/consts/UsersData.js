@@ -13,7 +13,7 @@ export const UsersData = [
     phone: "054-228-92-49",
     site: "Ramat Aviv",
     location: {
-      type: "Enter",
+      type: "Brake",
       distance: "1,3km",
     },
     manager: "Kobi Kats",

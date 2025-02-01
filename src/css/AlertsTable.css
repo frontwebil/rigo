@@ -101,6 +101,10 @@
 .location.colleague{
   background-color: #EFEFEF;
 }
+.location.brake{
+  background-color: orange;
+}
+
 
 .distance {
   background-color: #FFD4D4;

@@ -9,7 +9,7 @@ export function SortFiltrButtons({
   addCustomers,
   handleDownloadPdf,
 }) {
-  const checkBoxFiltersOptions = ["country", "status", "companyName", "agent" , "insurance" , "manager" , "customer"];
+  const checkBoxFiltersOptions = ["country", "status", "companyName", "agent" , "insurance" , "manager" , "customer" , ];
   const [currentAction, setCurrentAction] = useState("All");
   const [isOpenMore, setIsOpenMore] = useState(false);
   const [isSorted, setIsSorted] = useState(false);

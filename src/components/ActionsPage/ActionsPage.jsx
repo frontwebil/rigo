@@ -1,14 +1,12 @@
-import { EventsLog } from "../EventsLog/EventsLog";
-import { Search } from "../Search/Search";
-import { SortFiltrButtons } from "../SortFiltrButtons/SortFiltrButtons";
 import { UsersData } from "../../consts/UsersData";
-import { AlertsTableRow } from "./AlertsTableRow";
 import { useEffect, useState } from "react";
+import { SortFiltrButtons } from "../SortFiltrButtons/SortFiltrButtons";
+import { Search } from "../Search/Search";
+import { AlertsTableRow } from "../AlertsPage/AlertsTableRow";
 
-export function AlertsPage({currentPage}) {
+export function ActionPage({currentPage}) {
   const [AlertsData, setAlertsData] = useState(UsersData);
   const [searchTerm, setSearchTerm] = useState("");
-  const [eventLog , setEventLog] = useState([])
   const sortByButtons = ['name' , 'site' , 'date']
 
   const searchKeys =
@@ -24,18 +22,6 @@ export function AlertsPage({currentPage}) {
   });
   };
 
-  const eventHandleClick = (event) => {
-    if(event === 'All'){
-      setEventLog([])
-    }
-    setEventLog((prevLog) => {
-      if (prevLog.includes(event)) {
-        return prevLog.filter((item) => item !== event);
-      } else {
-        return [...prevLog, event];
-      }
-    });
-  };
 
   useEffect(() => {
     const debounce = setTimeout(() => {
@@ -65,7 +51,6 @@ export function AlertsPage({currentPage}) {
       
       <SortFiltrButtons sortByButtons={sortByButtons} data={AlertsData} setData={setAlertsData} defaultData={UsersData}/>
 
-      <EventsLog eventLog={eventLog} setEventLog={setEventLog} eventHandleClick={eventHandleClick}/>
       <div className="table-container">
         <div className="table">
           <div className="table-row nav">

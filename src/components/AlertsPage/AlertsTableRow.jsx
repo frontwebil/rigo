@@ -62,7 +62,7 @@ export function AlertsTableRow({ el }) {
         <div
           className={`location ${el.location.type == "Enter" ? "enter" : ""} ${
             el.location.type == "Exit" ? "exit" : ""
-          } ${el.location.type == "Colleague" ? "colleague" : ""}`}
+          } ${el.location.type == "Colleague" ? "colleague" : ""} ${el.location.type == "Brake" ? "brake" : ""}`}
         >
           {el.location.type}
         </div>

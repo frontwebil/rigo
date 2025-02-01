@@ -230,71 +230,150 @@ export function WorkersInnerTime({
               </div>
             </div>
           </div>
-          {TimeData.map((el, index) => {
-            return <WorkersInnerTimeRow el={el} key={index} />;
-          })}
-          <div className="table">
-            <div className="table-row nav">
-              <div className="table-block nav" style={{ width: "10%" }}>Total Hours:</div>
-              <div className="table-block nav" style={{ width: "10%" }}></div>
-              <div className="table-block nav" style={{ width: "10%" }}></div>
-              <div className="table-block nav" style={{ width: "8%" }}>
-                {(() => {
-                  let total = TimeData.reduce(
-                    (acc, el) => acc + (Number(el["100"]) || 0),
-                    0
-                  );
-                  return total;
-                })()}
+          {(() => {
+            const weeks = [];
+            let currentWeek = [];
+
+            TimeData.forEach((el, index) => {
+              currentWeek.push(el);
+
+              // Додаємо підсумковий рядок після суботи
+              if (el.day === "Saturday" || index === TimeData.length - 1) {
+                weeks.push([...currentWeek]);
+                currentWeek = [];
+              }
+            });
+
+            return weeks.map((week, weekIndex) => (
+              <div key={weekIndex}>
+                {week.map((el, index) => (
+                  <WorkersInnerTimeRow el={el} key={`${weekIndex}-${index}`} />
+                ))}
+                <div
+                  className="table-row nav"
+                  style={{ padding: 0, background: "gray" }}
+                >
+                  <div className="table-block nav" style={{ width: "10%" }}>
+                    Weekly Total:
+                  </div>
+                  <div
+                    className="table-block nav"
+                    style={{ width: "10%" }}
+                  ></div>
+                  <div
+                    className="table-block nav"
+                    style={{ width: "10%" }}
+                  ></div>
+                  <div className="table-block nav" style={{ width: "8%" }}>
+                    {week.reduce(
+                      (acc, el) => acc + (Number(el["100"]) || 0),
+                      0
+                    )}
+                  </div>
+                  <div className="table-block nav" style={{ width: "8%" }}>
+                    {week.reduce(
+                      (acc, el) => acc + (Number(el["125"]) || 0),
+                      0
+                    )}
+                  </div>
+                  <div className="table-block nav" style={{ width: "8%" }}>
+                    {week.reduce(
+                      (acc, el) => acc + (Number(el["150"]) || 0),
+                      0
+                    )}
+                  </div>
+                  <div className="table-block nav" style={{ width: "8%" }}>
+                    {week.reduce(
+                      (acc, el) => acc + (Number(el["175"]) || 0),
+                      0
+                    )}
+                  </div>
+                  <div className="table-block nav" style={{ width: "8%" }}>
+                    {week.reduce(
+                      (acc, el) => acc + (Number(el["200"]) || 0),
+                      0
+                    )}
+                  </div>
+                  <div className="table-block nav" style={{ width: "10%" }}>
+                    {week.reduce(
+                      (acc, el) => acc + (Number(el.totalTime) || 0),
+                      0
+                    )}
+                  </div>
+                  <div
+                    className="table-block nav"
+                    style={{ width: "20%" }}
+                  ></div>
+                </div>
               </div>
-              <div className="table-block nav" style={{ width: "8%" }}>
-                {(() => {
-                  let total = TimeData.reduce(
-                    (acc, el) => acc + (Number(el["125"]) || 0),
-                    0
-                  );
-                  return total;
-                })()}
+            ));
+          })()}
+          {!isWeekCurrent && (
+            <div className="table">
+              <div className="table-row nav">
+                <div className="table-block nav" style={{ width: "10%" }}>
+                  Total Hours:
+                </div>
+                <div className="table-block nav" style={{ width: "10%" }}></div>
+                <div className="table-block nav" style={{ width: "10%" }}></div>
+                <div className="table-block nav" style={{ width: "8%" }}>
+                  {(() => {
+                    let total = TimeData.reduce(
+                      (acc, el) => acc + (Number(el["100"]) || 0),
+                      0
+                    );
+                    return total;
+                  })()}
+                </div>
+                <div className="table-block nav" style={{ width: "8%" }}>
+                  {(() => {
+                    let total = TimeData.reduce(
+                      (acc, el) => acc + (Number(el["125"]) || 0),
+                      0
+                    );
+                    return total;
+                  })()}
+                </div>
+                <div className="table-block nav" style={{ width: "8%" }}>
+                  {(() => {
+                    let total = TimeData.reduce(
+                      (acc, el) => acc + (Number(el["150"]) || 0),
+                      0
+                    );
+                    return total;
+                  })()}
+                </div>
+                <div className="table-block nav" style={{ width: "8%" }}>
+                  {(() => {
+                    let total = TimeData.reduce(
+                      (acc, el) => acc + (Number(el["175"]) || 0),
+                      0
+                    );
+                    return total;
+                  })()}
+                </div>
+                <div className="table-block nav" style={{ width: "8%" }}>
+                  {(() => {
+                    let total = TimeData.reduce(
+                      (acc, el) => acc + (Number(el["200"]) || 0),
+                      0
+                    );
+                    return total;
+                  })()}
+                </div>
+                <div className="table-block nav" style={{ width: "10%" }}>
+                  {(() => {
+                    let total = TimeData.reduce(
+                      (acc, el) => acc + (Number(el.totalTime) || 0),
+                      0
+                    );
+                    return total;
+                  })()}
+                </div>
+                <div className="table-block nav" style={{ width: "20%" }}></div>
               </div>
-              <div className="table-block nav" style={{ width: "8%" }}>
-                {(() => {
-                  let total = TimeData.reduce(
-                    (acc, el) => acc + (Number(el["150"]) || 0),
-                    0
-                  );
-                  return total;
-                })()}
-              </div>
-              <div className="table-block nav" style={{ width: "8%" }}>
-                {(() => {
-                  let total = TimeData.reduce(
-                    (acc, el) => acc + (Number(el["175"]) || 0),
-                    0
-                  );
-                  return total;
-                })()}
-              </div>
-              <div className="table-block nav" style={{ width: "8%" }}>
-                {(() => {
-                  let total = TimeData.reduce(
-                    (acc, el) => acc + (Number(el["200"]) || 0),
-                    0
-                  );
-                  return total;
-                })()}
-              </div>
-              <div className="table-block nav" style={{ width: "10%" }}>
-                {(() => {
-                  let total = TimeData.reduce(
-                    (acc, el) => acc + (Number(el.totalTime) || 0),
-                    0
-                  );
-                  return total;
-                })()}
-              </div>
-              <div className="table-block nav" style={{ width: "20%" }}></div>
             </div>
-          </div>
+          )}
         </div>
       </div>
     </div>
