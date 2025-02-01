@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import { UsersData } from "../../consts/UsersData";
 import { sitesData } from "../../consts/sitesData";
 import { useState } from "react";
@@ -9,8 +9,12 @@ import { SitesInnerEmployees } from "../SitesInnerEmployees/SitesInnerEmployees"
 import { SitesInnerAlerts } from "../SitesInnerAlerts/SitesInnerAlerts";
 
 export function SitesInner({ currentPage }) {
+  const stateFromLink = useLocation();
+  const tabFromLink = stateFromLink.state?.currentTab
+
   const { id } = useParams();
   const currentData = sitesData.find((item) => item.id === id);
+
   const currentEmployees = UsersData.find((item) => item.id === id);
   const currentDataBasic = currentData?.sitesBasic;
   const currentDataTime = currentData?.sitesWorkedTime;
@@ -18,7 +22,7 @@ export function SitesInner({ currentPage }) {
   const currentAlertData = currentData.sitesAlerts;
   const currentEmployeesData = currentEmployees?.sitesEmployees;
 
-  const [activeTab, setActiveTab] = useState("Basic");
+  const [activeTab, setActiveTab] = useState(tabFromLink ? tabFromLink : "Basic");
 
   const tabs = [
     "Basic",
@@ -40,7 +44,6 @@ export function SitesInner({ currentPage }) {
     activeTab,
   ];
 
-  console.log(currentData)
 
   const getTabContent = (tab) => {
     switch (tab) {

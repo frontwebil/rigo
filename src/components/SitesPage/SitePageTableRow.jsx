@@ -10,13 +10,19 @@ export function SitePageTableRow({ el }) {
         {el.nameObject || "N/A"}
       </div>
       <div className="table-block workers-block-site" style={{ width: "9%" }}>
-        {el.workers || "N/A"}
+        <Link to={`/sites/${el.id}`} state={{ currentTab: "Employees" }}>
+          {el.workers || "N/A"}
+        </Link>
       </div>
       <div className="table-block absent-block-site" style={{ width: "8%" }}>
-        {el.absent || "N/A"}
+        <Link to={`/sites/${el.id}`} state={{ currentTab: "Employees" }}>
+          {el.absent || "N/A"}
+        </Link>
       </div>
       <div className="table-block present-block-site" style={{ width: "8%" }}>
-        {el.present || "N/A"}
+        <Link to={`/sites/${el.id}`} state={{ currentTab: "Employees" }}>
+          {el.present || "N/A"}
+        </Link>
       </div>
       <div className="table-block manager-block-site" style={{ width: "15%" }}>
         {el.manager || "N/A"}

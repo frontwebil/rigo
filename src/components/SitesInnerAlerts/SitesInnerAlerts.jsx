@@ -14,7 +14,6 @@ export function SitesInnerAlerts({
   activeTab,
 }) {
   const [actionsData, setActionsData] = useState(data);
-  console.log(actionsData);
   const [searchTerm, setSearchTerm] = useState("");
   const sortByButtons = ["name", "tax", "customer", "manager"];
   const [eventLog, setEventLog] = useState([]);
