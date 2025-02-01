@@ -12,7 +12,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 20px;
   max-width: 450px;
   width: 100%;
 }
@@ -56,7 +56,7 @@
 .SitesInnerBasic-content-block-title {
   font-size: 28px;
   font-weight: bold;
-  padding-bottom: 15px;
+  /* padding-bottom: 15px; */
 }
 .SitesInnerBasic-content-row {
   display: flex;

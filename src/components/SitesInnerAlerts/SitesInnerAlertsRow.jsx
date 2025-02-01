@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export function SitesInnerAlertsRow({ el }) {
   return (
     <div className="table-row ">
@@ -8,7 +10,7 @@ export function SitesInnerAlertsRow({ el }) {
         <img src={el.photo} alt="" />
       </div>
       <div className="table-block name-inner" style={{ width: "13%" }}>
-        {el.name}
+        <Link to={`/workers/${el.id}`}>{el.name}</Link>
       </div>
       <div className="table-block block-site-inner" style={{ width: "8%" }}>
         {el.customer}

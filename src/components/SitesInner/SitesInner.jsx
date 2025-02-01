@@ -40,6 +40,8 @@ export function SitesInner({ currentPage }) {
     activeTab,
   ];
 
+  console.log(currentData)
+
   const getTabContent = (tab) => {
     switch (tab) {
       case "Basic":

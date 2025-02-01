@@ -42,10 +42,10 @@ export function SitesPage({ currentPage }) {
       <div className="table-container">
         <div className="table">
           <div className="table-row nav">
-            <div className="table-block nav" style={{ width: "10%" }}>
+            <div className="table-block nav" style={{ width: "5%" }}>
               ID
             </div>
-            <div className="table-block nav" style={{ width: "19%" }}>
+            <div className="table-block nav" style={{ width: "24%" }}>
               Name
             </div>
             <div className="table-block nav" style={{ width: "9%" }}>

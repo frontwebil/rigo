@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { CiShare2 } from "react-icons/ci";
 import { LuPrinter } from "react-icons/lu";
-import { MdOutlineMoreVert } from "react-icons/md";
 import { Link } from "react-router-dom";
 
 export function SortFiltrButtons({
@@ -12,6 +11,8 @@ export function SortFiltrButtons({
   addCustomers,
   handleDownloadPdf,
 }) {
+  const checkBoxFiltersOptions = ["country", "status", "companyName", "agent" , "insurance" , "manager" , "customer"];
+  const [currentAction, setCurrentAction] = useState("All");
   const [isOpenMore, setIsOpenMore] = useState(false);
   const [isSorted, setIsSorted] = useState(false);
   const [isFiltered, setIsFiltered] = useState(false);
@@ -19,38 +20,35 @@ export function SortFiltrButtons({
   const [isOpenFiltr, setIsOpenFiltr] = useState(false);
   const [sortBy, setSortBy] = useState({ sort: sortByButtons[0], asc: true });
   const [filters, setFilters] = useState({});
-  const [checkboxFilters, setCheckboxFilters] = useState({
-    status: new Set(),
-    country: new Set(),
-    role: new Set(),
-    city: new Set(),
-  });
+  const [checkboxFilters, setCheckboxFilters] = useState(
+    checkBoxFiltersOptions.reduce((acc, key) => {
+      acc[key] = new Set();
+      return acc;
+    }, {})
+  );
 
-  const [filterOptions, setFilterOptions] = useState({
-    status: new Set(),
-    country: new Set(),
-    role: new Set(),
-    city: new Set(),
-  });
+  const [filterOptions, setFilterOptions] = useState(
+    checkBoxFiltersOptions.reduce(
+      (acc, key) => ({ ...acc, [key]: new Set() }),
+      {}
+    )
+  );
 
   useEffect(() => {
-    const options = {
-      status: new Set(defaultData.map((item) => item.status)),
-      country: new Set(defaultData.map((item) => item.country)),
-      role: new Set(defaultData.map((item) => item.role)),
-      city: new Set(defaultData.map((item) => item.city)),
-    };
+    const options = checkBoxFiltersOptions.reduce((acc, key) => {
+      acc[key] = new Set(defaultData.map((item) => item[key]));
+      return acc;
+    }, {});
     setFilterOptions(options);
 
     const initialFilters = Object.fromEntries(
       sortByButtons.map((button) => [
         button,
-        ["status", "country", "role", "city"].includes(button)
-          ? []
-          : { from: "", to: "" },
+        checkBoxFiltersOptions.includes(button) ? [] : { from: "", to: "" },
       ])
     );
     setFilters(initialFilters);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [defaultData, sortByButtons]);
 
   const handleCheckboxChange = (field, value) => {
@@ -66,7 +64,7 @@ export function SortFiltrButtons({
   };
 
   const handleFilterChange = (field, type, value) => {
-    if (!["status", "country", "role", "city"].includes(field)) {
+    if (!checkBoxFiltersOptions.includes(field)) {
       setFilters((prev) => ({
         ...prev,
         [field]: { ...prev[field], [type]: value },
@@ -76,7 +74,7 @@ export function SortFiltrButtons({
 
   const handleFilterAction = () => {
     const filteredData = [...defaultData].filter((item) => {
-      for (const field of ["status", "country", "role", "city"]) {
+      for (const field of checkBoxFiltersOptions) {
         if (
           checkboxFilters[field].size > 0 &&
           !checkboxFilters[field].has(item[field])
@@ -86,7 +84,7 @@ export function SortFiltrButtons({
       }
 
       return Object.entries(filters).every(([field, range]) => {
-        if (["status", "country", "role", "city"].includes(field)) return true;
+        if (checkBoxFiltersOptions.includes(field)) return true;
 
         let value = item[field];
         let from = range.from;
@@ -125,34 +123,86 @@ export function SortFiltrButtons({
     setSortBy((prev) => ({ ...prev, asc: e.target.value === "asc" }));
   };
 
+  // const handleSortAction = () => {
+  //   const newData = [...data].sort((a, b) => {
+  //     const field = sortBy.sort;
+  //     const isAscending = sortBy.asc;
+  //     let valueA = a[field];
+  //     let valueB = b[field];
+  //     let result;
+
+  //     const isDate = (val) => /^\d{2}-\d{2}-\d{4}$/.test(val);
+
+  //     if (isDate(valueA) && isDate(valueB)) {
+  //       valueA = new Date(valueA.split("-").reverse().join("-"));
+  //       valueB = new Date(valueB.split("-").reverse().join("-"));
+  //     } else if (!isNaN(valueA) && !isNaN(valueB)) {
+  //       valueA = +valueA;
+  //       valueB = +valueB;
+  //     }
+
+  //     if (typeof valueA === "string" && typeof valueB === "string") {
+  //       result = valueA.localeCompare(valueB);
+  //     } else {
+  //       result = (valueA || 0) - (valueB || 0);
+  //     }
+
+  //     return isAscending ? result : -result;
+  //   });
+
+  //   setIsSorted(true);
+  //   setIsOpenSort(false);
+  //   setData(newData);
+  // };
+
+  const compareDates = (dateA, dateB) => {
+    const getDateString = (date) => {
+      const year = date.year;
+      const month = date.month.padStart(2, "0");
+      const day = date.day.padStart(2, "0");
+      const time = date.time || "00:00"; // Якщо часу немає, використовуємо "00:00"
+      return `${year}-${month}-${day} ${time}`;
+    };
+
+    const dateStrA = getDateString(dateA);
+    const dateStrB = getDateString(dateB);
+
+    return new Date(dateStrA) - new Date(dateStrB);
+  };
+
   const handleSortAction = () => {
+    console.log(data);
     const newData = [...data].sort((a, b) => {
       const field = sortBy.sort;
       const isAscending = sortBy.asc;
-      let valueA = a[field];
-      let valueB = b[field];
       let result;
 
-      const isDate = (val) => /^\d{2}-\d{2}-\d{4}$/.test(val);
-
-      if (isDate(valueA) && isDate(valueB)) {
-        valueA = new Date(valueA.split("-").reverse().join("-"));
-        valueB = new Date(valueB.split("-").reverse().join("-"));
-      } else if (!isNaN(valueA) && !isNaN(valueB)) {
-        valueA = +valueA;
-        valueB = +valueB;
-      }
-
-      if (typeof valueA === "string" && typeof valueB === "string") {
-        result = valueA.localeCompare(valueB);
+      if (field === "date") {
+        result = compareDates(a.date, b.date);
+      } else if (field === "netto" || field === "brutto") {
+        const valueA = parseInt(a.workedTime[field].split(":")[0], 10);
+        const valueB = parseInt(b.workedTime[field].split(":")[0], 10);
+        result = valueA - valueB;
       } else {
-        result = (valueA || 0) - (valueB || 0);
+        let valueA = a[field];
+        let valueB = b[field];
+
+        if (!isNaN(valueA) && !isNaN(valueB)) {
+          valueA = +valueA;
+          valueB = +valueB;
+        }
+
+        if (typeof valueA === "string" && typeof valueB === "string") {
+          result = valueA.localeCompare(valueB);
+        } else {
+          result = (valueA || 0) - (valueB || 0);
+        }
       }
 
       return isAscending ? result : -result;
     });
 
-    setIsSorted(true);
+    console.log(newData);
     setIsOpenSort(false);
     setData(newData);
   };
@@ -162,18 +212,16 @@ export function SortFiltrButtons({
       Object.fromEntries(
         sortByButtons.map((button) => [
           button,
-          ["status", "country", "role", "city"].includes(button)
-            ? []
-            : { from: "", to: "" },
+          checkBoxFiltersOptions.includes(button) ? [] : { from: "", to: "" },
         ])
       )
     );
-    setCheckboxFilters({
-      status: new Set(),
-      country: new Set(),
-      role: new Set(),
-      city: new Set(),
-    });
+    setCheckboxFilters(
+      checkBoxFiltersOptions.reduce((acc, key) => {
+        acc[key] = new Set();
+        return acc;
+      }, {})
+    );
     setIsFiltered(false);
     setData(defaultData);
     setIsSorted(false);
@@ -200,16 +248,39 @@ export function SortFiltrButtons({
               Reset Filters
             </button>
           )}
+          <div className="flex-actions">
+            <button
+              onClick={() => setCurrentAction("Site")}
+              className={`${currentAction === "Site" && "activeAction"}`}
+            >
+              Site
+            </button>
+            <button
+              onClick={() => setCurrentAction("Customer")}
+              className={`${currentAction === "Customer" && "activeAction"}`}
+            >
+              Customer
+            </button>
+            <button
+              onClick={() => setCurrentAction("All")}
+              className={`${currentAction === "All" && "activeAction"}`}
+            >
+              All
+            </button>
+          </div>
         </div>
         <div className="SitesInnerNavButtons-buttons">
+          <button className="SitesInnerNavButton show-hide">Date</button>
           <button className="SitesInnerNavButton show-hide">
             Show\Hide Column
           </button>
-          <MdOutlineMoreVert
+          <img
+            src="/icons/more.png"
+            alt=""
+            className="SitesInnerNavButtons-more"
             onClick={() => {
               setIsOpenMore(!isOpenMore);
             }}
-            className="SitesInnerNavButtons-more"
           />
         </div>
         {isOpenSort && (
@@ -243,7 +314,13 @@ export function SortFiltrButtons({
                 </select>
               </div>
             </div>
-            <button className="Sort-button" onClick={handleSortAction}>
+            <button
+              className="Sort-button"
+              onClick={() => {
+                setIsSorted(true);
+                handleSortAction();
+              }}
+            >
               Sort
             </button>
             <button
@@ -263,7 +340,7 @@ export function SortFiltrButtons({
                     <p style={{ textTransform: "capitalize" }}>
                       {field.replace(/([a-z])([A-Z])/g, "$1 $2")}
                     </p>
-                    {["status", "country", "role", "city"].includes(field) ? (
+                    {checkBoxFiltersOptions.includes(field) ? (
                       <div className="checkbox-group">
                         {Array.from(filterOptions[field]).map((option, j) => (
                           <label key={j} className="checkbox-label">

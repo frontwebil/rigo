@@ -16,8 +16,8 @@ export function Header() {
     { name: "Managers", linkTo: "/notFound" },
     { name: "Real Estate", linkTo: "/notFound", wide: true },
     { name: "Worked Time", linkTo: "/workedTime", wide: true },
-    { name: "Insurance", linkTo: "/notFound" },
-    { name: "Banking", linkTo: "/notFound" },
+    { name: "Insurance", linkTo: "/insurance" },
+    { name: "Banking", linkTo: "/banking" },
   ];
 
   const location = useLocation(); // Поточний шлях

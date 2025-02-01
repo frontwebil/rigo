@@ -10,7 +10,7 @@
   justify-content: space-between;
 }
 .SitesInnerNav-button {
-  background-color: #434343;
+  background-color: #434343ff;
   max-width: 185px;
   width: 100%;
   text-align: center;
@@ -23,5 +23,5 @@
 }
 
 .SitesInnerNav-button.active {
-  background-color: #EF4255;
+  background-color: #ef4255ff;
 }

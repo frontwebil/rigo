@@ -3,7 +3,6 @@ import { SitesInnerEmployeesTableRow } from "../SitesInnerEmployees/SitesInnerEm
 import { UsersData } from "../../consts/UsersData";
 import { Search } from "../Search/Search";
 import { SortFiltrButtons } from "../SortFiltrButtons/SortFiltrButtons";
-import { WorkerEventLog } from "../WorkerEventLog/WorkerEventLog";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
 
@@ -12,103 +11,62 @@ export function WorkersPage({ currentPage }) {
     return UsersData.map((el) => el.sitesEmployees).flat();
   });
   const [allWorkersData, setAllWorkersData] = useState(data);
-  const [eventLog, setEventLog] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
-  const sortByButtons = [
-    "realEstate",
-    "insurance",
-    "country",
-    "customer",
-    "manager",
-    "tax",
-  ];
+  const sortByButtons = ["realEstate", "insurance", "country" , "manager" , "customer"];
 
   const printRef = useRef(null);
 
-const handleDownloadPdf = async () => {
-  const element = printRef.current;
-  if (!element) return;
+  const handleDownloadPdf = async () => {
+    const element = printRef.current;
+    if (!element) return;
 
-  const canvas = await html2canvas(element, { 
-    scale: 1, // Adjust scale if needed
-    useCORS: true,
-    logging: false
-  });
-  const data = canvas.toDataURL("image/png");
+    const canvas = await html2canvas(element, {
+      scale: 1, // Adjust scale if needed
+      useCORS: true,
+      logging: false,
+    });
+    const data = canvas.toDataURL("image/png");
 
-  const pdf = new jsPDF({
-    orientation: "portrait",
-    unit: "px",
-    format: "a4",
-  });
+    const pdf = new jsPDF({
+      orientation: "portrait",
+      unit: "px",
+      format: "a4",
+    });
 
-  const imgProperties = pdf.getImageProperties(data);
-  const pdfWidth = pdf.internal.pageSize.getWidth();
-  const pdfHeight = pdf.internal.pageSize.getHeight();
-  const ratio = pdfWidth / imgProperties.width;
-  const imgHeight = imgProperties.height * ratio;
+    const imgProperties = pdf.getImageProperties(data);
+    const pdfWidth = pdf.internal.pageSize.getWidth();
+    const pdfHeight = pdf.internal.pageSize.getHeight();
+    const ratio = pdfWidth / imgProperties.width;
+    const imgHeight = imgProperties.height * ratio;
 
-  // More precise page calculation
-  const totalPages = Math.ceil(imgHeight / pdfHeight);
+    // More precise page calculation
+    const totalPages = Math.ceil(imgHeight / pdfHeight);
 
-  for (let i = 0; i < totalPages; i++) {
-    if (i > 0) {
-      pdf.addPage();
+    for (let i = 0; i < totalPages; i++) {
+      if (i > 0) {
+        pdf.addPage();
+      }
+
+      pdf.addImage(data, "PNG", 0, -(pdfHeight * i), pdfWidth, imgHeight);
     }
 
-    pdf.addImage(
-      data, 
-      "PNG", 
-      0, 
-      -(pdfHeight * i), 
-      pdfWidth, 
-      imgHeight
-    );
-  }
+    pdf.save("document.pdf");
+  };
 
-  pdf.save("document.pdf");
-};
-
+  
+  const searchKeys =
+    data.length > 0 && typeof data[0] === "object" ? Object.keys(data[0]) : [];
   const SearchInData = (searchText, list) => {
     if (!searchText) return list;
     const cleanSearchText = searchText.replace(/-/g, "").toLowerCase();
-    return list.filter(
-      ({
-        name,
-        customer,
-        manager,
-        realEstate,
-        country,
-        passport,
-        tax,
-        phone,
-      }) => {
-        return (
-          name.toLowerCase().includes(cleanSearchText) ||
-          customer.toLowerCase().includes(cleanSearchText) ||
-          realEstate.toLowerCase().includes(cleanSearchText) ||
-          country.toLowerCase().includes(cleanSearchText) ||
-          passport.toLowerCase().includes(cleanSearchText) ||
-          tax.toLowerCase().includes(cleanSearchText) ||
-          phone.toLowerCase().includes(cleanSearchText) ||
-          manager.toLowerCase().includes(cleanSearchText)
-        );
-      }
-    );
-  };
-
-  const eventHandleClick = (event) => {
-    if (event === "All") {
-      setEventLog([]);
-    }
-    setEventLog((prevLog) => {
-      if (prevLog.includes(event)) {
-        return prevLog.filter((item) => item !== event);
-      } else {
-        return [...prevLog, event];
-      }
+    return list.filter((item) => {
+      return searchKeys.some((key) => {
+        const value = String(item[key]).toLowerCase();
+        return value.includes(cleanSearchText);
+      });
     });
   };
+
 
   useEffect(() => {
     const debounce = setTimeout(() => {
@@ -116,18 +74,12 @@ const handleDownloadPdf = async () => {
       if (searchTerm) {
         filteredData = SearchInData(searchTerm, filteredData);
       }
-
-      if (eventLog.length > 0) {
-        filteredData = filteredData.filter((alert) =>
-          eventLog.includes(alert.insurance)
-        );
-      }
-
       setAllWorkersData(filteredData);
     }, 100);
 
     return () => clearTimeout(debounce);
-  }, [searchTerm, data, eventLog]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchTerm, data]);
   return (
     <div>
       <Search
@@ -141,11 +93,6 @@ const handleDownloadPdf = async () => {
         setData={setAllWorkersData}
         defaultData={UsersData.map((el) => el.sitesEmployees).flat()}
         handleDownloadPdf={handleDownloadPdf}
-      />
-      <WorkerEventLog
-        eventLog={eventLog}
-        setEventLog={setEventLog}
-        eventHandleClick={eventHandleClick}
       />
 
       <div ref={printRef} className="table-container">

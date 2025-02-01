@@ -1,21 +1,34 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export function Search({ searchTerm, setSearchTerm, currentPage }) {
   const { linkTo, names } = currentPage;
-
+  const navigate = useNavigate();
   return (
     <section className="Search">
       <div className="search-container" style={{ justifyContent: "center" }}>
+        <div className="BackTo">
+            <div className="BackTo-button" onClick={() => navigate(-1)}>
+              <img src="/icons/arrow.png" alt="" style={{ transform: "scaleX(-1)" }} className="navBackNext"/>
+              <p>Back</p>
+            </div>
+          </div>
         <div className="search-input-container">
           <input
-            value={searchTerm}
             type="text"
-            name=""
-            id=""
             placeholder="Search"
-            onChange={(e) => setSearchTerm(e.target.value)}
+            className="content-input-inner"
+            value={searchTerm}
+            onChange={(e) => {
+              setSearchTerm(e.target.value);
+            }}
           />
         </div>
+          <div className="BackTo">
+            <div className="BackTo-button" onClick={() => navigate(+1)}>
+              <p>Next</p>
+              <img src="/icons/arrow.png" alt="" className="navBackNext"/>
+            </div>
+          </div>
 
       </div>
       <div className="current-page" style={{ textTransform: "capitalize" }}>
@@ -25,7 +38,7 @@ export function Search({ searchTerm, setSearchTerm, currentPage }) {
           className={`linkToAll ${names.length == 2 ? "link-current-page" : ""}`}
         >
           {currentPage.names[1]}
-        </Link>{" "}
+        </Link>{""}
         <span className={`${names.length == 3 ? "link-current-page" : ""}`}>
           {names[2] && `- ${names[2]}`}
         </span>

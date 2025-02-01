@@ -22,14 +22,14 @@
 .table-row.nav {
   display: flex;
   padding: 10px 0;
-  background-color: #f0f4fc;
+  background-color: #e9f0feff;
   text-align: center;
   font-weight: 700;
 }
 .table-block {
   padding: 8px;
   text-align: left;
-  border: 1px solid #f0f4fc;
+  border: 1px solid #e9f0feff;
   word-wrap: break-word;
   overflow-wrap: break-word;
   white-space: normal;
@@ -154,7 +154,7 @@
 .name-inner {
   display: flex;
   align-items: center;
-  background-color: #f0f4fc;
+  background-color: #f8fafdff;
   text-decoration: underline;
 }
 
@@ -189,4 +189,129 @@
   align-items: center;  
   flex-wrap: wrap;
   gap: 10px;
+}
+
+.location.Active {
+  background: #d8ecbc;
+}
+.location.Canceled {
+  background: #f4d1d1;
+}
+.location.Pending {
+  background: #f6ebb5;
+}
+.location.Empty {
+  background: #e9ecf0;
+}
+
+.InfoTableTitle {
+  max-width: 1340px;
+  margin: 0 auto;
+  padding: 10px;
+}
+.InfoTableTitle-container {
+  display: flex;
+  justify-content: center;
+  background-color: #e0ccec;
+  padding: 10px;
+}
+.InfoTableTitle-block {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+  max-width: 430px;
+  width: 100%;
+}
+
+.InfoTableTitle-block-text {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.InfoTable {
+  background-color: #fff;
+  min-height: 40vh;
+  padding-bottom: 20px;
+}
+.InfoTable-container {
+  max-width: 1340px;
+  margin: 0 auto;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+.InfoTable-block {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 430px;
+  padding: 10px 15px;
+  width: 100%;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+}
+
+.InfoTable-block-row {
+  display: flex;
+  justify-content: space-between;
+}
+.InfoTable-text {
+  font-size: 16px;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+
+.BackTo-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 10px;
+  cursor: pointer;
+  width: 100px;
+  color: rgb(82, 81, 81);
+  justify-content: center;
+}
+
+.navBackNext{
+  width: 30px;
+  height: 30px;
+}
+
+.info-button {
+  width: 40px;
+  cursor: pointer;
+}
+
+.dropdown-menu{
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 5px;
+  z-index: 5;
+  max-height:80px;
+  overflow-y:scroll;
+  scrollbar-width: thin
+}
+
+.dropdown-menu div{
+  border-bottom: 1px solid black;
+}
+.dropdown-menu div:last-child{
+  border-bottom: 1px solid transparent;
+}
+
+.documentBasicImg{
+  max-width:80px;
 }

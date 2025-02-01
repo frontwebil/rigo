@@ -42,7 +42,7 @@
   text-align: center;
   color: #000000;
   padding: 10px 2px;
-  border: 1px solid #bebebe;
+  border: 1px solid #b7b7b7ff;
   font-size: 12px;
   transition: 0.5s ease all;
 }
@@ -52,7 +52,8 @@
 }
 
 .nav-button.active {
-  background-color: #536aff;
+  background-color: #4285f4ff;
+  border: 1px solid transparent;
   color: #ffffff;
 }
 
@@ -151,6 +152,7 @@
 
 .mobile-exit-button {
   background-color: #15882e;
+  border: 1px solid transparent;
   color: #ffffff;
   padding: 5px 10px;
   border-radius: 10px;

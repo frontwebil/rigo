@@ -7,6 +7,10 @@ import { SitesInner } from "./components/SitesInner/SitesInner.jsx";
 import { PageNotFound } from "./components/InDeveloping/InDeveloping.jsx";
 import { WorkersPage } from "./components/WorkersPage/WorkersPage.jsx";
 import { WorkersInner } from "./components/WorkersInner/WorkersInner.jsx";
+import InsurancePage from "./components/InsurancePage/InsurancePage.jsx";
+import { CustomerDetails } from "./components/InsurancePage/СustomerInfo/СustomerDetails.jsx";
+import { BankingPage } from "./components/BankingPage/BankingPage.jsx";
+import { BankingInnerTime } from "./components/BankingPage/BankingInnerTime.jsx";
 
 export const router = createBrowserRouter([
   {
@@ -46,7 +50,22 @@ export const router = createBrowserRouter([
         path: "/notFound",
         element: <PageNotFound/>
       },
-
+      {
+        path: "/insurance",
+        element: <InsurancePage currentPage={{linkTo:'/insurance' , names:["Insurance","All Insurance"]}}/>
+      },
+      {
+        path: "/insuranceCustomer/:id",
+        element: <CustomerDetails currentPage={{linkTo:'/insurance' , names:["Insurance","All Insurance"]}}/>
+      },
+      {
+        path: "/banking",
+        element: <BankingPage currentPage={{linkTo:'/banking' , names:["Banking","All Workers"]}}/>
+      },
+      {
+        path: "/banking/WorkedTime/:id",
+        element: <BankingInnerTime currentPage={{linkTo:'/banking' , names:["Banking","All Workers","WorkedTime"]}}/>
+      },
     ],
   },
 ]);

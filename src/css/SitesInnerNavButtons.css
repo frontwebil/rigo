@@ -21,7 +21,11 @@
   color: #fff;
 }
 .Tag {
-  background-color: #983CDC;
+  background-color: #903edfff;
+  color: #fff;
+}
+.Edit{
+  background: #1b97f3ff;
   color: #fff;
 }
 .show-hide{
@@ -29,7 +33,7 @@
 }
 .SitesInnerNavButtons-more {
   background-color: #00CE26;
-  border: 2px solid #BEBEBE;
+  padding: 5px;
   width: 35px;
   height: 35px;
   color: #fff;

@@ -31,16 +31,15 @@
   justify-content: space-between;
   display: flex;
   align-items: center;
-  background-color: #F8F4FC;
+  background-color: #f8fafdff;
 }
 
 .house-info{
   width: 40px;
-  padding: 6px;
+  padding: 5px;
   background-color: #d9d9d9;
-  color: rgb(82, 77, 77);
   cursor: pointer;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 
 .manager-block {
@@ -48,7 +47,7 @@
 }
 .date-block {
   /* padding-top: 25px; */
-  background-color: #F8F4FC;
+  background-color: #f8fafdff;
   display: flex;
   gap: 5px;
   align-items: center;
@@ -64,19 +63,19 @@
 
 .edit-block {
   width: 40px;
-  padding: 6px;
+  padding: 7px;
   background-color: #b0e0ec;
   color: rgb(82, 77, 77);
   cursor: pointer;
-  border-radius: 20px;
+  border-radius: 15px;
 }
 .recent-block {
   width: 40px;
-  padding: 6px;
+  padding:7px;
   background-color: #b6dcc2;
   color: rgb(82, 77, 77);
   cursor: pointer;
-  border-radius: 20px;
+  border-radius: 15px;
 }
 
 .site-location{

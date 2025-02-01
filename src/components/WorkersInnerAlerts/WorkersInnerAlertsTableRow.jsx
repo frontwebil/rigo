@@ -1,6 +1,3 @@
-import { HiPencilAlt } from "react-icons/hi";
-import { IoChatboxEllipsesOutline } from "react-icons/io5";
-
 export function WorkersInnerAlertsTableRow({ el }) {
   return (
     <div className="table-row">
@@ -36,11 +33,16 @@ export function WorkersInnerAlertsTableRow({ el }) {
         </p>
       </div>
       <div className="table-block block-site-inner" style={{ width: "5%" }}>
-        {el.chat && <IoChatboxEllipsesOutline style={{fontSize:'25px' , cursor:'pointer'}}/>}
+        {el.chat && (
+          <img
+            src="/icons/chat.png"
+            style={{ width: "25px", cursor: "pointer" }}
+          />
+        )}
       </div>
       <div className="table-block date-block" style={{ width: "20%" }}>
         {`${el.date.day}.${el.date.month}.${el.date.year}`}
-        <HiPencilAlt className="edit-block" />
+        <img src="/icons/editDate.png" alt="" className="edit-block" />
       </div>
     </div>
   );

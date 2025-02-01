@@ -3,6 +3,7 @@ import { Search } from "../Search/Search";
 import { SitesInnerNav } from "../SitesInnerNav/SitesInnerNav";
 import { SitesInnerSortButtons } from "../SitesInnerSortButtons/SitesInnerSortButtons";
 import { SitesInnerAlertsRow } from "./SitesInnerAlertsRow";
+import { EventsLog } from "../EventsLog/EventsLog";
 
 export function SitesInnerAlerts({
   data,
@@ -12,11 +13,11 @@ export function SitesInnerAlerts({
   tabs,
   activeTab,
 }) {
-
   const [actionsData, setActionsData] = useState(data);
-  console.log(actionsData)
+  console.log(actionsData);
   const [searchTerm, setSearchTerm] = useState("");
   const sortByButtons = ["name", "tax", "customer", "manager"];
+  const [eventLog, setEventLog] = useState([]);
 
   const SearchInData = (searchText, list) => {
     if (!searchText) return list;
@@ -28,6 +29,19 @@ export function SitesInnerAlerts({
         tax.toLowerCase().includes(cleanSearchText) ||
         manager.toLowerCase().includes(cleanSearchText)
       );
+    });
+  };
+
+  const eventHandleClick = (event) => {
+    if (event === "All") {
+      setEventLog([]);
+    }
+    setEventLog((prevLog) => {
+      if (prevLog.includes(event)) {
+        return prevLog.filter((item) => item !== event);
+      } else {
+        return [...prevLog, event];
+      }
     });
   };
 
@@ -59,6 +73,12 @@ export function SitesInnerAlerts({
         data={actionsData}
         setData={setActionsData}
       />
+      <EventsLog
+        eventLog={eventLog}
+        setEventLog={setEventLog}
+        eventHandleClick={eventHandleClick}
+      />
+
       <div className="table-container">
         <div className="table">
           <div className="table-row nav">

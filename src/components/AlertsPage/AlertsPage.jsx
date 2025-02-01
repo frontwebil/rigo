@@ -9,24 +9,19 @@ export function AlertsPage({currentPage}) {
   const [AlertsData, setAlertsData] = useState(UsersData);
   const [searchTerm, setSearchTerm] = useState("");
   const [eventLog , setEventLog] = useState([])
-  const sortByButtons = ['name' , 'site' , 'manager' , 'date']
+  const sortByButtons = ['name' , 'site' , 'date']
 
-
+  const searchKeys =
+  UsersData.length > 0 && typeof UsersData[0] === "object" ? Object.keys(UsersData[0]) : [];
   const SearchInData = (searchText, list) => {
-    if (!searchText) return list;
-
-    const cleanSearchText = searchText.replace(/-/g, "").toLowerCase();
-
-    return list.filter(({ name, phone, site, manager }) => {
-      const cleanPhone = phone.replace(/-/g, "");
-
-      return (
-        name.toLowerCase().includes(cleanSearchText) ||
-        cleanPhone.includes(cleanSearchText) ||
-        site.toLowerCase().includes(cleanSearchText) ||
-        manager.toLowerCase().includes(cleanSearchText)
-      );
+  if (!searchText) return list;
+  const cleanSearchText = searchText.replace(/-/g, "").toLowerCase();
+  return list.filter((item) => {
+    return searchKeys.some((key) => {
+      const value = String(item[key]).toLowerCase();
+      return value.includes(cleanSearchText);
     });
+  });
   };
 
   const eventHandleClick = (event) => {
@@ -46,11 +41,11 @@ export function AlertsPage({currentPage}) {
     const debounce = setTimeout(() => {
       let filteredData = UsersData;
   
-      if (eventLog.length > 0) {
-        filteredData = filteredData.filter(alert =>
-          eventLog.includes(alert.location.type)
-        );
-      }
+      // if (eventLog.length > 0) {
+      //   filteredData = filteredData.filter(alert =>
+      //     eventLog.includes(alert.location.type)
+      //   );
+      // }
   
       if (searchTerm) {
         filteredData = SearchInData(searchTerm, filteredData);
@@ -60,7 +55,8 @@ export function AlertsPage({currentPage}) {
     }, 100);
   
     return () => clearTimeout(debounce);
-  }, [searchTerm , eventLog]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchTerm]);
 
     
   return (
@@ -82,16 +78,16 @@ export function AlertsPage({currentPage}) {
             <div className="table-block nav" style={{ width: "15%" }}>
               Name
             </div>
-            <div className="table-block nav" style={{ width: "11%" }}>
+            <div className="table-block nav" style={{ width: "10%" }}>
               Phone
             </div>
-            <div className="table-block nav" style={{ width: "15%" }}>
+            <div className="table-block nav" style={{ width: "18%" }}>
               Site
             </div>
             <div className="table-block nav" style={{ width: "18%" }}>
               Location
             </div>
-            <div className="table-block nav" style={{ width: "10%" }}>
+            <div className="table-block nav" style={{ width: "8%" }}>
               Manager
             </div>
             <div className="table-block nav" style={{ width: "21%" }}>

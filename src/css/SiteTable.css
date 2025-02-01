@@ -10,21 +10,21 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #F0F4FC;
+  background-color: #f8fafdff;
   text-decoration: underline;
 }
 .absent-block-site {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #F0F4FC;
+  background-color: #f8fafdff;
   text-decoration: underline;
 }
 .present-block-site {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #F0F4FC;
+  background-color: #f8fafdff;
   text-decoration: underline;
 }
 .manager-block-site {
@@ -44,7 +44,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #F0F4FC;
+  background-color: #f8fafdff;
 }
 .alerts-block-site {
   display: flex;

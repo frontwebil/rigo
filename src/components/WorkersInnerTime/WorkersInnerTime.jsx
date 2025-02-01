@@ -235,7 +235,7 @@ export function WorkersInnerTime({
           })}
           <div className="table">
             <div className="table-row nav">
-              <div className="table-block nav" style={{ width: "10%" }}></div>
+              <div className="table-block nav" style={{ width: "10%" }}>Total Hours:</div>
               <div className="table-block nav" style={{ width: "10%" }}></div>
               <div className="table-block nav" style={{ width: "10%" }}></div>
               <div className="table-block nav" style={{ width: "8%" }}>

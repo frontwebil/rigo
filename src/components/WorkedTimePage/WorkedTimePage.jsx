@@ -76,7 +76,7 @@ export function WorkedTimePage({ currentPage }) {
             return <WorkedTimeTableRow key={index} el={el} />;
           })}
           <div className="table-row nav">
-            <div className="table-block nav" style={{ width: "5%" }}></div>
+            <div className="table-block nav" style={{ width: "5%" }}>Total Hours:</div>
             <div className="table-block nav" style={{ width: "6%" }}></div>
             <div className="table-block nav" style={{ width: "15%" }}></div>
             <div className="table-block nav" style={{ width: "14%" }}></div>

@@ -17,19 +17,17 @@ export function SitesInnerActions({
     const [searchTerm, setSearchTerm] = useState("");
     const sortByButtons = ['site' , 'name' ,'brutto','netto' , 'manager' , 'date' ,'tax'];
   
+    const searchKeys =
+    data.length > 0 && typeof data[0] === "object" ? Object.keys(data[0]) : [];
     const SearchInData = (searchText, list) => {
-      if (!searchText) return list;
-      const cleanSearchText = searchText.replace(/-/g, "").toLowerCase();
-      return list.filter(({ name, customer, workedTime, manager , site}) => {
-        return (
-          name.toLowerCase().includes(cleanSearchText) ||
-          customer.toLowerCase().includes(cleanSearchText) ||
-          site.toLowerCase().includes(cleanSearchText) ||
-          workedTime.brutto.toLowerCase().includes(cleanSearchText) ||
-          workedTime.netto.toLowerCase().includes(cleanSearchText) ||
-          manager.toLowerCase().includes(cleanSearchText)
-        );
+    if (!searchText) return list;
+    const cleanSearchText = searchText.replace(/-/g, "").toLowerCase();
+    return list.filter((item) => {
+      return searchKeys.some((key) => {
+        const value = String(item[key]).toLowerCase();
+        return value.includes(cleanSearchText);
       });
+    });
     };
   
     useEffect(() => {
@@ -42,6 +40,7 @@ export function SitesInnerActions({
       }, 100);
   
       return () => clearTimeout(debounce);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [searchTerm , data]);
     const sumTimeBrutto = (siteActionData) => {
       let hours = 0;

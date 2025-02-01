@@ -1,6 +1,4 @@
-import { LuNotepadText } from "react-icons/lu";
-import { RiInfoCardLine } from "react-icons/ri";
-import { RiContactsBook2Line } from "react-icons/ri";
+import { InnerTagEditButtons } from "../InnerTagEditButtons/InnerTagEditButtons";
 import { Search } from "../Search/Search";
 import { SitesInnerNav } from "../SitesInnerNav/SitesInnerNav";
 
@@ -23,38 +21,39 @@ export default function SitesInnerBasic({
         tabs={tabs}
         activeTab={activeTab}
       />
+      <InnerTagEditButtons/>
       <div className="SitesInnerBasic">
         <div className="SitesInnerBasic-topInfo">
           <div className="SitesInnerBasic-topInfo-block">
-            <RiInfoCardLine
-              className="SitesInnerBasic-topInfo-block-img"
-              style={{ background: "#00b8c3" }}
-            />
+            <h2
+              className="SitesInnerBasic-content-block-title"
+              style={{ color: "#00c9d5" }}
+            >
+              A
+            </h2>
             <p className="SitesInnerBasic-topInfo-block-text">Settings</p>
           </div>
           <div className="SitesInnerBasic-topInfo-block">
-            <RiContactsBook2Line
-              className="SitesInnerBasic-topInfo-block-img"
-              style={{ background: "#ed7207" }}
-            />
+            <h2
+              className="SitesInnerBasic-content-block-title"
+              style={{ color: "#f67708" }}
+            >
+              B
+            </h2>
             <p className="SitesInnerBasic-topInfo-block-text">Summary</p>
           </div>
           <div className="SitesInnerBasic-topInfo-block">
-            <LuNotepadText
-              className="SitesInnerBasic-topInfo-block-img"
-              style={{ background: "#c8e368" }}
-            />
+            <h2
+              className="SitesInnerBasic-content-block-title"
+              style={{ color: "#c8e368" }}
+            >
+              C
+            </h2>
             <p className="SitesInnerBasic-topInfo-block-text">Schedule</p>
           </div>
         </div>
         <div className="SitesInnerBasic-content">
           <div className="SitesInnerBasic-content-block">
-            <h2
-              className="SitesInnerBasic-content-block-title"
-              style={{ color: "#00C9D5" }}
-            >
-              A
-            </h2>
             <div className="SitesInnerBasic-content-row">
               <p className="SitesInnerBasic-content-row-text">Location:</p>
               <p
@@ -93,12 +92,6 @@ export default function SitesInnerBasic({
             </div>
           </div>
           <div className="SitesInnerBasic-content-block">
-            <h2
-              className="SitesInnerBasic-content-block-title"
-              style={{ color: "#F67708" }}
-            >
-              B
-            </h2>
             <div className="SitesInnerBasic-content-row">
               <p className="SitesInnerBasic-content-row-text">Managers:</p>
               <p className="SitesInnerBasic-content-row-text">
@@ -125,12 +118,6 @@ export default function SitesInnerBasic({
             </div>
           </div>
           <div className="SitesInnerBasic-content-block">
-            <h2
-              className="SitesInnerBasic-content-block-title"
-              style={{ color: "#CFE67D" }}
-            >
-              C
-            </h2>
             <div className="SitesInnerBasic-content-row">
               <p
                 className="SitesInnerBasic-content-row-text"

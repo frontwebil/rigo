@@ -1,20 +1,24 @@
 import { useParams } from "react-router-dom";
 import { UsersData } from "../../consts/UsersData";
 import { useState } from "react";
-import {WorkersInnerAlerts} from "../WorkersInnerAlerts/WorkersInnerAlerts";
+import { WorkersInnerAlerts } from "../WorkersInnerAlerts/WorkersInnerAlerts";
 import { PageNotFound } from "../InDeveloping/InDeveloping";
 import { WorkersInnerTrack } from "../WorkersInnerTrack/WorkersInnerTrack";
 import { WorkersInnerTime } from "../WorkersInnerTime/WorkersInnerTime";
+import WorkersBasic from "../WorkersBasic/WorkersBasic";
 
 export function WorkersInner({ currentPage }) {
-  const { id } = useParams(); 
+  const { id } = useParams();
 
   const currentData = UsersData.find((user) =>
-    user.sitesEmployees.some((employee) => employee.id === id)
+    user.sitesEmployees.some((employee) => employee.tax === id)
   );
-  const currentEmployee = currentData?.sitesEmployees.find((employee) => employee.id === id);
-  
-  const [activeTab, setActiveTab] = useState("Time");
+  console.log(currentData);
+  const currentEmployee = currentData?.sitesEmployees.find(
+    (employee) => employee.tax === id
+  );
+
+  const [activeTab, setActiveTab] = useState("Basic");
 
   const tabs = [
     "Basic",
@@ -36,40 +40,55 @@ export function WorkersInner({ currentPage }) {
     activeTab,
   ];
 
+  console.log(updatedCurrentPage);
+
   const getTabContent = (tab) => {
     switch (tab) {
       case "Basic":
-        return <PageNotFound/>;
+        return (
+          <WorkersBasic
+            data={currentEmployee.employeeAlert}
+            currentPage={currentPage}
+            handleTabClick={handleTabClick}
+            tabs={tabs}
+            activeTab={activeTab}
+            updatedCurrentPage={updatedCurrentPage}
+          />
+        );
       case "Alerts":
         return (
           <WorkersInnerAlerts
-          data={currentEmployee.employeeAlert}
-          currentPage={currentPage}
-          handleTabClick={handleTabClick}
-          tabs={tabs}
-          activeTab={activeTab}
-          updatedCurrentPage={updatedCurrentPage}/>
+            data={currentEmployee.employeeAlert}
+            currentPage={currentPage}
+            handleTabClick={handleTabClick}
+            tabs={tabs}
+            activeTab={activeTab}
+            updatedCurrentPage={updatedCurrentPage}
+          />
         );
       case "Actions":
-        return <PageNotFound/>;
+        return <PageNotFound />;
       case "Track":
-        return <WorkersInnerTrack     
-        data={currentEmployee.employeeTrack}      
-        currentPage={currentPage}
-        handleTabClick={handleTabClick}
-        tabs={tabs}
-        activeTab={activeTab}
-        updatedCurrentPage={updatedCurrentPage}/>;
+        return (
+          <WorkersInnerTrack
+            data={currentEmployee.employeeTrack}
+            currentPage={currentPage}
+            handleTabClick={handleTabClick}
+            tabs={tabs}
+            activeTab={activeTab}
+            updatedCurrentPage={updatedCurrentPage}
+          />
+        );
       case "History":
-        return <PageNotFound/>;
+        return <PageNotFound />;
       case "Time":
         return (
-          <WorkersInnerTime 
-          currentPage={currentPage}
-          handleTabClick={handleTabClick}
-          tabs={tabs}
-          activeTab={activeTab}
-          updatedCurrentPage={updatedCurrentPage}
+          <WorkersInnerTime
+            currentPage={currentPage}
+            handleTabClick={handleTabClick}
+            tabs={tabs}
+            activeTab={activeTab}
+            updatedCurrentPage={updatedCurrentPage}
           />
         );
       case "Insures":

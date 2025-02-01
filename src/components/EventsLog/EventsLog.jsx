@@ -14,27 +14,59 @@ export function EventsLog({ eventLog, eventHandleClick , setEventLog }) {
           <div className="EventsLog-buttons">
             <button
               className={`EventsLog-button ${
-                eventLog.includes("Enter") ? "active" : ""
+                eventLog.includes("Late Entry") ? "active" : ""
               }`}
-              onClick={() => eventHandleClick("Enter")}
+              onClick={() => eventHandleClick("Late Entry")}
             >
-              Enter
+              Late Entry
             </button>
             <button
               className={`EventsLog-button ${
-                eventLog.includes("Exit") ? "active" : ""
+                eventLog.includes("Entry not on Site") ? "active" : ""
               }`}
-              onClick={() => eventHandleClick("Exit")}
+              onClick={() => eventHandleClick("Entry not on Site")}
             >
-              Exit
+              Entry not on Site
             </button>
             <button
               className={`EventsLog-button ${
-                eventLog.includes("Colleague") ? "active" : ""
+                eventLog.includes("Face Recognition") ? "active" : ""
               }`}
-              onClick={() => eventHandleClick("Colleague")}
+              onClick={() => eventHandleClick("Face Recognition")}
             >
-              Colleague
+              Face Recognition
+            </button>
+            <button
+              className={`EventsLog-button ${
+                eventLog.includes("Unauthorized Exit") ? "active" : ""
+              }`}
+              onClick={() => eventHandleClick("Unauthorized Exit")}
+            >
+              Unauthorized Exit 
+            </button>
+            <button
+              className={`EventsLog-button ${
+                eventLog.includes("Gray Time") ? "active" : ""
+              }`}
+              onClick={() => eventHandleClick("Gray Time")}
+            >
+              Gray Time
+            </button>
+            <button
+              className={`EventsLog-button ${
+                eventLog.includes("Exit not on Site") ? "active" : ""
+              }`}
+              onClick={() => eventHandleClick("Exit not on Site")}
+            >
+              Exit not on Site
+            </button>
+            <button
+              className={`EventsLog-button ${
+                eventLog.includes("Late Exit") ? "active" : ""
+              }`}
+              onClick={() => eventHandleClick("Late Exit")}
+            >
+              Late Exit
             </button>
           </div>
         </div>

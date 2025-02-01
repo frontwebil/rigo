@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { MdOutlineMoreVert } from "react-icons/md";
 import { CiShare2 } from "react-icons/ci";
 import { LuPrinter } from "react-icons/lu";
 import { TogleMonthWeek } from "../TogleMonthWeek/TogleMonthWeek";
@@ -13,6 +12,8 @@ export function SitesInnerSortButtons({
   setIsWeekCurrent,
   handleDownloadPdf
 }) {
+  const [currentAction ,setCurrentAction] = useState('All')
+  const [isSorted, setIsSorted] = useState(false);
   const [isOpenMore, setIsOpenMore] = useState(false);
   const [isOpenSort, setIsOpenSort] = useState(false);
   const [sortBy, setSortBy] = useState({ sort: "name", asc: true });
@@ -73,7 +74,7 @@ export function SitesInnerSortButtons({
       return isAscending ? result : -result;
     });
 
-    console.log(newData)
+    setIsSorted(true)
     setIsOpenSort(false);
     setData(newData);
   };
@@ -82,12 +83,32 @@ export function SitesInnerSortButtons({
     <div className="SitesInnerNavButtons">
       <div className="SitesInnerNavButtons-buttons">
         <button
-          className="SitesInnerNavButton Sort"
-          onClick={() => setIsOpenSort(!isOpenSort)}
+            className={`sortFiltrButtons-button ${isSorted && "active"}`}
+            onClick={() => setIsOpenSort(!isOpenSort)}
         >
           Sort
         </button>
         <button className="SitesInnerNavButton Tag">Tag</button>
+        <div className="flex-actions">
+            <button
+              onClick={() => setCurrentAction("All")}
+              className={`${currentAction === "All" && "activeAction"}`}
+            >
+              All
+            </button>
+            <button
+              onClick={() => setCurrentAction("At Site")}
+              className={`${currentAction === "At Site" && "activeAction"}`}
+            >
+              At Site
+            </button>
+            <button
+              onClick={() => setCurrentAction("Absent")}
+              className={`${currentAction === "Absent" && "activeAction"}`}
+            >
+              Absent
+            </button>
+          </div>
         {timeToggle && (
           <TogleMonthWeek
             isWeekCurrent={isWeekCurrent}
@@ -97,14 +118,19 @@ export function SitesInnerSortButtons({
       </div>
       <div className="SitesInnerNavButtons-buttons">
         <button className="SitesInnerNavButton show-hide">
+          Date
+        </button>
+        <button className="SitesInnerNavButton show-hide">
           Show\Hide Column
         </button>
-        <MdOutlineMoreVert
-          onClick={() => {
-            setIsOpenMore(!isOpenMore);
-          }}
-          className="SitesInnerNavButtons-more"
-        />
+        <img
+            src="/icons/more.png"
+            alt=""
+            className="SitesInnerNavButtons-more"
+            onClick={() => {
+              setIsOpenMore(!isOpenMore);
+            }}
+          />
       </div>
       {isOpenSort && (
         <div className="sortFiltrButtonsMenu">
