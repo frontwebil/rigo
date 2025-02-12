@@ -60,7 +60,7 @@
 }
 .SitesInnerBasic-content-row {
   display: flex;
-  gap: 40px;
+  gap: 10px;
   padding-bottom: 5px;
   justify-content: space-between;
 }
@@ -79,4 +79,11 @@
 
 .icon-basic-user{
   width: 50px;
+}
+
+.SitesInnerBasic-content-row p:first-child{
+  width: 50%;
+}
+.SitesInnerBasic-content-row p:last-child{
+  width: 50%;
 }

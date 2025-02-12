@@ -237,7 +237,7 @@ const WorkersBasic = ({
               <p className="SitesInnerBasic-content-row-text link">Insurance</p>
               <div
                 className="location Active"
-                style={{ padding: "5px", maxWidth: "100px" }}
+                style={{ padding: "5px", maxWidth: "50%" , width:"50%" }}
               >
                 Active
               </div>
