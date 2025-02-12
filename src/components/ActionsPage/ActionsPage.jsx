@@ -3,53 +3,65 @@ import { useEffect, useState } from "react";
 import { SortFiltrButtons } from "../SortFiltrButtons/SortFiltrButtons";
 import { Search } from "../Search/Search";
 import { AlertsTableRow } from "../AlertsPage/AlertsTableRow";
+import { ActionPageActionsStart } from "./ActionPageActionsStart";
 
-export function ActionPage({currentPage}) {
+export function ActionPage({ currentPage }) {
   const [AlertsData, setAlertsData] = useState(UsersData);
   const [searchTerm, setSearchTerm] = useState("");
-  const sortByButtons = ['name' , 'site' , 'date']
+  const sortByButtons = ["name", "site", "date"];
 
   const searchKeys =
-  UsersData.length > 0 && typeof UsersData[0] === "object" ? Object.keys(UsersData[0]) : [];
+    UsersData.length > 0 && typeof UsersData[0] === "object"
+      ? Object.keys(UsersData[0])
+      : [];
   const SearchInData = (searchText, list) => {
-  if (!searchText) return list;
-  const cleanSearchText = searchText.replace(/-/g, "").toLowerCase();
-  return list.filter((item) => {
-    return searchKeys.some((key) => {
-      const value = String(item[key]).toLowerCase();
-      return value.includes(cleanSearchText);
+    if (!searchText) return list;
+    const cleanSearchText = searchText.replace(/-/g, "").toLowerCase();
+    return list.filter((item) => {
+      return searchKeys.some((key) => {
+        const value = String(item[key]).toLowerCase();
+        return value.includes(cleanSearchText);
+      });
     });
-  });
   };
-
 
   useEffect(() => {
     const debounce = setTimeout(() => {
       let filteredData = UsersData;
-  
+
       // if (eventLog.length > 0) {
       //   filteredData = filteredData.filter(alert =>
       //     eventLog.includes(alert.location.type)
       //   );
       // }
-  
+
       if (searchTerm) {
         filteredData = SearchInData(searchTerm, filteredData);
       }
-  
+
       setAlertsData(filteredData);
     }, 100);
-  
+
     return () => clearTimeout(debounce);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [searchTerm]);
 
-    
   return (
     <>
-      <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} currentPage={currentPage}/>
-      
-      <SortFiltrButtons sortByButtons={sortByButtons} data={AlertsData} setData={setAlertsData} defaultData={UsersData}/>
+      <Search
+        searchTerm={searchTerm}
+        setSearchTerm={setSearchTerm}
+        currentPage={currentPage}
+      />
+
+      <SortFiltrButtons
+        sortByButtons={sortByButtons}
+        data={AlertsData}
+        setData={setAlertsData}
+        defaultData={UsersData}
+      />
+
+      <ActionPageActionsStart />
 
       <div className="table-container">
         <div className="table">

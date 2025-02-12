@@ -3,6 +3,7 @@ import { Search } from "../Search/Search";
 import { SitesInnerNav } from "../SitesInnerNav/SitesInnerNav";
 import { SitesInnerSortButtons } from "../SitesInnerSortButtons/SitesInnerSortButtons";
 import { SitesInnerActionsRow } from "./SitesInnerActionsRow";
+import { ActionPageActionsStart } from "../ActionsPage/ActionPageActionsStart";
 
 export function SitesInnerActions({
   data,
@@ -79,6 +80,9 @@ export function SitesInnerActions({
         activeTab={activeTab}
       />
       <SitesInnerSortButtons sortByButtons={sortByButtons} data={actionsData} setData={setActionsData}/>
+
+      <ActionPageActionsStart/>
+
       <div className="table-container">
         <div className="table">
           <div className="table-row nav">

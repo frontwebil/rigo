@@ -5,6 +5,7 @@ import { SitesInnerSortButtons } from "../SitesInnerSortButtons/SitesInnerSortBu
 import { SitesInnerEmployeesTableRow } from "./SitesInnerEmployeesTableRow";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
+import { WorkersPageActions } from "../WorkersPage/WorkersPageActions";
 // import { SitesInnerActionsRow } from "./SitesInnerActionsRow";
 
 export function SitesInnerEmployees({
@@ -47,7 +48,7 @@ export function SitesInnerEmployees({
 
     const imgProperties = pdf.getImageProperties(data);
     const pdfWidth = pdf.internal.pageSize.getWidth();
-    const pdfHeight = (imgProperties.height * pdfWidth / imgProperties.width)
+    const pdfHeight = (imgProperties.height * pdfWidth) / imgProperties.width;
 
     pdf.addImage(data, "PNG", 0, 0, pdfWidth, pdfHeight);
     pdf.save("examplepdf.pdf");
@@ -110,6 +111,9 @@ export function SitesInnerEmployees({
         setData={setEmployeeData}
         handleDownloadPdf={handleDownloadPdf}
       />
+
+      <WorkersPageActions />
+
       <div ref={printRef} className="table-container">
         <div className="table">
           <div className="table-row nav">

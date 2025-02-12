@@ -5,6 +5,7 @@ import { Search } from "../Search/Search";
 import { SortFiltrButtons } from "../SortFiltrButtons/SortFiltrButtons";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
+import { WorkersPageActions } from "./WorkersPageActions";
 
 export function WorkersPage({ currentPage }) {
   const [data] = useState(() => {
@@ -94,6 +95,8 @@ export function WorkersPage({ currentPage }) {
         defaultData={UsersData.map((el) => el.sitesEmployees).flat()}
         handleDownloadPdf={handleDownloadPdf}
       />
+
+      <WorkersPageActions />
 
       <div ref={printRef} className="table-container">
         <div className="table">

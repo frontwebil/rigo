@@ -8,7 +8,9 @@ const WorkersBasic = ({
   tabs,
   activeTab,
   updatedCurrentPage,
+  data,
 }) => {
+  console.log(data);
   return (
     <>
       <Search
@@ -29,7 +31,7 @@ const WorkersBasic = ({
             >
               A
             </h2>
-            <p className="SitesInnerBasic-topInfo-block-text">APP</p>
+            <p className="SitesInnerBasic-topInfo-block-text">Personal Info</p>
           </div>
           <div className="SitesInnerBasic-topInfo-block">
             <h2
@@ -38,7 +40,9 @@ const WorkersBasic = ({
             >
               B
             </h2>
-            <p className="SitesInnerBasic-topInfo-block-text">Summary</p>
+            <p className="SitesInnerBasic-topInfo-block-text">
+              Employment Details
+            </p>
           </div>
           <div className="SitesInnerBasic-topInfo-block">
             <h2
@@ -47,7 +51,7 @@ const WorkersBasic = ({
             >
               C
             </h2>
-            <p className="SitesInnerBasic-topInfo-block-text">Work</p>
+            <p className="SitesInnerBasic-topInfo-block-text">Additional</p>
           </div>
           <div className="SitesInnerBasic-topInfo-block">
             <h2
@@ -62,221 +66,217 @@ const WorkersBasic = ({
         <div className="SitesInnerBasic-content">
           <div className="SitesInnerBasic-content-block">
             <div className="SitesInnerBasic-content-row">
-              <p className="SitesInnerBasic-content-row-text">Created:</p>
-              <p className="SitesInnerBasic-content-row-text">07.18.2022</p>
-            </div>
-            <div className="SitesInnerBasic-content-row">
-              <p className="SitesInnerBasic-content-row-text">Languages:</p>
+              <p className="SitesInnerBasic-content-row-text">Worker type:</p>
               <p className="SitesInnerBasic-content-row-text">
-                Russian, Moldovan
+                foreign employer
               </p>
             </div>
             <div className="SitesInnerBasic-content-row">
-              <p className="SitesInnerBasic-content-row-text">Last Action:</p>
               <p className="SitesInnerBasic-content-row-text">
-                Exit Work 12.03.24
+                First Name, Last Name:
               </p>
+              <p className="SitesInnerBasic-content-row-text">Kumar Guptha</p>
             </div>
             <div className="SitesInnerBasic-content-row">
-              <p className="SitesInnerBasic-content-row-text">APP Version:</p>
-              <p className="SitesInnerBasic-content-row-text">4.2</p>
-            </div>
-          </div>
-          <div className="SitesInnerBasic-content-block">
-            <div className="SitesInnerBasic-content-row">
-              <p className="SitesInnerBasic-content-row-text">Type:</p>
-              <p className="SitesInnerBasic-content-row-text">Local</p>
+              <p className="SitesInnerBasic-content-row-text">Date of Birth:</p>
+              <p className="SitesInnerBasic-content-row-text">12.05.1980</p>
             </div>
             <div className="SitesInnerBasic-content-row">
-              <p className="SitesInnerBasic-content-row-text">SubType:</p>
-              <p className="SitesInnerBasic-content-row-text">
-                Foreign Employee
-              </p>
-            </div>
-            <div className="SitesInnerBasic-content-row">
-              <p className="SitesInnerBasic-content-row-text">Employee #:</p>
-              <p className="SitesInnerBasic-content-row-text">02764</p>
-            </div>
-            <div className="SitesInnerBasic-content-row">
-              <p className="SitesInnerBasic-content-row-text">Name:</p>
-              <p className="SitesInnerBasic-content-row-text">Kumar Sahendra</p>
+              <p className="SitesInnerBasic-content-row-text">Age:</p>
+              <p className="SitesInnerBasic-content-row-text">45 years</p>
             </div>
             <div className="SitesInnerBasic-content-row">
               <p className="SitesInnerBasic-content-row-text">Gender:</p>
               <p className="SitesInnerBasic-content-row-text">Male</p>
             </div>
             <div className="SitesInnerBasic-content-row">
-              <p className="SitesInnerBasic-content-row-text">Birth:</p>
+              <p className="SitesInnerBasic-content-row-text">Phone:</p>
+              <p className="SitesInnerBasic-content-row-text">050-497-32-16</p>
+            </div>
+            <div className="SitesInnerBasic-content-row">
+              <p className="SitesInnerBasic-content-row-text">Address:</p>
               <p className="SitesInnerBasic-content-row-text">
-                06.09.1983, 42 years
+                Jabotinsky 23, Petah-Tikva (rented by company/rented
+                individually)
               </p>
             </div>
             <div className="SitesInnerBasic-content-row">
               <p className="SitesInnerBasic-content-row-text">Passport:</p>
-              <p className="SitesInnerBasic-content-row-text">HR87200</p>
+              <p className="SitesInnerBasic-content-row-text">FA769365</p>
             </div>
             <div className="SitesInnerBasic-content-row">
-              <p className="SitesInnerBasic-content-row-text">Country:</p>
+              <p className="SitesInnerBasic-content-row-text">Language:</p>
+              <p className="SitesInnerBasic-content-row-text">Hindi, English</p>
+            </div>
+          </div>
+
+          <div className="SitesInnerBasic-content-block">
+            <div className="SitesInnerBasic-content-row">
+              <p className="SitesInnerBasic-content-row-text">Mispar Oved:</p>
+              <p className="SitesInnerBasic-content-row-text">1053</p>
+            </div>
+            <div className="SitesInnerBasic-content-row">
+              <p className="SitesInnerBasic-content-row-text">
+                Country of origin:
+              </p>
               <p className="SitesInnerBasic-content-row-text">India</p>
             </div>
             <div className="SitesInnerBasic-content-row">
-              <p className="SitesInnerBasic-content-row-text">Phone:</p>
-              <p className="SitesInnerBasic-content-row-text">531958773</p>
-            </div>
-            <div className="SitesInnerBasic-content-row">
               <p className="SitesInnerBasic-content-row-text">
-                Visa Termination:
+                Specialisation:
               </p>
-              <p className="SitesInnerBasic-content-row-text">26/11/2025</p>
-            </div>
-            <div className="SitesInnerBasic-content-row">
-              <p className="SitesInnerBasic-content-row-text">Languages:</p>
               <p className="SitesInnerBasic-content-row-text">
-                Russian, Moldovan
+                concrete worker
               </p>
             </div>
             <div className="SitesInnerBasic-content-row">
-              <p className="SitesInnerBasic-content-row-text">Apartment:</p>
+              <p className="SitesInnerBasic-content-row-text">Site:</p>
               <p className="SitesInnerBasic-content-row-text">
-                Bnei Brak, Herzl 21/5
-              </p>
-            </div>
-          </div>
-          <div className="SitesInnerBasic-content-block">
-            <div className="SitesInnerBasic-content-row">
-              <p className="SitesInnerBasic-content-row-text">
-                Specialization:
-              </p>
-              <p className="SitesInnerBasic-content-row-text">Iron Work</p>
-            </div>
-            <div className="SitesInnerBasic-content-row">
-              <p className="SitesInnerBasic-content-row-text">Working Site:</p>
-              <p className="SitesInnerBasic-content-row-text">Ramat Aviv 32</p>
-            </div>
-            <div className="SitesInnerBasic-content-row">
-              <p className="SitesInnerBasic-content-row-text">Last Action:</p>
-              <p className="SitesInnerBasic-content-row-text">
-                Exit Work 12.03.24
+                Ovdim Nethaniya
               </p>
             </div>
             <div className="SitesInnerBasic-content-row">
-              <p className="SitesInnerBasic-content-row-text">Manager:</p>
-              <p className="SitesInnerBasic-content-row-text">Moti Rush</p>
+              <p className="SitesInnerBasic-content-row-text">
+                Working status:
+              </p>
+              <p className="SitesInnerBasic-content-row-text">
+                active/without work/at hospital/fired
+              </p>
+            </div>
+            <div className="SitesInnerBasic-content-row">
+              <p className="SitesInnerBasic-content-row-text">Start work:</p>
+              <p className="SitesInnerBasic-content-row-text">
+                15.07.2020, 4 years
+              </p>
             </div>
             <div className="SitesInnerBasic-content-row">
               <p className="SitesInnerBasic-content-row-text">Schedule:</p>
-              <p className="SitesInnerBasic-content-row-text"></p>
+              <p className="SitesInnerBasic-content-row-text">
+                St, Mn, Tu, Wd, Th 6:00-17:00, brake: 12:00-12:45, Fr 6:00-12:00
+              </p>
+            </div>
+            <div className="SitesInnerBasic-content-row">
+              <p className="SitesInnerBasic-content-row-text">Coordinator:</p>
+              <p className="SitesInnerBasic-content-row-text">Moti Rush</p>
             </div>
           </div>
+
           <div className="SitesInnerBasic-content-block">
             <div className="SitesInnerBasic-content-row">
+              <p className="SitesInnerBasic-content-row-text">
+                System worker type:
+              </p>
+              <p className="SitesInnerBasic-content-row-text">
+                Local/Transit/Free/Office
+              </p>
+            </div>
+            <div className="SitesInnerBasic-content-row">
               <p className="SitesInnerBasic-content-row-text">Created:</p>
-              <p className="SitesInnerBasic-content-row-text">07.18.2022</p>
+              <p className="SitesInnerBasic-content-row-text">18.07.2020</p>
             </div>
             <div className="SitesInnerBasic-content-row">
-              <p className="SitesInnerBasic-content-row-text">Languages:</p>
-              <p className="SitesInnerBasic-content-row-text">
-                Russian, Moldovan
-              </p>
-            </div>
-            <div className="SitesInnerBasic-content-row">
-              <p className="SitesInnerBasic-content-row-text">Last Action:</p>
-              <p className="SitesInnerBasic-content-row-text">
-                Exit Work 12.03.24
-              </p>
-            </div>
-            <div className="SitesInnerBasic-content-row">
-              <p className="SitesInnerBasic-content-row-text">APP Version:</p>
+              <p className="SitesInnerBasic-content-row-text">App Version:</p>
               <p className="SitesInnerBasic-content-row-text">4.2</p>
             </div>
             <div className="SitesInnerBasic-content-row">
-              <p className="SitesInnerBasic-content-row-text">Apartment:</p>
               <p className="SitesInnerBasic-content-row-text">
-                Bnei Brak, Herzl 21/5
+                Last App Activity:
+              </p>
+              <p
+                className="SitesInnerBasic-content-row-text location exit"
+                style={{ maxWidth: "" }}
+              >
+                Exit work - 22.01.2025
               </p>
             </div>
           </div>
-        </div>
-      </div>
-      <div className="table-container">
-        <div className="table">
-          <div className="table-row nav">
+
+          <div className="SitesInnerBasic-content-block">
+            <p className="SitesInnerBasic-content-row-text link">Passport</p>
+            <p className="SitesInnerBasic-content-row-text link">
+              Driving licence
+            </p>
+            <p className="SitesInnerBasic-content-row-text link">Cartis Oved</p>
             <div
-              className="table-block nav"
-              style={{ width: "12%", justifyContent: "left" }}
+              className="SitesInnerBasic-content-row"
+              style={{ alignItems: "center" }}
             >
-              Name
+              <p className="SitesInnerBasic-content-row-text link">
+                Permission for work:
+              </p>
+              <p
+                className="SitesInnerBasic-content-row-text"
+                style={{ fontSize: "16px" }}
+              >
+                expire in 8 Days
+              </p>
             </div>
-            <div className="table-block nav" style={{ width: "22%" }}>
-              Passport
-            </div>
-            <div className="table-block nav" style={{ width: "22%" }}>
-              Permission to work
-            </div>
-            <div className="table-block nav" style={{ width: "22%" }}>
-              Driving Licence
-            </div>
-            <div className="table-block nav" style={{ width: "22%" }}>
-              Permission to work at heights
-            </div>
-          </div>
-          <div className="table-row">
+            <p className="SitesInnerBasic-content-row-text link inActive">Intervisa</p>
+            <p>
+              {" "}
+              <br />
+            </p>
+            <p className="SitesInnerBasic-content-row-text link">
+              Medical Cartis
+            </p>
+            <p className="SitesInnerBasic-content-row-text link">
+              Health Statement
+            </p>
             <div
-              className="table-block "
-              style={{ width: "12%", justifyContent: "left" }}
+              className="SitesInnerBasic-content-row"
+              style={{ alignItems: "center" }}
             >
-              Start-End
+              <p className="SitesInnerBasic-content-row-text link">Insurance</p>
+              <div
+                className="location Active"
+                style={{ padding: "5px", maxWidth: "100px" }}
+              >
+                Active
+              </div>
             </div>
-            <div className="table-block center" style={{ width: "22%" }}>
-              07.02.2022 - 07.02.2027
-            </div>
-            <div className="table-block center" style={{ width: "22%" }}>
-              07.02.2022 - 07.02.2027
-            </div>
-            <div className="table-block center" style={{ width: "22%" }}>
-              07.02.2022 - 07.02.2027
-            </div>
-            <div className="table-block center" style={{ width: "22%" }}>
-              07.02.2022 - 07.02.2027
-            </div>
-          </div>
-          <div className="table-row">
             <div
-              className="table-block "
-              style={{ width: "12%", justifyContent: "left" }}
+              className="SitesInnerBasic-content-row"
+              style={{ alignItems: "center" }}
             >
-              Status
+              <p className="SitesInnerBasic-content-row-text link">Bet Lamed</p>
+              <p className="SitesInnerBasic-content-row-text link">2 files</p>
             </div>
-            <div className="table-block center" style={{ width: "22%" }}>
-              Enable
-            </div>
-            <div className="table-block center" style={{ width: "22%" }}>
-              Enable
-            </div>
-            <div className="table-block center" style={{ width: "22%" }}>
-              Enable
-            </div>
-            <div className="table-block center" style={{ width: "22%" }}>
-              Enable
-            </div>
-          </div>
-          <div className="table-row">
+            <p>
+              {" "}
+              <br />
+            </p>
+            <p className="SitesInnerBasic-content-row-text link inActive">
+              Adraha Le Gova
+            </p>
+            <p>
+              {" "}
+              <br />
+            </p>
+            <p className="SitesInnerBasic-content-row-text link">Tofes 101</p>
+            <p className="SitesInnerBasic-content-row-text link">
+              Tlush Maskored
+            </p>
+            <p className="SitesInnerBasic-content-row-text link">Doh Shaot</p>
             <div
-              className="table-block "
-              style={{ width: "12%", justifyContent: "left" }}
+              className="SitesInnerBasic-content-row"
+              style={{ alignItems: "center" }}
             >
-              Picture
+              <p className="SitesInnerBasic-content-row-text link">
+                Tlush Sahar
+              </p>
+              <p
+                className="SitesInnerBasic-content-row-text"
+                style={{ fontSize: "16px" }}
+              >
+                signed, 01.02.2025
+              </p>
             </div>
-            <div className="table-block center" style={{ width: "22%" }}>
-              <img src="/icons/basic-1.jpg" alt="" className="documentBasicImg"/>
-            </div>
-            <div className="table-block center" style={{ width: "22%" }}>
-              <img src="/icons/basic-2.jpg" alt="" className="documentBasicImg"/>
-            </div>
-            <div className="table-block center" style={{ width: "22%" }}></div>
-            <div className="table-block center" style={{ width: "22%" }}>
-              <img src="/icons/basic-4.jpg" alt="" className="documentBasicImg"/>
-            </div>
+            <p className="SitesInnerBasic-content-row-text link">
+              Employment Contract
+            </p>
+            <p className="SitesInnerBasic-content-row-text link">
+              Hiring Letter
+            </p>
           </div>
         </div>
       </div>

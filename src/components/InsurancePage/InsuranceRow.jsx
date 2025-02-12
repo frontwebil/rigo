@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
+import "./InsuranceRow.css";
 
-export function InsuranceRow({ el, i }) {
+export function InsuranceRow({ el, i, setOpenRowId, openRowId }) {
+  const isOpen = openRowId === i;
   return (
     <div className="table-row" key={i}>
       <div className="table-block" style={{ width: "10%" }}>
@@ -25,11 +27,7 @@ export function InsuranceRow({ el, i }) {
         {el.country}
       </div>
       <div className="table-block" style={{ width: "10%" }}>
-        <div
-          className={`location ${el.status}`}
-        >
-          {el.status}
-        </div>
+        <div className={`location ${el.status}`}>{el.status}</div>
       </div>
       <div className="table-block center" style={{ width: "5%" }}>
         {el.notes}
@@ -37,15 +35,33 @@ export function InsuranceRow({ el, i }) {
       <div className="table-block center" style={{ width: "5%" }}>
         {el.alerts}
       </div>
-      <div className="table-block" style={{ width: "10%" }}>
-        {el.agent}
+      <div
+        className="table-block center"
+        style={{ width: "10%", position: "relative" }}
+      >
+        <button
+          className="fast-action-btn"
+          onClick={() => setOpenRowId(isOpen ? null : i)}
+        >
+          Fast Action
+        </button>
+        {isOpen && (
+          <ul className="fast-actions-menu">
+            <li className="fast-action-item">Cancel/Renew/Edit Insurance</li>
+            <li className="fast-action-item">Open Quick Chat</li>
+            <li className="fast-action-item">Tag</li>
+            <li className="fast-action-item">Open Work Accident Form</li>
+            <li className="fast-action-item">Documents</li>
+            <li className="fast-action-item">Send Files BetLamed</li>
+          </ul>
+        )}
       </div>
       <Link
         to={`/insuranceCustomer/${el.tax}`}
         className="table-block center"
         style={{ width: "5%" }}
       >
-          <img src="/icons/info-icon.png" alt="" className="info-button" />
+        <img src="/icons/info-icon.png" alt="" className="info-button" />
       </Link>
     </div>
   );

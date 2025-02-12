@@ -78,7 +78,7 @@
 
 .exit-button {
   padding: 10px 0;
-  background-color: #15882e;
+  background-color: #0ebd80ff;
   color: #ffffff;
   font-size: 12px;
   border: 1px solid #bebebe;
@@ -118,7 +118,7 @@
   cursor: pointer;
   padding: 3px;
   border-radius: 5px;
-  background-color: #22b665;
+  background-color: #0ebd80ff;
   color: #fff;
 }
 .header-flex-mobile-button.active {

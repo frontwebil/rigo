@@ -8,9 +8,17 @@ export function SortFiltrButtons({
   defaultData,
   addCustomers,
   handleDownloadPdf,
+  ActionButtonsStart,
 }) {
-  const checkBoxFiltersOptions = ["country", "status", "companyName", "agent" , "insurance" , "manager" , "customer" , ];
-  const [currentAction, setCurrentAction] = useState("All");
+  const checkBoxFiltersOptions = [
+    "country",
+    "status",
+    "companyName",
+    "agent",
+    "insurance",
+    "manager",
+    "customer",
+  ];
   const [isOpenMore, setIsOpenMore] = useState(false);
   const [isSorted, setIsSorted] = useState(false);
   const [isFiltered, setIsFiltered] = useState(false);
@@ -246,26 +254,7 @@ export function SortFiltrButtons({
               Reset Filters
             </button>
           )}
-          <div className="flex-actions">
-            <button
-              onClick={() => setCurrentAction("Site")}
-              className={`${currentAction === "Site" && "activeAction"}`}
-            >
-              Site
-            </button>
-            <button
-              onClick={() => setCurrentAction("Customer")}
-              className={`${currentAction === "Customer" && "activeAction"}`}
-            >
-              Customer
-            </button>
-            <button
-              onClick={() => setCurrentAction("All")}
-              className={`${currentAction === "All" && "activeAction"}`}
-            >
-              All
-            </button>
-          </div>
+          {ActionButtonsStart && <ActionButtonsStart />}
         </div>
         <div className="SitesInnerNavButtons-buttons">
           <button className="SitesInnerNavButton show-hide">Date</button>
@@ -407,7 +396,7 @@ export function SortFiltrButtons({
               onClick={handleDownloadPdf}
             >
               Download PDF
-              <img src="/icons/download.png" alt="" className="openMoreIcon"/>
+              <img src="/icons/download.png" alt="" className="openMoreIcon" />
             </div>
           </div>
         )}

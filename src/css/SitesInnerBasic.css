@@ -43,7 +43,7 @@
   width: 100%;
   border-right: 1px solid #000000;
   border-left: 1px solid #000000;
-  padding: 5px 20px;
+  padding: 5px 10px;
 }
 
 .SitesInnerBasic-content-block:last-child {
@@ -60,10 +60,19 @@
 }
 .SitesInnerBasic-content-row {
   display: flex;
+  gap: 40px;
   padding-bottom: 5px;
   justify-content: space-between;
 }
 .SitesInnerBasic-content-row-text {
   font-size: 13px;
 
+}
+
+.status.Active{
+  background-color: #d8ecbc;
+}
+
+.link.inActive{
+  color: #828282!important;
 }

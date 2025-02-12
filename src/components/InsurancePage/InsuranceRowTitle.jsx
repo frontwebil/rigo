@@ -11,7 +11,7 @@ export function InsuranceRowTitle() {
       <div className="table-block nav" style={{width:'10%'}}>Status</div>
       <div className="table-block nav" style={{width:'5%'}}>Notes</div>
       <div className="table-block nav" style={{width:'5%'}}>Alerts</div>
-      <div className="table-block nav" style={{width:'10%'}}>Agent</div>
+      <div className="table-block nav" style={{width:'10%'}}>Fast Action</div>
       <div className="table-block nav" style={{width:'5%'}}>Details</div>
     </div>
   );

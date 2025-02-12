@@ -69,3 +69,9 @@
 .inputSallary button:hover {
   background: #0056b3;
 }
+
+.info-page-container{
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 12px;
+}

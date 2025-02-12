@@ -9,7 +9,7 @@ export function EventsLog({ eventLog, eventHandleClick , setEventLog }) {
             }`}
             onClick={() => setEventLog([])}
           >
-            All
+            All : 500
           </button>
           <div className="EventsLog-buttons">
             <button
@@ -18,7 +18,7 @@ export function EventsLog({ eventLog, eventHandleClick , setEventLog }) {
               }`}
               onClick={() => eventHandleClick("Late Entry")}
             >
-              Late Entry
+              Late Entry : 230
             </button>
             <button
               className={`EventsLog-button ${
@@ -26,7 +26,7 @@ export function EventsLog({ eventLog, eventHandleClick , setEventLog }) {
               }`}
               onClick={() => eventHandleClick("Entry not on Site")}
             >
-              Entry not on Site
+              Entry not on Site : 220
             </button>
             <button
               className={`EventsLog-button ${
@@ -34,7 +34,7 @@ export function EventsLog({ eventLog, eventHandleClick , setEventLog }) {
               }`}
               onClick={() => eventHandleClick("Face Recognition")}
             >
-              Face Recognition
+              Face Recognition : 400
             </button>
             <button
               className={`EventsLog-button ${
@@ -42,7 +42,7 @@ export function EventsLog({ eventLog, eventHandleClick , setEventLog }) {
               }`}
               onClick={() => eventHandleClick("Unauthorized Exit")}
             >
-              Unauthorized Exit 
+              Unauthorized Exit : 130
             </button>
             <button
               className={`EventsLog-button ${
@@ -50,7 +50,7 @@ export function EventsLog({ eventLog, eventHandleClick , setEventLog }) {
               }`}
               onClick={() => eventHandleClick("Gray Time")}
             >
-              Gray Time
+              Gray Time : 210
             </button>
             <button
               className={`EventsLog-button ${
@@ -58,7 +58,7 @@ export function EventsLog({ eventLog, eventHandleClick , setEventLog }) {
               }`}
               onClick={() => eventHandleClick("Exit not on Site")}
             >
-              Exit not on Site
+              Exit not on Site : 253
             </button>
             <button
               className={`EventsLog-button ${
@@ -66,7 +66,7 @@ export function EventsLog({ eventLog, eventHandleClick , setEventLog }) {
               }`}
               onClick={() => eventHandleClick("Late Exit")}
             >
-              Late Exit
+              Late Exit : 250
             </button>
           </div>
         </div>

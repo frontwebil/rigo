@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
+import { UsersData } from "../../consts/UsersData";
 import { Search } from "../Search/Search";
 import { SortFiltrButtons } from "../SortFiltrButtons/SortFiltrButtons";
-import { UsersData } from "../../consts/UsersData";
-import { SitePageTableRow } from "./SitePageTableRow";
-import SitePageActions from "./SitesPageActions";
+import { CustomerPageActions } from "./CustomerPageActions";
+import { CustomerPageRow } from "./CustomerPageRow";
 
-export function SitesPage({ currentPage }) {
+export function CustomerPage({ currentPage }) {
   const [siteData, setSiteData] = useState(UsersData);
   const [searchTerm, setSearchTerm] = useState("");
   const sortByButtons = ['workers','absent','present','radius','alerts'];
@@ -40,49 +40,45 @@ export function SitesPage({ currentPage }) {
     <>
       <Search currentPage={currentPage} searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
       <SortFiltrButtons sortByButtons={sortByButtons} data={siteData} setData={setSiteData} defaultData={UsersData}/>
-      <SitePageActions/>
+      <CustomerPageActions/>
       <div className="table-container">
         <div className="table">
           <div className="table-row nav">
             <div className="table-block nav" style={{ width: "5%" }}>
               ID
             </div>
-            <div className="table-block nav" style={{ width: "24%" }}>
+            <div className="table-block nav" style={{ width: "15%" }}>
               Name
             </div>
-            <div className="table-block nav" style={{ width: "9%" }}>
+            <div className="table-block nav" style={{ width: "15%" }}>
+              Sites
+            </div>
+            <div className="table-block nav" style={{ width: "15%" }}>
               Workers
             </div>
-            <div className="table-block nav" style={{ width: "8%" }}>
+            <div className="table-block nav" style={{ width: "15%" }}>
               Absent
             </div>
-            <div className="table-block nav" style={{ width: "8%" }}>
+            <div className="table-block nav" style={{ width: "15%" }}>
               Present
             </div>
             <div className="table-block nav" style={{ width: "15%" }}>
-              Manager
-            </div>
-            <div className="table-block nav" style={{ width: "9%" }}>
-              Location
-            </div>
-            <div className="table-block nav" style={{ width: "8%" }}>
-              Radius
-            </div>
-            <div className="table-block nav" style={{ width: "7%" }}>
               Alerts
             </div>
-            <div className="table-block nav" style={{ width: "7%" }}>
+            <div className="table-block nav" style={{ width: "15%" }}>
               Info
             </div>
           </div>
         </div>
         {siteData.map((el, index) => {
-          return <SitePageTableRow el={el} key={index} id={index} />;
+          return <CustomerPageRow el={el} key={index} id={index} />;
         })}
+
         <div className="table-row nav">
-          <div className="table-block nav" style={{ width: "10%" }}></div>
-          <div className="table-block nav" style={{ width: "19%" }}></div>
-          <div className="table-block nav" style={{ width: "9%" }}>
+          <div className="table-block nav" style={{ width: "5%" }}></div>
+          <div className="table-block nav" style={{ width: "15%" }}></div>
+          <div className="table-block nav" style={{ width: "15%" }}></div>
+          <div className="table-block nav" style={{ width: "15%" }}>
             {(() => {
               let workers = siteData.reduce(
                 (acc, el) => acc + (+el.workers || 0),
@@ -91,7 +87,7 @@ export function SitesPage({ currentPage }) {
               return workers;
             })()}
           </div>
-          <div className="table-block nav" style={{ width: "8%" }}>
+          <div className="table-block nav" style={{ width: "15%" }}>
             {(() => {
               let absent = siteData.reduce(
                 (acc, el) => acc + (+el.absent || 0),
@@ -100,7 +96,7 @@ export function SitesPage({ currentPage }) {
               return absent;
             })()}
           </div>
-          <div className="table-block nav" style={{ width: "8%" }}>
+          <div className="table-block nav" style={{ width: "15%" }}>
           {(() => {
               let present = siteData.reduce(
                 (acc, el) => acc + (+el.present || 0),
@@ -110,10 +106,7 @@ export function SitesPage({ currentPage }) {
             })()}
           </div>
           <div className="table-block nav" style={{ width: "15%" }}></div>
-          <div className="table-block nav" style={{ width: "9%" }}></div>
-          <div className="table-block nav" style={{ width: "8%" }}></div>
-          <div className="table-block nav" style={{ width: "7%" }}></div>
-          <div className="table-block nav" style={{ width: "7%" }}></div>
+          <div className="table-block nav" style={{ width: "15%" }}></div>
         </div>
       </div>
     </>

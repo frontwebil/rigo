@@ -1,5 +1,7 @@
 export const UsersData = [
   {
+    sites:'5',
+    customerName:"FICO TAO",
     tax:'2001',
     nameObject: "Ovdim Netanya",
     id: "1",
@@ -1321,6 +1323,8 @@ export const UsersData = [
     ],
   },
   {
+    sites:'12',
+    customerName:"Electra",
     tax:'2002',
     nameObject: "Motiv Rishon Le Zion",
     id: "2",
@@ -2068,6 +2072,8 @@ export const UsersData = [
     ],
   },
   {
+    sites:'11',
+    customerName:"MALGAM",
     tax:'2003',
     nameObject: "Nisbor Ramat Beca",
     id: "3",
@@ -2815,6 +2821,8 @@ export const UsersData = [
     ],
   },
   {
+    sites:'8',
+    customerName:"Solel Bone",
     tax:'2004',
     nameObject: "Etz Shaked Nes Tziona",
     id: "4",
@@ -3563,6 +3571,8 @@ export const UsersData = [
     ],
   },
   {
+    sites:'3',
+    customerName:"BSR",
     tax:'2005',
     nameObject: "Andasa Hod Ha-Sharon",
     id: "5",

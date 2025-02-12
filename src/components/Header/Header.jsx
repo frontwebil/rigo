@@ -12,7 +12,7 @@ export function Header() {
     { name: "Actions", linkTo: "/actions" },
     { name: "Alerts", linkTo: "/alerts" },
     { name: "Sites", linkTo: "/sites" },
-    { name: "Customers", linkTo: "/notFound" },
+    { name: "Customers", linkTo: "/customers" },
     { name: "Managers", linkTo: "/notFound" },
     { name: "Real Estate", linkTo: "/notFound", wide: true },
     { name: "Worked Time", linkTo: "/workedTime", wide: true },

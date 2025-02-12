@@ -1,0 +1,38 @@
+.fast-action-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 5px;
+}
+
+.fast-action-btn:hover {
+  background-color: #0056b3;
+}
+
+.fast-actions-menu {
+  position: absolute;
+  top: 100%;
+  z-index: 5;
+  background: white;
+  border: 1px solid #ddd;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  padding: 5px 0;
+  margin-top: 5px;
+  width: 200px;
+  overflow-y: scroll;
+  border-radius: 5px;
+}
+
+.fast-action-item {
+  padding: 10px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.fast-action-item:hover {
+  background: #f1f1f1;
+}
