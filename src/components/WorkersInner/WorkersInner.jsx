@@ -13,7 +13,6 @@ export function WorkersInner({ currentPage }) {
   const currentData = UsersData.find((user) =>
     user.sitesEmployees.some((employee) => employee.tax === id)
   );
-  console.log(currentData);
   const currentEmployee = currentData?.sitesEmployees.find(
     (employee) => employee.tax === id
   );
@@ -40,14 +39,12 @@ export function WorkersInner({ currentPage }) {
     activeTab,
   ];
 
-  console.log(updatedCurrentPage);
-
   const getTabContent = (tab) => {
     switch (tab) {
       case "Basic":
         return (
           <WorkersBasic
-            data={currentEmployee.employeeAlert}
+            data={currentEmployee}
             currentPage={currentPage}
             handleTabClick={handleTabClick}
             tabs={tabs}

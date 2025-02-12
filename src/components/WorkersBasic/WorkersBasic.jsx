@@ -162,6 +162,12 @@ const WorkersBasic = ({
           </div>
 
           <div className="SitesInnerBasic-content-block">
+            <div className="SitesInnerBasic-content-row" style={{alignItems:'center'}}> 
+              <p className="SitesInnerBasic-content-row-text">
+                PHOTO:
+              </p>
+              <img src={data.photo} alt="" className="icon-basic-user" />
+            </div>
             <div className="SitesInnerBasic-content-row">
               <p className="SitesInnerBasic-content-row-text">
                 System worker type:
@@ -211,7 +217,9 @@ const WorkersBasic = ({
                 expire in 8 Days
               </p>
             </div>
-            <p className="SitesInnerBasic-content-row-text link inActive">Intervisa</p>
+            <p className="SitesInnerBasic-content-row-text link inActive">
+              Intervisa
+            </p>
             <p>
               {" "}
               <br />
