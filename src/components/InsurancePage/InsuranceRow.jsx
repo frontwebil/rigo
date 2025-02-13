@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import "./InsuranceRow.css";
 
 export function InsuranceRow({ el, i, setOpenRowId, openRowId }) {
   const isOpen = openRowId === i;
