@@ -5,15 +5,30 @@ import { Search } from "../Search/Search";
 import { SortFiltrButtons } from "../SortFiltrButtons/SortFiltrButtons";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
-import { WorkersPageActions } from "./WorkersPageActions";
+import { EventLogWorkers } from "./EventLogWorkers";
+// import { WorkersPageActions } from "./WorkersPageActions";
 
 export function WorkersPage({ currentPage }) {
   const [data] = useState(() => {
     return UsersData.map((el) => el.sitesEmployees).flat();
   });
+  const [eventLog , setEventLog] = useState([])
   const [allWorkersData, setAllWorkersData] = useState(data);
   const [searchTerm, setSearchTerm] = useState("");
   const sortByButtons = ["realEstate", "insurance", "country" , "manager" , "customer"];
+  const eventHandleClick = (event) => {
+    if(event === 'All'){
+      setEventLog([])
+    }
+    setEventLog((prevLog) => {
+      if (prevLog.includes(event)) {
+        return prevLog.filter((item) => item !== event);
+      } else {
+        return [...prevLog, event];
+      }
+    });
+  };
+
 
   const printRef = useRef(null);
 
@@ -96,7 +111,8 @@ export function WorkersPage({ currentPage }) {
         handleDownloadPdf={handleDownloadPdf}
       />
 
-      <WorkersPageActions />
+      {/* <WorkersPageActions /> */}
+      <EventLogWorkers eventLog={eventLog} setEventLog={setEventLog} eventHandleClick={eventHandleClick}/>
 
       <div ref={printRef} className="table-container">
         <div className="table">
