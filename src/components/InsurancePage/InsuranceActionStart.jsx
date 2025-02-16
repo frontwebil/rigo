@@ -1,10 +1,11 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const InsuranceActionStart = () => {
   const [currentAction, setCurrentAction] = useState("All");
 
   return (
-    <div className="info-page-container">
+    <div className="info-page-container" style={{display:'flex' , justifyContent:'space-between' , gap:'10px'}}>
       <div className="flex-actions">
         <button
           onClick={() => setCurrentAction("All")}
@@ -72,6 +73,15 @@ const InsuranceActionStart = () => {
           By type
         </button>
       </div>
+      <div className="sortFiltrButtons-flexButtons">
+            <Link
+              to="/add-insurance"
+              className={`sortFiltrButtons-button active`}
+              style={{border:'none'}}
+            >
+              Add Insurance
+            </Link>
+          </div>
     </div>
   );
 };

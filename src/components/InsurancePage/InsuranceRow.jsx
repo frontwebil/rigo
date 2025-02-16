@@ -26,7 +26,13 @@ export function InsuranceRow({ el, i, setOpenRowId, openRowId }) {
         {el.country}
       </div>
       <div className="table-block" style={{ width: "10%" }}>
-        <div className={`location ${el.status}`}>{el.status}</div>
+        <div className={`location ${el.status}`}>
+        {el.status == "Empty" ? (
+            <Link to="/add-insurance">{el.status}</Link>
+          ) : (
+            el.status
+          )}
+        </div>
       </div>
       <div className="table-block center" style={{ width: "5%" }}>
         {el.notes}

@@ -1,0 +1,138 @@
+.form-container {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #f5f8fc;
+  border-radius: 8px;
+  max-width: 1400px;
+  margin: 50px auto 0;
+}
+
+.form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.form-header h2 {
+  font-size: 24px;
+  color: #3173e0;
+}
+
+.form-header h3 {
+  font-size: 18px;
+  color: #6c757d;
+}
+
+.customer-type-button {
+  padding: 10px 20px;
+  background-color: #6c757d;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.customer-type-button:hover {
+  background-color: #5a6268;
+}
+
+.form-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.form-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-item label {
+  margin-bottom: 5px;
+  font-size: 14px;
+  color: #495057;
+}
+
+.form-item input {
+  padding: 8px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.submit-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #3173e0;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  background-color: #275bb5;
+}
+
+.customer-type-select {
+  padding: 8px 12px;
+  border: 1px solid #ced4da;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  appearance: none; /* Убирает стандартную стрелку */
+  -webkit-appearance: none; /* Для Safari */
+  -moz-appearance: none; /* Для Firefox */
+  background-image: none;
+  text-align: center;
+  background-color: #5766d0;
+  color: #f2fafa;
+  transition: all 0.5s ease;
+}
+
+.customer-type-select:hover {
+  opacity: 0.9;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.close-button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: #5766d0;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.close-button:hover {
+  background: #4654a3;
+}

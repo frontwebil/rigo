@@ -46,16 +46,22 @@ export function SitesInnerEmployeesTableRow({ el }) {
             el.insurance == "Empty" ? "empty" : ""
           }`}
         >
-          {el.insurance}
+          {el.insurance == "Empty" ? (
+            <Link to="/add-insurance">{el.insurance}</Link>
+          ) : (
+            el.insurance
+          )}
         </div>
       </div>
       <div className="table-block alertsButton-wrap" style={{ width: "5%" }}>
         <Link to="/alerts">
-          {el.alerts && <img src="/icons/alert.png" alt="" className="alertsButton" />}
+          {el.alerts && (
+            <img src="/icons/alert.png" alt="" className="alertsButton" />
+          )}
         </Link>
       </div>
       <div className="table-block tableFlex-block" style={{ width: "8%" }}>
-        <img src="/icons/location.png" alt="" className="location-button"/>
+        <img src="/icons/location.png" alt="" className="location-button" />
         {el.realEstate}
       </div>
       <div className="table-block tableFlex-block" style={{ width: "6%" }}>

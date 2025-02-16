@@ -13,6 +13,7 @@ import { BankingPage } from "./components/BankingPage/BankingPage.jsx";
 import { BankingInnerTime } from "./components/BankingPage/BankingInnerTime.jsx";
 import { ActionPage } from "./components/ActionsPage/ActionsPage.jsx";
 import { CustomerPage } from "./components/Customer/CustomerPage.jsx";
+import { AddInsurance } from "./components/AddInsurance/AddInsurance.jsx";
 
 export const router = createBrowserRouter([
   {
@@ -75,6 +76,10 @@ export const router = createBrowserRouter([
       {
         path: "/banking/WorkedTime/:id",
         element: <BankingInnerTime currentPage={{linkTo:'/banking' , names:["Banking","All Workers","WorkedTime"]}}/>
+      },
+      {
+        path: "/add-insurance",
+        element: <AddInsurance currentPage={{linkTo:'/add-insurance' , names:["Insurance","Add Insurance"]}}/>
       },
     ],
   },
