@@ -1,6 +1,14 @@
 .SitesInnerBasic {
   max-width: 1380px;
   margin: 0 auto;
+  border: 1px solid #d0d0d0;
+  border-radius: 10px;
+  background: #f8fcfc;
+  padding: 25px 15px 25px;
+  display: flex
+;
+  flex-direction: column;
+  gap: 10px;
 }
 .SitesInnerBasic-topInfo {
   background-color: #484444;
@@ -47,10 +55,13 @@
 }
 
 .SitesInnerBasic-content-block:last-child {
-  border-right: 2px solid #000000;
+  border-left: 0px solid #000000;
+}
+.SitesInnerBasic-content-block:nth-child(3) {
+  border-left: 0px solid #000000;
 }
 .SitesInnerBasic-content-block:first-child {
-  border-left: 2px solid #000000;
+  border-right: 0px solid #000000;
 }
 
 .SitesInnerBasic-content-block-title {
