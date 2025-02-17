@@ -1,14 +1,19 @@
 .table-container {
-  max-width: 1400px;
+  max-width: 1430px;
   margin: 15px auto 40px;
   overflow-x: auto;
   width: max-content;
   scrollbar-width: thin;
   width: 100%;
+  border: 1px solid #d0d0d0;
+  border-radius: 10px;
+  background: #f8fcfc;
+  padding: 25px 15px 25px;
 }
 .table {
   border-collapse: separate;
   border-spacing: 0;
+
 }
 .table-block.nav {
   justify-content: center;
@@ -44,7 +49,6 @@
 .table-block.center {
   justify-content: center;
 }
-
 
 .brake {
   background-color: #f1ad80;
@@ -168,25 +172,25 @@
 .confirmTimeRed {
   padding: 8px 18px;
   border-radius: 10px;
-  border: 1px solid #FF0000;
+  border: 1px solid #ff0000;
   max-width: 80px;
 }
 
-.confirmTime{
+.confirmTime {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
 }
 
-.alerts-block-notification{
-  background-color: #F5B184;
+.alerts-block-notification {
+  background-color: #f5b184;
   border-radius: 10px;
   padding: 8px 15px;
 }
-.alertNotification-flex{
+.alertNotification-flex {
   display: flex;
-  align-items: center;  
+  align-items: center;
   flex-wrap: wrap;
   gap: 10px;
 }
@@ -269,7 +273,6 @@
   font-weight: 700;
 }
 
-
 .BackTo-button {
   display: flex;
   align-items: center;
@@ -281,7 +284,7 @@
   justify-content: center;
 }
 
-.navBackNext{
+.navBackNext {
   width: 30px;
   height: 30px;
 }
@@ -291,7 +294,7 @@
   cursor: pointer;
 }
 
-.dropdown-menu{
+.dropdown-menu {
   position: absolute;
   top: 100%;
   right: 0;
@@ -300,18 +303,18 @@
   border-radius: 5px;
   padding: 5px;
   z-index: 5;
-  max-height:80px;
-  overflow-y:scroll;
-  scrollbar-width: thin
+  max-height: 80px;
+  overflow-y: scroll;
+  scrollbar-width: thin;
 }
 
-.dropdown-menu div{
+.dropdown-menu div {
   border-bottom: 1px solid black;
 }
-.dropdown-menu div:last-child{
+.dropdown-menu div:last-child {
   border-bottom: 1px solid transparent;
 }
 
-.documentBasicImg{
-  max-width:80px;
+.documentBasicImg {
+  max-width: 80px;
 }

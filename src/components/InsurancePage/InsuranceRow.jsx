@@ -61,13 +61,11 @@ export function InsuranceRow({ el, i, setOpenRowId, openRowId }) {
           </ul>
         )}
       </div>
-      <Link
-        to={`/insuranceCustomer/${el.tax}`}
-        className="table-block center"
-        style={{ width: "5%" }}
-      >
-        <img src="/icons/info-icon.png" alt="" className="info-button" />
-      </Link>
+      <div className="table-block tableFlex-block" style={{ width: "5%" }}>
+        <Link to={`/workers/${el.tax}`}>
+          <img src="/icons/info-icon.png" alt="" className="info-button" />
+        </Link>
+      </div>
     </div>
   );
 }

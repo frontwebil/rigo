@@ -195,35 +195,6 @@ const WorkersBasic = ({
                 Exit work - 22.01.2025
               </p>
             </div>
-          </div>
-
-          <div className="SitesInnerBasic-content-block">
-            <p className="SitesInnerBasic-content-row-text link">Passport</p>
-            <p className="SitesInnerBasic-content-row-text link">
-              Driving licence
-            </p>
-            <p className="SitesInnerBasic-content-row-text link">Cartis Oved</p>
-            <div
-              className="SitesInnerBasic-content-row"
-              style={{ alignItems: "center" }}
-            >
-              <p className="SitesInnerBasic-content-row-text link">
-                Permission for work:
-              </p>
-              <p
-                className="SitesInnerBasic-content-row-text"
-                style={{ fontSize: "16px" }}
-              >
-                expire in 8 Days
-              </p>
-            </div>
-            <p className="SitesInnerBasic-content-row-text link inActive">
-              Intervisa
-            </p>
-            <p>
-              {" "}
-              <br />
-            </p>
             <p className="SitesInnerBasic-content-row-text link">
               Medical Cartis
             </p>
@@ -249,6 +220,31 @@ const WorkersBasic = ({
               <p className="SitesInnerBasic-content-row-text link">Bet Lamed</p>
               <p className="SitesInnerBasic-content-row-text link">2 files</p>
             </div>
+          </div>
+
+          <div className="SitesInnerBasic-content-block">
+            <p className="SitesInnerBasic-content-row-text link">Passport</p>
+            <p className="SitesInnerBasic-content-row-text link">
+              Driving licence
+            </p>
+            <p className="SitesInnerBasic-content-row-text link">Cartis Oved</p>
+            <div
+              className="SitesInnerBasic-content-row"
+              style={{ alignItems: "center" }}
+            >
+              <p className="SitesInnerBasic-content-row-text link">
+                Permission for work:
+              </p>
+              <p
+                className="SitesInnerBasic-content-row-text"
+                style={{ fontSize: "16px" }}
+              >
+                expire in 8 Days
+              </p>
+            </div>
+            <p className="SitesInnerBasic-content-row-text link inActive">
+              Intervisa
+            </p>
             <p>
               {" "}
               <br />
