@@ -2,6 +2,21 @@ import { InnerTagEditButtons } from "../InnerTagEditButtons/InnerTagEditButtons"
 import { Search } from "../Search/Search";
 import { SitesInnerNav } from "../SitesInnerNav/SitesInnerNav";
 
+const handleDownload = (e, documentName) => {
+  e.preventDefault();
+  // Here we're using a placeholder image URL since we don't have actual document URLs
+
+  // Create a temporary link element
+  const link = document.createElement("a");
+  link.href = 'https://vta.kz/img/visa/Czech_Visa.jpg';
+  link.download = `${documentName}.png`; // Set the download filename
+
+  // Trigger the download
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+};
+
 const WorkersBasic = ({
   currentPage,
   handleTabClick,
@@ -223,35 +238,56 @@ const WorkersBasic = ({
           </div>
 
           <div className="SitesInnerBasic-content-block">
-            <p className="SitesInnerBasic-content-row-text link">Passport</p>
-            <p className="SitesInnerBasic-content-row-text link">
-              Driving licence
-            </p>
-            <p className="SitesInnerBasic-content-row-text link">Cartis Oved</p>
-            <div
-              className="SitesInnerBasic-content-row"
-              style={{ alignItems: "center" }}
+          <p
+            className="SitesInnerBasic-content-row-text link"
+            onClick={(e) => handleDownload(e, "passport")}
+          >
+            Passport
+          </p>
+          <p
+            className="SitesInnerBasic-content-row-text link"
+            onClick={(e) => handleDownload(e, "driving-licence")}
+          >
+            Driving licence
+          </p>
+          <p
+            className="SitesInnerBasic-content-row-text link"
+            onClick={(e) => handleDownload(e, "cartis-oved")}
+          >
+            Cartis Oved
+          </p>
+          <div
+            className="SitesInnerBasic-content-row"
+            style={{ alignItems: "center" }}
+          >
+            <p
+              className="SitesInnerBasic-content-row-text link"
+              onClick={(e) => handleDownload(e, "work-permission")}
             >
-              <p className="SitesInnerBasic-content-row-text link">
-                Permission for work:
-              </p>
-              <p
-                className="SitesInnerBasic-content-row-text"
-                style={{ fontSize: "16px" }}
-              >
-                expire in 8 Days
-              </p>
-            </div>
-            <p className="SitesInnerBasic-content-row-text link inActive">
-              Intervisa
+              Permission for work:
             </p>
-            <p>
-              {" "}
-              <br />
+            <p
+              className="SitesInnerBasic-content-row-text"
+              style={{ fontSize: "16px" }}
+            >
+              expire in 8 Days
             </p>
-            <p className="SitesInnerBasic-content-row-text link inActive">
-              Adraha Le Gova
-            </p>
+          </div>
+          <p
+            className="SitesInnerBasic-content-row-text link inActive"
+            onClick={(e) => handleDownload(e, "intervisa")}
+          >
+            Intervisa
+          </p>
+          <p>
+            <br />
+          </p>
+          <p
+            className="SitesInnerBasic-content-row-text link inActive"
+            onClick={(e) => handleDownload(e, "adraha-le-gova")}
+          >
+            Adraha Le Gova
+          </p>
             <p>
               {" "}
               <br />
